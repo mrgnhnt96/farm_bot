@@ -1,3 +1,4 @@
+import 'package:farmbot_flutter/services/app_info/app_info.dart';
 import 'package:farmbot_flutter/services/injection/injection.config.dart';
 import 'package:injectable/injectable.dart';
 import 'package:get_it/get_it.dart';
@@ -12,7 +13,7 @@ const _dev = Environment('dev');
 
 ///use on injected classes
 ///
-///`@dev`
+///`@staging`
 // ignore: unused_element
 const _staging = Environment('staging');
 
@@ -23,5 +24,5 @@ const _staging = Environment('staging');
 const _prod = Environment('prod');
 
 @injectableInit
-void configureDependencies(String environment) =>
-    $initGetIt(getIt, environment: environment);
+void configureDependencies(AppEnvironment environment) =>
+    $initGetIt(getIt, environment: environment.toFormattedString());
