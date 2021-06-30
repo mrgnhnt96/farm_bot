@@ -7,12 +7,12 @@ bricks:
   repo:
     git:
       url: git@github.com:mrgnhnt96/quick_bricks.git
-      path: flutter/repo
+      path: flutter/logger/repo
 
   feature:
     git:
       url: git@github.com:mrgnhnt96/quick_bricks.git
-      path: flutter/feature
+      path: flutter/logger/feature
 
   cubit:
     git:
