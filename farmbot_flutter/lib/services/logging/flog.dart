@@ -5,6 +5,7 @@ export 'package:flog/flog.dart';
 
 enum Features {
   auth,
+  hydrate,
 }
 
 void setUpFlog() {
