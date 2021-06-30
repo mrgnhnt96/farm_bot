@@ -1,0 +1,20 @@
+bricks:
+  model:
+    git:
+      url: https://github.com/mrgnhnt96/quick_bricks.git
+      path: flutter/model
+
+  repo:
+    git:
+      url: git@github.com:mrgnhnt96/quick_bricks.git
+      path: flutter/repo
+
+  feature:
+    git:
+      url: git@github.com:mrgnhnt96/quick_bricks.git
+      path: flutter/feature
+
+  cubit:
+    git:
+      url: git@github.com:mrgnhnt96/quick_bricks.git
+      path: flutter/cubit
