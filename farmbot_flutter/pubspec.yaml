@@ -5,22 +5,45 @@ publish_to: none
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
+  flutter: 2.2.2
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  another_flushbar: ^1.10.23
+  auto_route: ^2.2.0
   bloc: ^7.0.0
+  device_info_plus: ^2.0.1
+  flog: ^0.2.1
   flutter_bloc: ^7.0.0
+  freezed_annotation: ^0.14.2
+  get_it: ^7.1.4
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
+  http: ^0.13.3
+  hydrated_bloc: ^7.0.1
+  injectable: ^1.4.1
   intl: ^0.17.0
+  json_serializable: ^4.1.3
+  package_info_plus: ^1.0.3
+  permission_handler: ^8.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  auto_route_generator: ^2.1.0
   bloc_test: ^8.0.0
+  build_runner: ^2.0.5
+  freezed: ^0.14.2
+  injectable_generator: ^1.4.1
   mocktail: ^0.1.0
   very_good_analysis: ^2.1.0
+
+dependency_overrides:
+  analyzer: 1.5.0
+  async: ^2.7.0
 
 flutter:
   uses-material-design: true
