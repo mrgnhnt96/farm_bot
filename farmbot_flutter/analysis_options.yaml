@@ -1,4 +1,17 @@
 include: package:very_good_analysis/analysis_options.yaml
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    - "**/injection.config.dart"
+    - "**/*.freezed.dart"
+    - "**/generated_plugin_registrant.dart"
+    - "bricks/**"
+  errors:
+    missing_required_param: error
+    missing_return: error
+    must_be_immutable: error
+    override_on_non_overriding_member: error
 linter:
   rules:
     public_member_api_docs: false
