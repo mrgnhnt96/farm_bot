@@ -1,4 +1,4 @@
-package com.example.farmbotFlutter
+package com.farmbot.mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
