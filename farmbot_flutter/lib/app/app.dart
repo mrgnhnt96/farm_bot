@@ -31,7 +31,7 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    MaterialApp.router(
+    return MaterialApp.router(
       theme: farmbotTheme,
       key: const Key('farmbot_app'),
       title: 'Farmbot',
@@ -48,13 +48,6 @@ class _AppState extends State<App> {
           return [NavObserver()];
         },
       ),
-    );
-    return MaterialApp(
-      theme: ThemeData(
-        accentColor: const Color(0xFF13B9FF),
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-      ),
-      home: const HomeScreen(),
     );
   }
 }
