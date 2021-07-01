@@ -1,6 +1,6 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
-import 'package:farmbot_dart/farmbot_dart.dart';
+import 'package:farmbot/farmbot.dart';
 
 void main() {
   test('adds one to input values', () {
