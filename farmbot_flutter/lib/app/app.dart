@@ -33,6 +33,8 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     MaterialApp.router(
       theme: farmbotTheme,
+      key: const Key('farmbot_app'),
+      title: 'Farmbot',
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
