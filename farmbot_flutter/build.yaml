@@ -5,7 +5,7 @@ targets:
         enabled: true
         generate_for:
           include:
-            - lib/infrastructure/routes/app_routes.routes.dart
+            - lib/routes/app_routes.routes.dart
           exclude:
             - lib/**_bloc.dart
             - lib/**_cubit.dart
@@ -76,7 +76,7 @@ targets:
         enabled: true
         generate_for:
           include:
-            - lib/infrastructure/injection/injection.dart
+            - lib/services/injection/injection.dart
           exclude:
             - lib/**_wrapper.dart
             - lib/**_screen.dart
