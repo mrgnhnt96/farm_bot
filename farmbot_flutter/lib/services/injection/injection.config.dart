@@ -23,7 +23,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i5.Logger>(() => _i5.Logger());
   gh.factory<_i3.IHomeRepo>(
       () => _i4.HomeEntity(get<_i3.IHomeCache>(instanceName: 'HomeCache'),
-          get<_i3.IHomeSource>(instanceName: 'HomeSource')),
+          get<_i3.IHomeSource>(instanceName: 'HomeSource'), get<_i5.Logger>()),
       instanceName: 'HomeEntity');
   gh.factory<_i6.HomeCubit>(
       () => _i6.HomeCubit(get<_i3.IHomeRepo>(instanceName: 'HomeEntity')));

@@ -6,7 +6,7 @@ part of 'home.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Home _$_$_HomeFromJson(Map<String, dynamic> json) {
+_$_Home _$_$_HomeFromJson(Map json) {
   return _$_Home();
 }
 
