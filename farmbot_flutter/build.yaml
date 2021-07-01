@@ -1,0 +1,86 @@
+targets:
+  $default:
+    builders:
+      auto_route_generator|autoRouteGenerator:
+        enabled: true
+        generate_for:
+          include:
+            - lib/infrastructure/routes/app_routes.routes.dart
+          exclude:
+            - lib/**_bloc.dart
+            - lib/**_cubit.dart
+            - lib/**.dao.dart
+            - lib/**.i.dart
+            - lib/**_wrapper.dart
+            - lib/**_screen.dart
+            - lib/**_bottom_sheet.dart
+            - lib/**_dialog.dart
+            - lib/**/components/**
+
+      json_serializable:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**.model.dart
+            - lib/**_bloc.dart
+            - lib/**_cubit.dart
+          exclude:
+            - lib/**.dao.dart
+            - lib/**.i.dart
+            - lib/**_wrapper.dart
+            - lib/**_screen.dart
+            - lib/**_bottom_sheet.dart
+            - lib/**_dialog.dart
+            - lib/**/components/**
+            - lib/**/services/**
+
+        options:
+          explicit_to_json: true
+          include_if_null: false
+          any_map: true
+      freezed|freezed:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**.model.dart
+            - lib/**_bloc.dart
+            - lib/**_cubit.dart
+          exclude:
+            - lib/**.dao.dart
+            - lib/**.i.dart
+            - lib/**_wrapper.dart
+            - lib/**_screen.dart
+            - lib/**_bottom_sheet.dart
+            - lib/**_dialog.dart
+            - lib/**/components/**
+            - lib/**/services/**
+
+      injectable_generator|injectable_builder:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**_bloc.dart
+            - lib/**_cubit.dart
+            - lib/**.dao.dart
+            - lib/**logger.dart
+            - lib/**calculator.dart
+          exclude:
+            - lib/**_wrapper.dart
+            - lib/**_screen.dart
+            - lib/**_bottom_sheet.dart
+            - lib/**_dialog.dart
+            - lib/**/components/**
+            - lib/**/services/**
+
+      injectable_generator|injectable_config_builder:
+        enabled: true
+        generate_for:
+          include:
+            - lib/infrastructure/injection/injection.dart
+          exclude:
+            - lib/**_wrapper.dart
+            - lib/**_screen.dart
+            - lib/**_bottom_sheet.dart
+            - lib/**_dialog.dart
+            - lib/**/components/**
+            - lib/**/services/**
