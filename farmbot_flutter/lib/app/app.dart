@@ -5,13 +5,12 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
-import 'package:farmbot_flutter/app/home/presentation/home_screen.dart';
+import 'package:farmbot_flutter/l10n/l10n.dart';
 import 'package:farmbot_flutter/routes/app_routes.routes.dart';
 import 'package:farmbot_flutter/services/observers/nav_observer.dart';
 import 'package:farmbot_flutter/themes/material_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:farmbot_flutter/l10n/l10n.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);

@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:farmbot_flutter/shared/ui_widgets/error_indicator.dart';
 import 'package:farmbot_flutter/shared/ui_widgets/loading_indicator.dart';
-import 'package:farmbot_flutter/shared/ui_widgets/scale_widget.dart';
 import 'package:flog/flog.dart';
 import 'package:flutter/material.dart';
 
