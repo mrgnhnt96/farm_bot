@@ -3,17 +3,23 @@ description: A Dart Farmbot RPC wrapper
 version: 0.0.1
 homepage: https://github.com/mrgnhnt96/farm_bot
 
+_farmbot_internal_variables_: 
+  &freezed_ver ^0.14.2
+
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   async:
+  freezed_annotation: *freezed_ver
   meta:
   mqtt_client: ^9.3.1
   stack_trace:
 
 
 dev_dependencies:
+  build_runner:
   fake_async:
+  freezed: *freezed_ver
   matcher:
   test:
