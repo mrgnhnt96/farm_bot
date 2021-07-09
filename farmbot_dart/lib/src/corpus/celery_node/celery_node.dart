@@ -1,4 +1,4 @@
-import 'package:farmbot/src/corpus/celery_script_node.dart';
+import 'package:farmbot/src/corpus/celery_node/script/celery_script_node.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'celery_node.freezed.dart';
@@ -6,8 +6,13 @@ part 'celery_node.g.dart';
 
 // TODO: create union for classes args & body
 
+abstract class CeleryScript {
+  String get kind;
+  CeleryScriptNode toRequest();
+}
+
 @freezed
-class Assertion with _$Assertion {
+class Assertion with _$Assertion implements CeleryScript {
   const Assertion._();
 
   const factory Assertion({
@@ -15,8 +20,13 @@ class Assertion with _$Assertion {
     required AssertionArgs args,
   }) = _DefaultAssertion;
 
+  factory Assertion.fromJson(Map<String, dynamic> json) =>
+      _$AssertionFromJson(json);
+
+  @override
   String get kind => 'assertion';
 
+  @override
   CeleryScriptNode toRequest() {
     return CeleryScriptNode(
       args: args.toJson(),
@@ -24,9 +34,6 @@ class Assertion with _$Assertion {
       comment: comment,
     );
   }
-
-  factory Assertion.fromJson(Map<String, dynamic> json) =>
-      _$AssertionFromJson(json);
 }
 
 @freezed
@@ -185,6 +192,7 @@ class Identifier with _$Identifier {
 }
 
 @freezed
+// ignore: camel_case_types
 class If_ with _$If_ {
   const factory If_() = _DefaultIf_;
 
