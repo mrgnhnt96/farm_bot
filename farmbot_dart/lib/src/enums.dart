@@ -1,3 +1,4 @@
+// ignore_for_file: constant_identifier_names
 enum Kinds {
   install_farmware,
   update_farmware,
@@ -43,8 +44,8 @@ extension PackagesExtension on Packages {
 }
 
 String describeEnum(Object enumEntry) {
-  final String description = enumEntry.toString();
-  final int indexOfDot = description.indexOf('.');
+  final description = enumEntry.toString();
+  final indexOfDot = description.indexOf('.');
   assert(
     indexOfDot != -1 && indexOfDot < description.length - 1,
     'The provided object "$enumEntry" is not an enum.',
