@@ -1,8 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-
-import '../enums.dart';
+import 'package:farmbot/src/corpus/enums.dart';
 
 part 'celery_script.freezed.dart';
 part 'celery_script.g.dart';
@@ -48,32 +47,6 @@ class AssertionArgs with _$AssertionArgs {
 
   factory AssertionArgs.fromJson(Map<String, dynamic> json) =>
       _$AssertionArgsFromJson(json);
-}
-
-@freezed
-class AssertionBody with _$AssertionBody {
-  const AssertionBody._();
-
-  const factory AssertionBody() = _DefaultAssertionBody;
-
-  factory AssertionBody.fromJson(Map<String, dynamic> json) =>
-      _$AssertionBodyFromJson(json);
-}
-
-@freezed
-class AxisAddition with _$AxisAddition {
-  const factory AxisAddition() = _DefaultAxisAddition;
-
-  factory AxisAddition.fromJson(Map<String, dynamic> json) =>
-      _$AxisAdditionFromJson(json);
-}
-
-@freezed
-class AxisOverwrite with _$AxisOverwrite {
-  const factory AxisOverwrite() = _DefaultAxisOverwrite;
-
-  factory AxisOverwrite.fromJson(Map<String, dynamic> json) =>
-      _$AxisOverwriteFromJson(json);
 }
 
 @freezed

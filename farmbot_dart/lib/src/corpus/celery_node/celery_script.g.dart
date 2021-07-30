@@ -88,30 +88,6 @@ const _$AllowedAssertionTypesEnumMap = {
   AllowedAssertionTypes.recover: 'recover',
 };
 
-_$_DefaultAssertionBody _$_$_DefaultAssertionBodyFromJson(Map json) {
-  return _$_DefaultAssertionBody();
-}
-
-Map<String, dynamic> _$_$_DefaultAssertionBodyToJson(
-        _$_DefaultAssertionBody instance) =>
-    <String, dynamic>{};
-
-_$_DefaultAxisAddition _$_$_DefaultAxisAdditionFromJson(Map json) {
-  return _$_DefaultAxisAddition();
-}
-
-Map<String, dynamic> _$_$_DefaultAxisAdditionToJson(
-        _$_DefaultAxisAddition instance) =>
-    <String, dynamic>{};
-
-_$_DefaultAxisOverwrite _$_$_DefaultAxisOverwriteFromJson(Map json) {
-  return _$_DefaultAxisOverwrite();
-}
-
-Map<String, dynamic> _$_$_DefaultAxisOverwriteToJson(
-        _$_DefaultAxisOverwrite instance) =>
-    <String, dynamic>{};
-
 _$_DefaultCalibrate _$_$_DefaultCalibrateFromJson(Map json) {
   return _$_DefaultCalibrate();
 }
