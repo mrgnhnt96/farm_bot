@@ -2,10 +2,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 
+import '../enums.dart';
+
 part 'celery_script.freezed.dart';
 part 'celery_script.g.dart';
-
-// TODO: create union for classes args & body
 
 abstract class CeleryScript {
   String get kind;
@@ -33,15 +33,18 @@ class Assertion with _$Assertion implements CeleryScript {
       args: args.toJson(),
       kind: kind,
       comment: comment,
+      body: [],
     );
   }
 }
 
 @freezed
 class AssertionArgs with _$AssertionArgs {
-  const AssertionArgs._();
-
-  const factory AssertionArgs() = _DefaultAssertionArgs;
+  const factory AssertionArgs({
+    @JsonKey(name: '_then') Execute? then,
+    required AllowedAssertionTypes assertionType,
+    required String lua,
+  }) = _DefaultAssertionArgs;
 
   factory AssertionArgs.fromJson(Map<String, dynamic> json) =>
       _$AssertionArgsFromJson(json);
@@ -263,11 +266,20 @@ class NamedPin with _$NamedPin {
 }
 
 @freezed
-class Nothing with _$Nothing {
+class Nothing with _$Nothing implements CeleryScript {
+  const Nothing._();
   const factory Nothing() = _DefaultNothing;
 
   factory Nothing.fromJson(Map<String, dynamic> json) =>
       _$NothingFromJson(json);
+
+  @override
+  String get kind => 'nothing';
+
+  @override
+  CeleryNode toRequest() {
+    return CeleryNode(kind: kind, args: {});
+  }
 }
 
 @freezed

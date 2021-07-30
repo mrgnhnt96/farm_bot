@@ -202,8 +202,15 @@ AssertionArgs _$AssertionArgsFromJson(Map<String, dynamic> json) {
 class _$AssertionArgsTearOff {
   const _$AssertionArgsTearOff();
 
-  _DefaultAssertionArgs call() {
-    return const _DefaultAssertionArgs();
+  _DefaultAssertionArgs call(
+      {@JsonKey(name: '_then') Execute? then,
+      required AllowedAssertionTypes assertionType,
+      required String lua}) {
+    return _DefaultAssertionArgs(
+      then: then,
+      assertionType: assertionType,
+      lua: lua,
+    );
   }
 
   AssertionArgs fromJson(Map<String, Object> json) {
@@ -216,7 +223,15 @@ const $AssertionArgs = _$AssertionArgsTearOff();
 
 /// @nodoc
 mixin _$AssertionArgs {
+  @JsonKey(name: '_then')
+  Execute? get then => throw _privateConstructorUsedError;
+  AllowedAssertionTypes get assertionType => throw _privateConstructorUsedError;
+  String get lua => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AssertionArgsCopyWith<AssertionArgs> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -224,6 +239,12 @@ abstract class $AssertionArgsCopyWith<$Res> {
   factory $AssertionArgsCopyWith(
           AssertionArgs value, $Res Function(AssertionArgs) then) =
       _$AssertionArgsCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: '_then') Execute? then,
+      AllowedAssertionTypes assertionType,
+      String lua});
+
+  $ExecuteCopyWith<$Res>? get then;
 }
 
 /// @nodoc
@@ -234,13 +255,55 @@ class _$AssertionArgsCopyWithImpl<$Res>
   final AssertionArgs _value;
   // ignore: unused_field
   final $Res Function(AssertionArgs) _then;
+
+  @override
+  $Res call({
+    Object? then = freezed,
+    Object? assertionType = freezed,
+    Object? lua = freezed,
+  }) {
+    return _then(_value.copyWith(
+      then: then == freezed
+          ? _value.then
+          : then // ignore: cast_nullable_to_non_nullable
+              as Execute?,
+      assertionType: assertionType == freezed
+          ? _value.assertionType
+          : assertionType // ignore: cast_nullable_to_non_nullable
+              as AllowedAssertionTypes,
+      lua: lua == freezed
+          ? _value.lua
+          : lua // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $ExecuteCopyWith<$Res>? get then {
+    if (_value.then == null) {
+      return null;
+    }
+
+    return $ExecuteCopyWith<$Res>(_value.then!, (value) {
+      return _then(_value.copyWith(then: value));
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$DefaultAssertionArgsCopyWith<$Res> {
+abstract class _$DefaultAssertionArgsCopyWith<$Res>
+    implements $AssertionArgsCopyWith<$Res> {
   factory _$DefaultAssertionArgsCopyWith(_DefaultAssertionArgs value,
           $Res Function(_DefaultAssertionArgs) then) =
       __$DefaultAssertionArgsCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: '_then') Execute? then,
+      AllowedAssertionTypes assertionType,
+      String lua});
+
+  @override
+  $ExecuteCopyWith<$Res>? get then;
 }
 
 /// @nodoc
@@ -253,28 +316,79 @@ class __$DefaultAssertionArgsCopyWithImpl<$Res>
 
   @override
   _DefaultAssertionArgs get _value => super._value as _DefaultAssertionArgs;
+
+  @override
+  $Res call({
+    Object? then = freezed,
+    Object? assertionType = freezed,
+    Object? lua = freezed,
+  }) {
+    return _then(_DefaultAssertionArgs(
+      then: then == freezed
+          ? _value.then
+          : then // ignore: cast_nullable_to_non_nullable
+              as Execute?,
+      assertionType: assertionType == freezed
+          ? _value.assertionType
+          : assertionType // ignore: cast_nullable_to_non_nullable
+              as AllowedAssertionTypes,
+      lua: lua == freezed
+          ? _value.lua
+          : lua // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultAssertionArgs extends _DefaultAssertionArgs {
-  const _$_DefaultAssertionArgs() : super._();
+class _$_DefaultAssertionArgs implements _DefaultAssertionArgs {
+  const _$_DefaultAssertionArgs(
+      {@JsonKey(name: '_then') this.then,
+      required this.assertionType,
+      required this.lua});
 
   factory _$_DefaultAssertionArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultAssertionArgsFromJson(json);
 
   @override
+  @JsonKey(name: '_then')
+  final Execute? then;
+  @override
+  final AllowedAssertionTypes assertionType;
+  @override
+  final String lua;
+
+  @override
   String toString() {
-    return 'AssertionArgs()';
+    return 'AssertionArgs(then: $then, assertionType: $assertionType, lua: $lua)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultAssertionArgs);
+    return identical(this, other) ||
+        (other is _DefaultAssertionArgs &&
+            (identical(other.then, then) ||
+                const DeepCollectionEquality().equals(other.then, then)) &&
+            (identical(other.assertionType, assertionType) ||
+                const DeepCollectionEquality()
+                    .equals(other.assertionType, assertionType)) &&
+            (identical(other.lua, lua) ||
+                const DeepCollectionEquality().equals(other.lua, lua)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(then) ^
+      const DeepCollectionEquality().hash(assertionType) ^
+      const DeepCollectionEquality().hash(lua);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DefaultAssertionArgsCopyWith<_DefaultAssertionArgs> get copyWith =>
+      __$DefaultAssertionArgsCopyWithImpl<_DefaultAssertionArgs>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -282,12 +396,26 @@ class _$_DefaultAssertionArgs extends _DefaultAssertionArgs {
   }
 }
 
-abstract class _DefaultAssertionArgs extends AssertionArgs {
-  const factory _DefaultAssertionArgs() = _$_DefaultAssertionArgs;
-  const _DefaultAssertionArgs._() : super._();
+abstract class _DefaultAssertionArgs implements AssertionArgs {
+  const factory _DefaultAssertionArgs(
+      {@JsonKey(name: '_then') Execute? then,
+      required AllowedAssertionTypes assertionType,
+      required String lua}) = _$_DefaultAssertionArgs;
 
   factory _DefaultAssertionArgs.fromJson(Map<String, dynamic> json) =
       _$_DefaultAssertionArgs.fromJson;
+
+  @override
+  @JsonKey(name: '_then')
+  Execute? get then => throw _privateConstructorUsedError;
+  @override
+  AllowedAssertionTypes get assertionType => throw _privateConstructorUsedError;
+  @override
+  String get lua => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$DefaultAssertionArgsCopyWith<_DefaultAssertionArgs> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 AssertionBody _$AssertionBodyFromJson(Map<String, dynamic> json) {
@@ -2883,8 +3011,8 @@ class __$DefaultNothingCopyWithImpl<$Res> extends _$NothingCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultNothing implements _DefaultNothing {
-  const _$_DefaultNothing();
+class _$_DefaultNothing extends _DefaultNothing {
+  const _$_DefaultNothing() : super._();
 
   factory _$_DefaultNothing.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultNothingFromJson(json);
@@ -2908,8 +3036,9 @@ class _$_DefaultNothing implements _DefaultNothing {
   }
 }
 
-abstract class _DefaultNothing implements Nothing {
+abstract class _DefaultNothing extends Nothing {
   const factory _DefaultNothing() = _$_DefaultNothing;
+  const _DefaultNothing._() : super._();
 
   factory _DefaultNothing.fromJson(Map<String, dynamic> json) =
       _$_DefaultNothing.fromJson;
