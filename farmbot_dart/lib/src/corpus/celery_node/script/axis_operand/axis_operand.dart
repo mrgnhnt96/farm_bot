@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 
 part 'axis_operand.freezed.dart';
