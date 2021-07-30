@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'celery_script_node.dart';
+part of 'celery_node.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,20 +12,20 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-CeleryScriptNode _$CeleryScriptNodeFromJson(Map<String, dynamic> json) {
-  return _CeleryScriptNode.fromJson(json);
+CeleryNode _$CeleryNodeFromJson(Map<String, dynamic> json) {
+  return _CeleryNode.fromJson(json);
 }
 
 /// @nodoc
-class _$CeleryScriptNodeTearOff {
-  const _$CeleryScriptNodeTearOff();
+class _$CeleryNodeTearOff {
+  const _$CeleryNodeTearOff();
 
-  _CeleryScriptNode call(
+  _CeleryNode call(
       {String? comment,
       List<Map<String, dynamic>>? body,
       required String kind,
       required Map<String, dynamic> args}) {
-    return _CeleryScriptNode(
+    return _CeleryNode(
       comment: comment,
       body: body,
       kind: kind,
@@ -33,16 +33,16 @@ class _$CeleryScriptNodeTearOff {
     );
   }
 
-  CeleryScriptNode fromJson(Map<String, Object> json) {
-    return CeleryScriptNode.fromJson(json);
+  CeleryNode fromJson(Map<String, Object> json) {
+    return CeleryNode.fromJson(json);
   }
 }
 
 /// @nodoc
-const $CeleryScriptNode = _$CeleryScriptNodeTearOff();
+const $CeleryNode = _$CeleryNodeTearOff();
 
 /// @nodoc
-mixin _$CeleryScriptNode {
+mixin _$CeleryNode {
   String? get comment => throw _privateConstructorUsedError;
   List<Map<String, dynamic>>? get body => throw _privateConstructorUsedError;
   String get kind => throw _privateConstructorUsedError;
@@ -50,15 +50,15 @@ mixin _$CeleryScriptNode {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CeleryScriptNodeCopyWith<CeleryScriptNode> get copyWith =>
+  $CeleryNodeCopyWith<CeleryNode> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CeleryScriptNodeCopyWith<$Res> {
-  factory $CeleryScriptNodeCopyWith(
-          CeleryScriptNode value, $Res Function(CeleryScriptNode) then) =
-      _$CeleryScriptNodeCopyWithImpl<$Res>;
+abstract class $CeleryNodeCopyWith<$Res> {
+  factory $CeleryNodeCopyWith(
+          CeleryNode value, $Res Function(CeleryNode) then) =
+      _$CeleryNodeCopyWithImpl<$Res>;
   $Res call(
       {String? comment,
       List<Map<String, dynamic>>? body,
@@ -67,13 +67,12 @@ abstract class $CeleryScriptNodeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CeleryScriptNodeCopyWithImpl<$Res>
-    implements $CeleryScriptNodeCopyWith<$Res> {
-  _$CeleryScriptNodeCopyWithImpl(this._value, this._then);
+class _$CeleryNodeCopyWithImpl<$Res> implements $CeleryNodeCopyWith<$Res> {
+  _$CeleryNodeCopyWithImpl(this._value, this._then);
 
-  final CeleryScriptNode _value;
+  final CeleryNode _value;
   // ignore: unused_field
-  final $Res Function(CeleryScriptNode) _then;
+  final $Res Function(CeleryNode) _then;
 
   @override
   $Res call({
@@ -104,11 +103,10 @@ class _$CeleryScriptNodeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CeleryScriptNodeCopyWith<$Res>
-    implements $CeleryScriptNodeCopyWith<$Res> {
-  factory _$CeleryScriptNodeCopyWith(
-          _CeleryScriptNode value, $Res Function(_CeleryScriptNode) then) =
-      __$CeleryScriptNodeCopyWithImpl<$Res>;
+abstract class _$CeleryNodeCopyWith<$Res> implements $CeleryNodeCopyWith<$Res> {
+  factory _$CeleryNodeCopyWith(
+          _CeleryNode value, $Res Function(_CeleryNode) then) =
+      __$CeleryNodeCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? comment,
@@ -118,15 +116,14 @@ abstract class _$CeleryScriptNodeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CeleryScriptNodeCopyWithImpl<$Res>
-    extends _$CeleryScriptNodeCopyWithImpl<$Res>
-    implements _$CeleryScriptNodeCopyWith<$Res> {
-  __$CeleryScriptNodeCopyWithImpl(
-      _CeleryScriptNode _value, $Res Function(_CeleryScriptNode) _then)
-      : super(_value, (v) => _then(v as _CeleryScriptNode));
+class __$CeleryNodeCopyWithImpl<$Res> extends _$CeleryNodeCopyWithImpl<$Res>
+    implements _$CeleryNodeCopyWith<$Res> {
+  __$CeleryNodeCopyWithImpl(
+      _CeleryNode _value, $Res Function(_CeleryNode) _then)
+      : super(_value, (v) => _then(v as _CeleryNode));
 
   @override
-  _CeleryScriptNode get _value => super._value as _CeleryScriptNode;
+  _CeleryNode get _value => super._value as _CeleryNode;
 
   @override
   $Res call({
@@ -135,7 +132,7 @@ class __$CeleryScriptNodeCopyWithImpl<$Res>
     Object? kind = freezed,
     Object? args = freezed,
   }) {
-    return _then(_CeleryScriptNode(
+    return _then(_CeleryNode(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
@@ -159,12 +156,12 @@ class __$CeleryScriptNodeCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(genericArgumentFactories: true)
-class _$_CeleryScriptNode implements _CeleryScriptNode {
-  const _$_CeleryScriptNode(
+class _$_CeleryNode implements _CeleryNode {
+  const _$_CeleryNode(
       {this.comment, this.body, required this.kind, required this.args});
 
-  factory _$_CeleryScriptNode.fromJson(Map<String, dynamic> json) =>
-      _$_$_CeleryScriptNodeFromJson(json);
+  factory _$_CeleryNode.fromJson(Map<String, dynamic> json) =>
+      _$_$_CeleryNodeFromJson(json);
 
   @override
   final String? comment;
@@ -177,13 +174,13 @@ class _$_CeleryScriptNode implements _CeleryScriptNode {
 
   @override
   String toString() {
-    return 'CeleryScriptNode(comment: $comment, body: $body, kind: $kind, args: $args)';
+    return 'CeleryNode(comment: $comment, body: $body, kind: $kind, args: $args)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CeleryScriptNode &&
+        (other is _CeleryNode &&
             (identical(other.comment, comment) ||
                 const DeepCollectionEquality()
                     .equals(other.comment, comment)) &&
@@ -205,24 +202,24 @@ class _$_CeleryScriptNode implements _CeleryScriptNode {
 
   @JsonKey(ignore: true)
   @override
-  _$CeleryScriptNodeCopyWith<_CeleryScriptNode> get copyWith =>
-      __$CeleryScriptNodeCopyWithImpl<_CeleryScriptNode>(this, _$identity);
+  _$CeleryNodeCopyWith<_CeleryNode> get copyWith =>
+      __$CeleryNodeCopyWithImpl<_CeleryNode>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CeleryScriptNodeToJson(this);
+    return _$_$_CeleryNodeToJson(this);
   }
 }
 
-abstract class _CeleryScriptNode implements CeleryScriptNode {
-  const factory _CeleryScriptNode(
+abstract class _CeleryNode implements CeleryNode {
+  const factory _CeleryNode(
       {String? comment,
       List<Map<String, dynamic>>? body,
       required String kind,
-      required Map<String, dynamic> args}) = _$_CeleryScriptNode;
+      required Map<String, dynamic> args}) = _$_CeleryNode;
 
-  factory _CeleryScriptNode.fromJson(Map<String, dynamic> json) =
-      _$_CeleryScriptNode.fromJson;
+  factory _CeleryNode.fromJson(Map<String, dynamic> json) =
+      _$_CeleryNode.fromJson;
 
   @override
   String? get comment => throw _privateConstructorUsedError;
@@ -234,6 +231,6 @@ abstract class _CeleryScriptNode implements CeleryScriptNode {
   Map<String, dynamic> get args => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CeleryScriptNodeCopyWith<_CeleryScriptNode> get copyWith =>
+  _$CeleryNodeCopyWith<_CeleryNode> get copyWith =>
       throw _privateConstructorUsedError;
 }

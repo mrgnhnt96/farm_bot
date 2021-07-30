@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:farmbot/src/corpus/celery_node/script/celery_script_node.dart';
+import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 
 part 'celery_node.freezed.dart';
 part 'celery_node.g.dart';
@@ -9,7 +9,7 @@ part 'celery_node.g.dart';
 
 abstract class CeleryScript {
   String get kind;
-  CeleryScriptNode toRequest();
+  CeleryNode toRequest();
 }
 
 @freezed
@@ -28,8 +28,8 @@ class Assertion with _$Assertion implements CeleryScript {
   String get kind => 'assertion';
 
   @override
-  CeleryScriptNode toRequest() {
-    return CeleryScriptNode(
+  CeleryNode toRequest() {
+    return CeleryNode(
       args: args.toJson(),
       kind: kind,
       comment: comment,

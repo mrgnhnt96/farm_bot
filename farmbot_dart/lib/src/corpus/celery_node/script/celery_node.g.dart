@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'celery_script_node.dart';
+part of 'celery_node.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CeleryScriptNode _$_$_CeleryScriptNodeFromJson(Map json) {
-  return _$_CeleryScriptNode(
+_$_CeleryNode _$_$_CeleryNodeFromJson(Map json) {
+  return _$_CeleryNode(
     comment: json['comment'] as String?,
     body: (json['body'] as List<dynamic>?)
         ?.map((e) => Map<String, dynamic>.from(e as Map))
@@ -17,7 +17,7 @@ _$_CeleryScriptNode _$_$_CeleryScriptNodeFromJson(Map json) {
   );
 }
 
-Map<String, dynamic> _$_$_CeleryScriptNodeToJson(_$_CeleryScriptNode instance) {
+Map<String, dynamic> _$_$_CeleryNodeToJson(_$_CeleryNode instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
