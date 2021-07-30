@@ -50,14 +50,6 @@ class AssertionArgs with _$AssertionArgs {
 }
 
 @freezed
-class Calibrate with _$Calibrate {
-  const factory Calibrate() = _DefaultCalibrate;
-
-  factory Calibrate.fromJson(Map<String, dynamic> json) =>
-      _$CalibrateFromJson(json);
-}
-
-@freezed
 class ChangeOwnership with _$ChangeOwnership {
   const factory ChangeOwnership() = _DefaultChangeOwnership;
 

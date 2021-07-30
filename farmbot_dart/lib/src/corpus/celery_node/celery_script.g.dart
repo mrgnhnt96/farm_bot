@@ -88,14 +88,6 @@ const _$AllowedAssertionTypesEnumMap = {
   AllowedAssertionTypes.recover: 'recover',
 };
 
-_$_DefaultCalibrate _$_$_DefaultCalibrateFromJson(Map json) {
-  return _$_DefaultCalibrate();
-}
-
-Map<String, dynamic> _$_$_DefaultCalibrateToJson(
-        _$_DefaultCalibrate instance) =>
-    <String, dynamic>{};
-
 _$_DefaultChangeOwnership _$_$_DefaultChangeOwnershipFromJson(Map json) {
   return _$_DefaultChangeOwnership();
 }
