@@ -1,0 +1,20 @@
+build: fvm flutter packages pub run build_runner build --delete-conflicting-outputs
+watch: fvm flutter packages pub run build_runner watch --delete-conflicting-outputs
+cleanbuild: fvm flutter packages pub run build_runner clean build
+cleanpod: fvm flutter clean && cd ios && pod deintegrate && fvm flutter packages get && pod install && cd ..
+cleanproj: fvm flutter clean && fvm flutter packages get
+bundle:
+  - $cleanproj
+  - fvm flutter build appbundle
+  - open build/app/outputs/bundle/release
+updategit: git rm -rf --cached . && git add . && git commit -m "Update gitignore"
+syncbranch:
+  - REMOTE="$(git remote)/release/4.2.0"; echo SYNCING WITH \"$REMOTE\"
+  - git merge --no-ff $REMOTE
+cleangit:
+  - "git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
+gentestcoverage:
+  - flutter test --coverage
+  - genhtml -o coverage coverage/lcov.info
+  - open coverage/index.html
+sortimports: flutter pub global run import_sorter:main
