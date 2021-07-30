@@ -2,8 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 
-part 'celery_node.freezed.dart';
-part 'celery_node.g.dart';
+part 'celery_script.freezed.dart';
+part 'celery_script.g.dart';
 
 // TODO: create union for classes args & body
 

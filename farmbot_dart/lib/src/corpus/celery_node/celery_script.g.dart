@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'celery_node.dart';
+part of 'celery_script.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
