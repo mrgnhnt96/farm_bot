@@ -10,13 +10,9 @@ abstract class CeleryScript {
   CeleryNode toRequest();
 }
 
-@freezed
-class ChangeOwnership with _$ChangeOwnership {
-  const factory ChangeOwnership() = _DefaultChangeOwnership;
-
-  factory ChangeOwnership.fromJson(Map<String, dynamic> json) =>
-      _$ChangeOwnershipFromJson(json);
-}
+// TODO: open files celery_node and axis_addition. Use axis_additiona as a template
+// TODO: Continue to convert the below classes to CeleryScript classes
+// Reference: https://github.com/FarmBot/farmbot-js/blob/HEAD/dist/corpus.d.ts
 
 @freezed
 class Channel with _$Channel {

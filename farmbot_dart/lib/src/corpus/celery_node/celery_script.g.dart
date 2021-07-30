@@ -6,14 +6,6 @@ part of 'celery_script.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultChangeOwnership _$_$_DefaultChangeOwnershipFromJson(Map json) {
-  return _$_DefaultChangeOwnership();
-}
-
-Map<String, dynamic> _$_$_DefaultChangeOwnershipToJson(
-        _$_DefaultChangeOwnership instance) =>
-    <String, dynamic>{};
-
 _$_DefaultChannel _$_$_DefaultChannelFromJson(Map json) {
   return _$_DefaultChannel();
 }
