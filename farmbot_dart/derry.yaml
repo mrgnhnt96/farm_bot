@@ -17,4 +17,5 @@ gentestcoverage:
   - flutter test --coverage
   - genhtml -o coverage coverage/lcov.info
   - open coverage/index.html
-sortimports: flutter pub global run import_sorter:main
+sort: flutter pub global run import_sorter:main
+model: mason make model
