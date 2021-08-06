@@ -1,4 +1,6 @@
 // ignore_for_file: constant_identifier_names
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum AllowedAssertionTypes { abort, abort_recover, next, recover }
 
 enum AllowedAxis { all, x, y, z }
@@ -21,8 +23,12 @@ enum AllowedOps { lessThan, greaterThan, isType, not }
 enum AllowedPackages { arduino_firmware, farmbot_os }
 
 class AllowedPinModes {
-  static const int zero = 0;
-  static const int one = 1;
+  AllowedPinModes(this.value) : assert(_allowedValues.contains(value));
+
+  static const List<int> _allowedValues = [0, 1];
+  static AllowedPinModes pinModeFromJson(int value) => AllowedPinModes(value);
+  static int pinModeToJson(AllowedPinModes pinMode) => pinMode.value;
+  final int value;
 }
 
 enum AllowedSpecialValue { current_location, safe_height, soil_height }
@@ -275,7 +281,7 @@ enum lhs {
   z
 }
 
-enum resource_type { Device, GenericPointer, Plant, Point, ToolSlot, Weed }
+enum ResourceType { Device, GenericPointer, Plant, Point, ToolSlot, Weed }
 
 enum AssertionBodyItem { never }
 

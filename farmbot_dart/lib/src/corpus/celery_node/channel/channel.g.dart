@@ -30,13 +30,13 @@ Map<String, dynamic> _$_$_DefaultChannelToJson(_$_DefaultChannel instance) {
 _$_ChannelArgs _$_$_ChannelArgsFromJson(Map json) {
   return _$_ChannelArgs(
     channelName:
-        _$enumDecode(_$AllowedChannelNamesEnumMap, json['channelName']),
+        _$enumDecode(_$AllowedChannelNamesEnumMap, json['channel_name']),
   );
 }
 
 Map<String, dynamic> _$_$_ChannelArgsToJson(_$_ChannelArgs instance) =>
     <String, dynamic>{
-      'channelName': _$AllowedChannelNamesEnumMap[instance.channelName],
+      'channel_name': _$AllowedChannelNamesEnumMap[instance.channelName],
     };
 
 K _$enumDecode<K, V>(

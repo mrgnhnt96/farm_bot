@@ -34,7 +34,7 @@ _$_DefaultAssertionArgs _$_$_DefaultAssertionArgsFromJson(Map json) {
         ? null
         : Execute.fromJson(Map<String, dynamic>.from(json['_then'] as Map)),
     assertionType:
-        _$enumDecode(_$AllowedAssertionTypesEnumMap, json['assertionType']),
+        _$enumDecode(_$AllowedAssertionTypesEnumMap, json['assertion_type']),
     lua: json['lua'] as String,
   );
 }
@@ -50,7 +50,8 @@ Map<String, dynamic> _$_$_DefaultAssertionArgsToJson(
   }
 
   writeNotNull('_then', instance.then?.toJson());
-  val['assertionType'] = _$AllowedAssertionTypesEnumMap[instance.assertionType];
+  val['assertion_type'] =
+      _$AllowedAssertionTypesEnumMap[instance.assertionType];
   val['lua'] = instance.lua;
   return val;
 }

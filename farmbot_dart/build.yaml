@@ -5,6 +5,7 @@ targets:
         enabled: true
 
         options:
+          field_rename: snake
           explicit_to_json: true
           include_if_null: false
           any_map: true

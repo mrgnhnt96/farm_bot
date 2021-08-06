@@ -33,7 +33,7 @@ _$_AxisAdditionArgs _$_$_AxisAdditionArgsFromJson(Map json) {
   return _$_AxisAdditionArgs(
     axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
     axisOperand: AxisOperand.fromJson(
-        Map<String, dynamic>.from(json['axisOperand'] as Map)),
+        Map<String, dynamic>.from(json['axis_operand'] as Map)),
   );
 }
 
@@ -41,7 +41,7 @@ Map<String, dynamic> _$_$_AxisAdditionArgsToJson(
         _$_AxisAdditionArgs instance) =>
     <String, dynamic>{
       'axis': _$AllowedAxisEnumMap[instance.axis],
-      'axisOperand': instance.axisOperand.toJson(),
+      'axis_operand': instance.axisOperand.toJson(),
     };
 
 K _$enumDecode<K, V>(

@@ -72,13 +72,13 @@ Map<String, dynamic> _$_$_RandomToJson(_$_Random instance) => <String, dynamic>{
 _$_SpecialValue _$_$_SpecialValueFromJson(Map json) {
   return _$_SpecialValue(
     SpecialValue.fromJson(
-        Map<String, dynamic>.from(json['specialValue'] as Map)),
+        Map<String, dynamic>.from(json['special_value'] as Map)),
   );
 }
 
 Map<String, dynamic> _$_$_SpecialValueToJson(_$_SpecialValue instance) =>
     <String, dynamic>{
-      'specialValue': instance.specialValue.toJson(),
+      'special_value': instance.specialValue.toJson(),
     };
 
 _$_Tool _$_$_ToolFromJson(Map json) {
