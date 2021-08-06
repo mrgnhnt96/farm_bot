@@ -15,14 +15,6 @@ abstract class CeleryScript {
 // Reference: https://github.com/FarmBot/farmbot-js/blob/HEAD/dist/corpus.d.ts
 
 @freezed
-class CheckUpdates with _$CheckUpdates {
-  const factory CheckUpdates() = _DefaultCheckUpdates;
-
-  factory CheckUpdates.fromJson(Map<String, dynamic> json) =>
-      _$CheckUpdatesFromJson(json);
-}
-
-@freezed
 class Coordinate with _$Coordinate {
   const factory Coordinate() = _DefaultCoordinate;
 

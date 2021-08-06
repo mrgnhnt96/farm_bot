@@ -6,14 +6,6 @@ part of 'celery_script.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultCheckUpdates _$_$_DefaultCheckUpdatesFromJson(Map json) {
-  return _$_DefaultCheckUpdates();
-}
-
-Map<String, dynamic> _$_$_DefaultCheckUpdatesToJson(
-        _$_DefaultCheckUpdates instance) =>
-    <String, dynamic>{};
-
 _$_DefaultCoordinate _$_$_DefaultCoordinateFromJson(Map json) {
   return _$_DefaultCoordinate();
 }
