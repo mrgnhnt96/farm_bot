@@ -6,13 +6,6 @@ part of 'celery_script.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultChannel _$_$_DefaultChannelFromJson(Map json) {
-  return _$_DefaultChannel();
-}
-
-Map<String, dynamic> _$_$_DefaultChannelToJson(_$_DefaultChannel instance) =>
-    <String, dynamic>{};
-
 _$_DefaultCheckUpdates _$_$_DefaultCheckUpdatesFromJson(Map json) {
   return _$_DefaultCheckUpdates();
 }

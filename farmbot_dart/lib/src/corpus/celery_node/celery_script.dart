@@ -15,14 +15,6 @@ abstract class CeleryScript {
 // Reference: https://github.com/FarmBot/farmbot-js/blob/HEAD/dist/corpus.d.ts
 
 @freezed
-class Channel with _$Channel {
-  const factory Channel() = _DefaultChannel;
-
-  factory Channel.fromJson(Map<String, dynamic> json) =>
-      _$ChannelFromJson(json);
-}
-
-@freezed
 class CheckUpdates with _$CheckUpdates {
   const factory CheckUpdates() = _DefaultCheckUpdates;
 
