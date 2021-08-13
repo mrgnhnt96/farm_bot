@@ -1,3 +1,5 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:farmbot/src/corpus/celery_node/assertion/assertion.dart';
 import 'package:farmbot/src/corpus/celery_node/calibrate/calibrate.dart';
 import 'package:farmbot/src/corpus/celery_node/change_ownership/change_ownership.dart';
@@ -33,7 +35,6 @@ import 'package:farmbot/src/corpus/celery_node/update_resource/update_resource.d
 import 'package:farmbot/src/corpus/celery_node/wait/wait.dart';
 import 'package:farmbot/src/corpus/celery_node/write_pin/write_pin.dart';
 import 'package:farmbot/src/corpus/celery_node/zero/zero.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'any_body_item.freezed.dart';
 part 'any_body_item.g.dart';

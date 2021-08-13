@@ -1,9 +1,10 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:farmbot/src/corpus/celery_node/coordinate/coordinate.dart';
 import 'package:farmbot/src/corpus/celery_node/identifier/identifier.dart';
 import 'package:farmbot/src/corpus/celery_node/point/point.dart';
 import 'package:farmbot/src/corpus/celery_node/point_group/point_group.dart';
 import 'package:farmbot/src/corpus/celery_node/tool/tool.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'data_value_arg.freezed.dart';
 part 'data_value_arg.g.dart';

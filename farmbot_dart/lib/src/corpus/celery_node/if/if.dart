@@ -1,11 +1,11 @@
 //ignore_for_file: non_constant_identifier_names
 
-import 'package:farmbot/src/corpus/celery_node/pair/pair.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/execute/execute.dart';
 import 'package:farmbot/src/corpus/celery_node/named_pin/named_pin.dart';
+import 'package:farmbot/src/corpus/celery_node/pair/pair.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 import 'package:farmbot/src/corpus/enums.dart';
 

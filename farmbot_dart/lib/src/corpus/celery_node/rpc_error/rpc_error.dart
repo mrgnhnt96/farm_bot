@@ -1,7 +1,7 @@
-import 'package:farmbot/src/corpus/celery_node/explanation/explanation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
+import 'package:farmbot/src/corpus/celery_node/explanation/explanation.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 
 part 'rpc_error.freezed.dart';

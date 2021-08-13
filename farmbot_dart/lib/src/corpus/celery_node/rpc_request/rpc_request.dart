@@ -1,7 +1,8 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 import 'package:farmbot/src/corpus/celery_node/shared/any_body_item/any_body_item.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'rpc_request.freezed.dart';
 part 'rpc_request.g.dart';

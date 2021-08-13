@@ -1,8 +1,8 @@
-import 'package:farmbot/src/corpus/celery_node/lua/lua.dart';
-import 'package:farmbot/src/corpus/celery_node/numeric/numeric.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
+import 'package:farmbot/src/corpus/celery_node/lua/lua.dart';
+import 'package:farmbot/src/corpus/celery_node/numeric/numeric.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 import 'package:farmbot/src/corpus/enums.dart';
 

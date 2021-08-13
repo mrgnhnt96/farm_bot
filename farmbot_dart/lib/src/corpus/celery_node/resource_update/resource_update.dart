@@ -1,8 +1,8 @@
-import 'package:farmbot/src/corpus/celery_node/shared/value_arg/value_arg.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
+import 'package:farmbot/src/corpus/celery_node/shared/value_arg/value_arg.dart';
 import 'package:farmbot/src/corpus/enums.dart';
 
 part 'resource_update.freezed.dart';

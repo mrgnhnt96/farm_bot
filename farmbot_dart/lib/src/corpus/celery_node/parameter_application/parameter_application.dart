@@ -1,7 +1,8 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 import 'package:farmbot/src/corpus/celery_node/shared/data_value_arg/data_value_arg.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'parameter_application.freezed.dart';
 part 'parameter_application.g.dart';

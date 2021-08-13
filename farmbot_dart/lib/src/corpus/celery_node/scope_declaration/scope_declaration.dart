@@ -1,8 +1,9 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/parameter_declaration/parameter_declaration.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 import 'package:farmbot/src/corpus/celery_node/variable_declaration/variable_declaration.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'scope_declaration.freezed.dart';
 part 'scope_declaration.g.dart';

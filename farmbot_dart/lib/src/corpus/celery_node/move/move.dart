@@ -1,11 +1,11 @@
-import 'package:farmbot/src/corpus/celery_node/axis_addition/axis_addition.dart';
-import 'package:farmbot/src/corpus/celery_node/axis_overwrite/axis_overwrite.dart';
-import 'package:farmbot/src/corpus/celery_node/safe_z/safe_z.dart';
-import 'package:farmbot/src/corpus/celery_node/speed_overwrite/speed_overwrite.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'package:farmbot/src/corpus/celery_node/axis_addition/axis_addition.dart';
+import 'package:farmbot/src/corpus/celery_node/axis_overwrite/axis_overwrite.dart';
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
+import 'package:farmbot/src/corpus/celery_node/safe_z/safe_z.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
+import 'package:farmbot/src/corpus/celery_node/speed_overwrite/speed_overwrite.dart';
 
 part 'move.freezed.dart';
 part 'move.g.dart';

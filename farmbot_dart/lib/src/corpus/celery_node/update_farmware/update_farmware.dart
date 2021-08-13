@@ -1,6 +1,7 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'update_farmware.freezed.dart';
 part 'update_farmware.g.dart';

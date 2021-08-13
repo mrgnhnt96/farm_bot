@@ -1,5 +1,6 @@
-import 'package:farmbot/src/corpus/celery_node/named_pin/named_pin.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:farmbot/src/corpus/celery_node/named_pin/named_pin.dart';
 
 part 'pin_number_arg.freezed.dart';
 part 'pin_number_arg.g.dart';

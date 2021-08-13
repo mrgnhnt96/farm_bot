@@ -1,8 +1,8 @@
-import 'package:farmbot/src/corpus/celery_node/shared/axis_operand/axis_operand.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
+import 'package:farmbot/src/corpus/celery_node/shared/axis_operand/axis_operand.dart';
 import 'package:farmbot/src/corpus/enums.dart';
 
 part 'axis_addition.freezed.dart';

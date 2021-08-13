@@ -1,8 +1,8 @@
-import 'package:farmbot/src/corpus/celery_node/shared/pin_number_arg/pin_number_arg.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
+import 'package:farmbot/src/corpus/celery_node/shared/pin_number_arg/pin_number_arg.dart';
 import 'package:farmbot/src/corpus/enums.dart';
 
 part 'write_pin.freezed.dart';
