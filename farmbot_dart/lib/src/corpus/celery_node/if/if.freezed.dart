@@ -20,10 +20,12 @@ If _$IfFromJson(Map<String, dynamic> json) {
 class _$IfTearOff {
   const _$IfTearOff();
 
-  _DefaultIf call({String? comment, required IfArgs args}) {
+  _DefaultIf call(
+      {String? comment, required IfArgs args, List<IfBodyItem>? body}) {
     return _DefaultIf(
       comment: comment,
       args: args,
+      body: body,
     );
   }
 
@@ -39,6 +41,7 @@ const $If = _$IfTearOff();
 mixin _$If {
   String? get comment => throw _privateConstructorUsedError;
   IfArgs get args => throw _privateConstructorUsedError;
+  List<IfBodyItem>? get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +52,7 @@ mixin _$If {
 abstract class $IfCopyWith<$Res> {
   factory $IfCopyWith(If value, $Res Function(If) then) =
       _$IfCopyWithImpl<$Res>;
-  $Res call({String? comment, IfArgs args});
+  $Res call({String? comment, IfArgs args, List<IfBodyItem>? body});
 
   $IfArgsCopyWith<$Res> get args;
 }
@@ -66,6 +69,7 @@ class _$IfCopyWithImpl<$Res> implements $IfCopyWith<$Res> {
   $Res call({
     Object? comment = freezed,
     Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
@@ -76,6 +80,10 @@ class _$IfCopyWithImpl<$Res> implements $IfCopyWith<$Res> {
           ? _value.args
           : args // ignore: cast_nullable_to_non_nullable
               as IfArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<IfBodyItem>?,
     ));
   }
 
@@ -93,7 +101,7 @@ abstract class _$DefaultIfCopyWith<$Res> implements $IfCopyWith<$Res> {
           _DefaultIf value, $Res Function(_DefaultIf) then) =
       __$DefaultIfCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment, IfArgs args});
+  $Res call({String? comment, IfArgs args, List<IfBodyItem>? body});
 
   @override
   $IfArgsCopyWith<$Res> get args;
@@ -112,6 +120,7 @@ class __$DefaultIfCopyWithImpl<$Res> extends _$IfCopyWithImpl<$Res>
   $Res call({
     Object? comment = freezed,
     Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_DefaultIf(
       comment: comment == freezed
@@ -122,6 +131,10 @@ class __$DefaultIfCopyWithImpl<$Res> extends _$IfCopyWithImpl<$Res>
           ? _value.args
           : args // ignore: cast_nullable_to_non_nullable
               as IfArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<IfBodyItem>?,
     ));
   }
 }
@@ -129,7 +142,7 @@ class __$DefaultIfCopyWithImpl<$Res> extends _$IfCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultIf extends _DefaultIf {
-  const _$_DefaultIf({this.comment, required this.args}) : super._();
+  const _$_DefaultIf({this.comment, required this.args, this.body}) : super._();
 
   factory _$_DefaultIf.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultIfFromJson(json);
@@ -138,10 +151,12 @@ class _$_DefaultIf extends _DefaultIf {
   final String? comment;
   @override
   final IfArgs args;
+  @override
+  final List<IfBodyItem>? body;
 
   @override
   String toString() {
-    return 'If(comment: $comment, args: $args)';
+    return 'If(comment: $comment, args: $args, body: $body)';
   }
 
   @override
@@ -152,14 +167,17 @@ class _$_DefaultIf extends _DefaultIf {
                 const DeepCollectionEquality()
                     .equals(other.comment, comment)) &&
             (identical(other.args, args) ||
-                const DeepCollectionEquality().equals(other.args, args)));
+                const DeepCollectionEquality().equals(other.args, args)) &&
+            (identical(other.body, body) ||
+                const DeepCollectionEquality().equals(other.body, body)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(args);
+      const DeepCollectionEquality().hash(args) ^
+      const DeepCollectionEquality().hash(body);
 
   @JsonKey(ignore: true)
   @override
@@ -173,8 +191,10 @@ class _$_DefaultIf extends _DefaultIf {
 }
 
 abstract class _DefaultIf extends If {
-  const factory _DefaultIf({String? comment, required IfArgs args}) =
-      _$_DefaultIf;
+  const factory _DefaultIf(
+      {String? comment,
+      required IfArgs args,
+      List<IfBodyItem>? body}) = _$_DefaultIf;
   const _DefaultIf._() : super._();
 
   factory _DefaultIf.fromJson(Map<String, dynamic> json) =
@@ -184,6 +204,8 @@ abstract class _DefaultIf extends If {
   String? get comment => throw _privateConstructorUsedError;
   @override
   IfArgs get args => throw _privateConstructorUsedError;
+  @override
+  List<IfBodyItem>? get body => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DefaultIfCopyWith<_DefaultIf> get copyWith =>
@@ -805,5 +827,163 @@ abstract class _LHSArgPin implements LHSArg {
   NamedPin get value => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LHSArgPinCopyWith<_LHSArgPin> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+IfBodyItem _$IfBodyItemFromJson(Map<String, dynamic> json) {
+  return _IfBodyItem.fromJson(json);
+}
+
+/// @nodoc
+class _$IfBodyItemTearOff {
+  const _$IfBodyItemTearOff();
+
+  _IfBodyItem call(Pair value) {
+    return _IfBodyItem(
+      value,
+    );
+  }
+
+  IfBodyItem fromJson(Map<String, Object> json) {
+    return IfBodyItem.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $IfBodyItem = _$IfBodyItemTearOff();
+
+/// @nodoc
+mixin _$IfBodyItem {
+  Pair get value => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IfBodyItemCopyWith<IfBodyItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IfBodyItemCopyWith<$Res> {
+  factory $IfBodyItemCopyWith(
+          IfBodyItem value, $Res Function(IfBodyItem) then) =
+      _$IfBodyItemCopyWithImpl<$Res>;
+  $Res call({Pair value});
+
+  $PairCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class _$IfBodyItemCopyWithImpl<$Res> implements $IfBodyItemCopyWith<$Res> {
+  _$IfBodyItemCopyWithImpl(this._value, this._then);
+
+  final IfBodyItem _value;
+  // ignore: unused_field
+  final $Res Function(IfBodyItem) _then;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_value.copyWith(
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Pair,
+    ));
+  }
+
+  @override
+  $PairCopyWith<$Res> get value {
+    return $PairCopyWith<$Res>(_value.value, (value) {
+      return _then(_value.copyWith(value: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$IfBodyItemCopyWith<$Res> implements $IfBodyItemCopyWith<$Res> {
+  factory _$IfBodyItemCopyWith(
+          _IfBodyItem value, $Res Function(_IfBodyItem) then) =
+      __$IfBodyItemCopyWithImpl<$Res>;
+  @override
+  $Res call({Pair value});
+
+  @override
+  $PairCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class __$IfBodyItemCopyWithImpl<$Res> extends _$IfBodyItemCopyWithImpl<$Res>
+    implements _$IfBodyItemCopyWith<$Res> {
+  __$IfBodyItemCopyWithImpl(
+      _IfBodyItem _value, $Res Function(_IfBodyItem) _then)
+      : super(_value, (v) => _then(v as _IfBodyItem));
+
+  @override
+  _IfBodyItem get _value => super._value as _IfBodyItem;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_IfBodyItem(
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Pair,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_IfBodyItem implements _IfBodyItem {
+  const _$_IfBodyItem(this.value);
+
+  factory _$_IfBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$_$_IfBodyItemFromJson(json);
+
+  @override
+  final Pair value;
+
+  @override
+  String toString() {
+    return 'IfBodyItem(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _IfBodyItem &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$IfBodyItemCopyWith<_IfBodyItem> get copyWith =>
+      __$IfBodyItemCopyWithImpl<_IfBodyItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_IfBodyItemToJson(this);
+  }
+}
+
+abstract class _IfBodyItem implements IfBodyItem {
+  const factory _IfBodyItem(Pair value) = _$_IfBodyItem;
+
+  factory _IfBodyItem.fromJson(Map<String, dynamic> json) =
+      _$_IfBodyItem.fromJson;
+
+  @override
+  Pair get value => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$IfBodyItemCopyWith<_IfBodyItem> get copyWith =>
       throw _privateConstructorUsedError;
 }

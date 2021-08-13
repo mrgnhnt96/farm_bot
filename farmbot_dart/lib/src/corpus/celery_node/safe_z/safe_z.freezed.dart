@@ -20,10 +20,9 @@ SafeZ _$SafeZFromJson(Map<String, dynamic> json) {
 class _$SafeZTearOff {
   const _$SafeZTearOff();
 
-  _DefaultSafeZ call({String? comment, required SafeZArgs args}) {
+  _DefaultSafeZ call({String? comment}) {
     return _DefaultSafeZ(
       comment: comment,
-      args: args,
     );
   }
 
@@ -38,7 +37,6 @@ const $SafeZ = _$SafeZTearOff();
 /// @nodoc
 mixin _$SafeZ {
   String? get comment => throw _privateConstructorUsedError;
-  SafeZArgs get args => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,9 +47,7 @@ mixin _$SafeZ {
 abstract class $SafeZCopyWith<$Res> {
   factory $SafeZCopyWith(SafeZ value, $Res Function(SafeZ) then) =
       _$SafeZCopyWithImpl<$Res>;
-  $Res call({String? comment, SafeZArgs args});
-
-  $SafeZArgsCopyWith<$Res> get args;
+  $Res call({String? comment});
 }
 
 /// @nodoc
@@ -65,25 +61,13 @@ class _$SafeZCopyWithImpl<$Res> implements $SafeZCopyWith<$Res> {
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as SafeZArgs,
     ));
-  }
-
-  @override
-  $SafeZArgsCopyWith<$Res> get args {
-    return $SafeZArgsCopyWith<$Res>(_value.args, (value) {
-      return _then(_value.copyWith(args: value));
-    });
   }
 }
 
@@ -93,10 +77,7 @@ abstract class _$DefaultSafeZCopyWith<$Res> implements $SafeZCopyWith<$Res> {
           _DefaultSafeZ value, $Res Function(_DefaultSafeZ) then) =
       __$DefaultSafeZCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment, SafeZArgs args});
-
-  @override
-  $SafeZArgsCopyWith<$Res> get args;
+  $Res call({String? comment});
 }
 
 /// @nodoc
@@ -112,17 +93,12 @@ class __$DefaultSafeZCopyWithImpl<$Res> extends _$SafeZCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
   }) {
     return _then(_DefaultSafeZ(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as SafeZArgs,
     ));
   }
 }
@@ -130,19 +106,17 @@ class __$DefaultSafeZCopyWithImpl<$Res> extends _$SafeZCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultSafeZ extends _DefaultSafeZ {
-  const _$_DefaultSafeZ({this.comment, required this.args}) : super._();
+  const _$_DefaultSafeZ({this.comment}) : super._();
 
   factory _$_DefaultSafeZ.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultSafeZFromJson(json);
 
   @override
   final String? comment;
-  @override
-  final SafeZArgs args;
 
   @override
   String toString() {
-    return 'SafeZ(comment: $comment, args: $args)';
+    return 'SafeZ(comment: $comment)';
   }
 
   @override
@@ -150,17 +124,12 @@ class _$_DefaultSafeZ extends _DefaultSafeZ {
     return identical(this, other) ||
         (other is _DefaultSafeZ &&
             (identical(other.comment, comment) ||
-                const DeepCollectionEquality()
-                    .equals(other.comment, comment)) &&
-            (identical(other.args, args) ||
-                const DeepCollectionEquality().equals(other.args, args)));
+                const DeepCollectionEquality().equals(other.comment, comment)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(args);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
 
   @JsonKey(ignore: true)
   @override
@@ -174,8 +143,7 @@ class _$_DefaultSafeZ extends _DefaultSafeZ {
 }
 
 abstract class _DefaultSafeZ extends SafeZ {
-  const factory _DefaultSafeZ({String? comment, required SafeZArgs args}) =
-      _$_DefaultSafeZ;
+  const factory _DefaultSafeZ({String? comment}) = _$_DefaultSafeZ;
   const _DefaultSafeZ._() : super._();
 
   factory _DefaultSafeZ.fromJson(Map<String, dynamic> json) =
@@ -184,153 +152,7 @@ abstract class _DefaultSafeZ extends SafeZ {
   @override
   String? get comment => throw _privateConstructorUsedError;
   @override
-  SafeZArgs get args => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$DefaultSafeZCopyWith<_DefaultSafeZ> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SafeZArgs _$SafeZArgsFromJson(Map<String, dynamic> json) {
-  return _SafeZArgs.fromJson(json);
-}
-
-/// @nodoc
-class _$SafeZArgsTearOff {
-  const _$SafeZArgsTearOff();
-
-  _SafeZArgs call({required AllowedAxis axis}) {
-    return _SafeZArgs(
-      axis: axis,
-    );
-  }
-
-  SafeZArgs fromJson(Map<String, Object> json) {
-    return SafeZArgs.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SafeZArgs = _$SafeZArgsTearOff();
-
-/// @nodoc
-mixin _$SafeZArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SafeZArgsCopyWith<SafeZArgs> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SafeZArgsCopyWith<$Res> {
-  factory $SafeZArgsCopyWith(SafeZArgs value, $Res Function(SafeZArgs) then) =
-      _$SafeZArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
-}
-
-/// @nodoc
-class _$SafeZArgsCopyWithImpl<$Res> implements $SafeZArgsCopyWith<$Res> {
-  _$SafeZArgsCopyWithImpl(this._value, this._then);
-
-  final SafeZArgs _value;
-  // ignore: unused_field
-  final $Res Function(SafeZArgs) _then;
-
-  @override
-  $Res call({
-    Object? axis = freezed,
-  }) {
-    return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SafeZArgsCopyWith<$Res> implements $SafeZArgsCopyWith<$Res> {
-  factory _$SafeZArgsCopyWith(
-          _SafeZArgs value, $Res Function(_SafeZArgs) then) =
-      __$SafeZArgsCopyWithImpl<$Res>;
-  @override
-  $Res call({AllowedAxis axis});
-}
-
-/// @nodoc
-class __$SafeZArgsCopyWithImpl<$Res> extends _$SafeZArgsCopyWithImpl<$Res>
-    implements _$SafeZArgsCopyWith<$Res> {
-  __$SafeZArgsCopyWithImpl(_SafeZArgs _value, $Res Function(_SafeZArgs) _then)
-      : super(_value, (v) => _then(v as _SafeZArgs));
-
-  @override
-  _SafeZArgs get _value => super._value as _SafeZArgs;
-
-  @override
-  $Res call({
-    Object? axis = freezed,
-  }) {
-    return _then(_SafeZArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_SafeZArgs implements _SafeZArgs {
-  const _$_SafeZArgs({required this.axis});
-
-  factory _$_SafeZArgs.fromJson(Map<String, dynamic> json) =>
-      _$_$_SafeZArgsFromJson(json);
-
-  @override
-  final AllowedAxis axis;
-
-  @override
-  String toString() {
-    return 'SafeZArgs(axis: $axis)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SafeZArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SafeZArgsCopyWith<_SafeZArgs> get copyWith =>
-      __$SafeZArgsCopyWithImpl<_SafeZArgs>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_SafeZArgsToJson(this);
-  }
-}
-
-abstract class _SafeZArgs implements SafeZArgs {
-  const factory _SafeZArgs({required AllowedAxis axis}) = _$_SafeZArgs;
-
-  factory _SafeZArgs.fromJson(Map<String, dynamic> json) =
-      _$_SafeZArgs.fromJson;
-
-  @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$SafeZArgsCopyWith<_SafeZArgs> get copyWith =>
       throw _privateConstructorUsedError;
 }

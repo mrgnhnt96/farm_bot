@@ -21,10 +21,13 @@ class _$ExecuteScriptTearOff {
   const _$ExecuteScriptTearOff();
 
   _DefaultExecuteScript call(
-      {String? comment, required ExecuteScriptArgs args}) {
+      {String? comment,
+      required ExecuteScriptArgs args,
+      List<ExecuteScriptBodyItem>? body}) {
     return _DefaultExecuteScript(
       comment: comment,
       args: args,
+      body: body,
     );
   }
 
@@ -40,6 +43,7 @@ const $ExecuteScript = _$ExecuteScriptTearOff();
 mixin _$ExecuteScript {
   String? get comment => throw _privateConstructorUsedError;
   ExecuteScriptArgs get args => throw _privateConstructorUsedError;
+  List<ExecuteScriptBodyItem>? get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +56,10 @@ abstract class $ExecuteScriptCopyWith<$Res> {
   factory $ExecuteScriptCopyWith(
           ExecuteScript value, $Res Function(ExecuteScript) then) =
       _$ExecuteScriptCopyWithImpl<$Res>;
-  $Res call({String? comment, ExecuteScriptArgs args});
+  $Res call(
+      {String? comment,
+      ExecuteScriptArgs args,
+      List<ExecuteScriptBodyItem>? body});
 
   $ExecuteScriptArgsCopyWith<$Res> get args;
 }
@@ -70,6 +77,7 @@ class _$ExecuteScriptCopyWithImpl<$Res>
   $Res call({
     Object? comment = freezed,
     Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
@@ -80,6 +88,10 @@ class _$ExecuteScriptCopyWithImpl<$Res>
           ? _value.args
           : args // ignore: cast_nullable_to_non_nullable
               as ExecuteScriptArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<ExecuteScriptBodyItem>?,
     ));
   }
 
@@ -98,7 +110,10 @@ abstract class _$DefaultExecuteScriptCopyWith<$Res>
           $Res Function(_DefaultExecuteScript) then) =
       __$DefaultExecuteScriptCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment, ExecuteScriptArgs args});
+  $Res call(
+      {String? comment,
+      ExecuteScriptArgs args,
+      List<ExecuteScriptBodyItem>? body});
 
   @override
   $ExecuteScriptArgsCopyWith<$Res> get args;
@@ -119,6 +134,7 @@ class __$DefaultExecuteScriptCopyWithImpl<$Res>
   $Res call({
     Object? comment = freezed,
     Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_DefaultExecuteScript(
       comment: comment == freezed
@@ -129,6 +145,10 @@ class __$DefaultExecuteScriptCopyWithImpl<$Res>
           ? _value.args
           : args // ignore: cast_nullable_to_non_nullable
               as ExecuteScriptArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<ExecuteScriptBodyItem>?,
     ));
   }
 }
@@ -136,7 +156,8 @@ class __$DefaultExecuteScriptCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultExecuteScript extends _DefaultExecuteScript {
-  const _$_DefaultExecuteScript({this.comment, required this.args}) : super._();
+  const _$_DefaultExecuteScript({this.comment, required this.args, this.body})
+      : super._();
 
   factory _$_DefaultExecuteScript.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultExecuteScriptFromJson(json);
@@ -145,10 +166,12 @@ class _$_DefaultExecuteScript extends _DefaultExecuteScript {
   final String? comment;
   @override
   final ExecuteScriptArgs args;
+  @override
+  final List<ExecuteScriptBodyItem>? body;
 
   @override
   String toString() {
-    return 'ExecuteScript(comment: $comment, args: $args)';
+    return 'ExecuteScript(comment: $comment, args: $args, body: $body)';
   }
 
   @override
@@ -159,14 +182,17 @@ class _$_DefaultExecuteScript extends _DefaultExecuteScript {
                 const DeepCollectionEquality()
                     .equals(other.comment, comment)) &&
             (identical(other.args, args) ||
-                const DeepCollectionEquality().equals(other.args, args)));
+                const DeepCollectionEquality().equals(other.args, args)) &&
+            (identical(other.body, body) ||
+                const DeepCollectionEquality().equals(other.body, body)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(args);
+      const DeepCollectionEquality().hash(args) ^
+      const DeepCollectionEquality().hash(body);
 
   @JsonKey(ignore: true)
   @override
@@ -183,7 +209,8 @@ class _$_DefaultExecuteScript extends _DefaultExecuteScript {
 abstract class _DefaultExecuteScript extends ExecuteScript {
   const factory _DefaultExecuteScript(
       {String? comment,
-      required ExecuteScriptArgs args}) = _$_DefaultExecuteScript;
+      required ExecuteScriptArgs args,
+      List<ExecuteScriptBodyItem>? body}) = _$_DefaultExecuteScript;
   const _DefaultExecuteScript._() : super._();
 
   factory _DefaultExecuteScript.fromJson(Map<String, dynamic> json) =
@@ -193,6 +220,8 @@ abstract class _DefaultExecuteScript extends ExecuteScript {
   String? get comment => throw _privateConstructorUsedError;
   @override
   ExecuteScriptArgs get args => throw _privateConstructorUsedError;
+  @override
+  List<ExecuteScriptBodyItem>? get body => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DefaultExecuteScriptCopyWith<_DefaultExecuteScript> get copyWith =>
@@ -346,5 +375,170 @@ abstract class _ExecuteScriptArgs implements ExecuteScriptArgs {
   @override
   @JsonKey(ignore: true)
   _$ExecuteScriptArgsCopyWith<_ExecuteScriptArgs> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ExecuteScriptBodyItem _$ExecuteScriptBodyItemFromJson(
+    Map<String, dynamic> json) {
+  return _ChangeOwnershipBodyItem.fromJson(json);
+}
+
+/// @nodoc
+class _$ExecuteScriptBodyItemTearOff {
+  const _$ExecuteScriptBodyItemTearOff();
+
+  _ChangeOwnershipBodyItem call(Pair value) {
+    return _ChangeOwnershipBodyItem(
+      value,
+    );
+  }
+
+  ExecuteScriptBodyItem fromJson(Map<String, Object> json) {
+    return ExecuteScriptBodyItem.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $ExecuteScriptBodyItem = _$ExecuteScriptBodyItemTearOff();
+
+/// @nodoc
+mixin _$ExecuteScriptBodyItem {
+  Pair get value => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ExecuteScriptBodyItemCopyWith<ExecuteScriptBodyItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ExecuteScriptBodyItemCopyWith<$Res> {
+  factory $ExecuteScriptBodyItemCopyWith(ExecuteScriptBodyItem value,
+          $Res Function(ExecuteScriptBodyItem) then) =
+      _$ExecuteScriptBodyItemCopyWithImpl<$Res>;
+  $Res call({Pair value});
+
+  $PairCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class _$ExecuteScriptBodyItemCopyWithImpl<$Res>
+    implements $ExecuteScriptBodyItemCopyWith<$Res> {
+  _$ExecuteScriptBodyItemCopyWithImpl(this._value, this._then);
+
+  final ExecuteScriptBodyItem _value;
+  // ignore: unused_field
+  final $Res Function(ExecuteScriptBodyItem) _then;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_value.copyWith(
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Pair,
+    ));
+  }
+
+  @override
+  $PairCopyWith<$Res> get value {
+    return $PairCopyWith<$Res>(_value.value, (value) {
+      return _then(_value.copyWith(value: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$ChangeOwnershipBodyItemCopyWith<$Res>
+    implements $ExecuteScriptBodyItemCopyWith<$Res> {
+  factory _$ChangeOwnershipBodyItemCopyWith(_ChangeOwnershipBodyItem value,
+          $Res Function(_ChangeOwnershipBodyItem) then) =
+      __$ChangeOwnershipBodyItemCopyWithImpl<$Res>;
+  @override
+  $Res call({Pair value});
+
+  @override
+  $PairCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class __$ChangeOwnershipBodyItemCopyWithImpl<$Res>
+    extends _$ExecuteScriptBodyItemCopyWithImpl<$Res>
+    implements _$ChangeOwnershipBodyItemCopyWith<$Res> {
+  __$ChangeOwnershipBodyItemCopyWithImpl(_ChangeOwnershipBodyItem _value,
+      $Res Function(_ChangeOwnershipBodyItem) _then)
+      : super(_value, (v) => _then(v as _ChangeOwnershipBodyItem));
+
+  @override
+  _ChangeOwnershipBodyItem get _value =>
+      super._value as _ChangeOwnershipBodyItem;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_ChangeOwnershipBodyItem(
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Pair,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ChangeOwnershipBodyItem implements _ChangeOwnershipBodyItem {
+  const _$_ChangeOwnershipBodyItem(this.value);
+
+  factory _$_ChangeOwnershipBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$_$_ChangeOwnershipBodyItemFromJson(json);
+
+  @override
+  final Pair value;
+
+  @override
+  String toString() {
+    return 'ExecuteScriptBodyItem(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ChangeOwnershipBodyItem &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ChangeOwnershipBodyItemCopyWith<_ChangeOwnershipBodyItem> get copyWith =>
+      __$ChangeOwnershipBodyItemCopyWithImpl<_ChangeOwnershipBodyItem>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ChangeOwnershipBodyItemToJson(this);
+  }
+}
+
+abstract class _ChangeOwnershipBodyItem implements ExecuteScriptBodyItem {
+  const factory _ChangeOwnershipBodyItem(Pair value) =
+      _$_ChangeOwnershipBodyItem;
+
+  factory _ChangeOwnershipBodyItem.fromJson(Map<String, dynamic> json) =
+      _$_ChangeOwnershipBodyItem.fromJson;
+
+  @override
+  Pair get value => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ChangeOwnershipBodyItemCopyWith<_ChangeOwnershipBodyItem> get copyWith =>
       throw _privateConstructorUsedError;
 }

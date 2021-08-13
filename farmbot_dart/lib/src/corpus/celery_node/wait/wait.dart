@@ -1,8 +1,6 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'wait.freezed.dart';
 part 'wait.g.dart';
@@ -15,22 +13,24 @@ class Wait with _$Wait implements CeleryScript {
     required WaitArgs args,
   }) = _DefaultWait;
 
-  factory Wait.fromJson(Map<String, dynamic> json) =>
-      _$WaitFromJson(json);
+  factory Wait.fromJson(Map<String, dynamic> json) => _$WaitFromJson(json);
 
   @override
   String get kind => 'wait';
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 
 @freezed
 class WaitArgs with _$WaitArgs {
   const factory WaitArgs({
-    required AllowedAxis axis,
+    required int milliseconds,
   }) = _WaitArgs;
 
   factory WaitArgs.fromJson(Map<String, dynamic> json) =>

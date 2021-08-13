@@ -20,7 +20,8 @@ ChangeOwnership _$ChangeOwnershipFromJson(Map<String, dynamic> json) {
 class _$ChangeOwnershipTearOff {
   const _$ChangeOwnershipTearOff();
 
-  _DefaultChangeOwnership call({String? comment, Pair? body}) {
+  _DefaultChangeOwnership call(
+      {String? comment, List<ChangeOwnershipBodyItem>? body}) {
     return _DefaultChangeOwnership(
       comment: comment,
       body: body,
@@ -38,7 +39,7 @@ const $ChangeOwnership = _$ChangeOwnershipTearOff();
 /// @nodoc
 mixin _$ChangeOwnership {
   String? get comment => throw _privateConstructorUsedError;
-  Pair? get body => throw _privateConstructorUsedError;
+  List<ChangeOwnershipBodyItem>? get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,9 +52,7 @@ abstract class $ChangeOwnershipCopyWith<$Res> {
   factory $ChangeOwnershipCopyWith(
           ChangeOwnership value, $Res Function(ChangeOwnership) then) =
       _$ChangeOwnershipCopyWithImpl<$Res>;
-  $Res call({String? comment, Pair? body});
-
-  $PairCopyWith<$Res>? get body;
+  $Res call({String? comment, List<ChangeOwnershipBodyItem>? body});
 }
 
 /// @nodoc
@@ -78,19 +77,8 @@ class _$ChangeOwnershipCopyWithImpl<$Res>
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as Pair?,
+              as List<ChangeOwnershipBodyItem>?,
     ));
-  }
-
-  @override
-  $PairCopyWith<$Res>? get body {
-    if (_value.body == null) {
-      return null;
-    }
-
-    return $PairCopyWith<$Res>(_value.body!, (value) {
-      return _then(_value.copyWith(body: value));
-    });
   }
 }
 
@@ -101,10 +89,7 @@ abstract class _$DefaultChangeOwnershipCopyWith<$Res>
           $Res Function(_DefaultChangeOwnership) then) =
       __$DefaultChangeOwnershipCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment, Pair? body});
-
-  @override
-  $PairCopyWith<$Res>? get body;
+  $Res call({String? comment, List<ChangeOwnershipBodyItem>? body});
 }
 
 /// @nodoc
@@ -131,7 +116,7 @@ class __$DefaultChangeOwnershipCopyWithImpl<$Res>
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as Pair?,
+              as List<ChangeOwnershipBodyItem>?,
     ));
   }
 }
@@ -147,7 +132,7 @@ class _$_DefaultChangeOwnership extends _DefaultChangeOwnership {
   @override
   final String? comment;
   @override
-  final Pair? body;
+  final List<ChangeOwnershipBodyItem>? body;
 
   @override
   String toString() {
@@ -184,8 +169,9 @@ class _$_DefaultChangeOwnership extends _DefaultChangeOwnership {
 }
 
 abstract class _DefaultChangeOwnership extends ChangeOwnership {
-  const factory _DefaultChangeOwnership({String? comment, Pair? body}) =
-      _$_DefaultChangeOwnership;
+  const factory _DefaultChangeOwnership(
+      {String? comment,
+      List<ChangeOwnershipBodyItem>? body}) = _$_DefaultChangeOwnership;
   const _DefaultChangeOwnership._() : super._();
 
   factory _DefaultChangeOwnership.fromJson(Map<String, dynamic> json) =
@@ -194,9 +180,174 @@ abstract class _DefaultChangeOwnership extends ChangeOwnership {
   @override
   String? get comment => throw _privateConstructorUsedError;
   @override
-  Pair? get body => throw _privateConstructorUsedError;
+  List<ChangeOwnershipBodyItem>? get body => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DefaultChangeOwnershipCopyWith<_DefaultChangeOwnership> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ChangeOwnershipBodyItem _$ChangeOwnershipBodyItemFromJson(
+    Map<String, dynamic> json) {
+  return _ChangeOwnershipBodyItem.fromJson(json);
+}
+
+/// @nodoc
+class _$ChangeOwnershipBodyItemTearOff {
+  const _$ChangeOwnershipBodyItemTearOff();
+
+  _ChangeOwnershipBodyItem call(Pair value) {
+    return _ChangeOwnershipBodyItem(
+      value,
+    );
+  }
+
+  ChangeOwnershipBodyItem fromJson(Map<String, Object> json) {
+    return ChangeOwnershipBodyItem.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $ChangeOwnershipBodyItem = _$ChangeOwnershipBodyItemTearOff();
+
+/// @nodoc
+mixin _$ChangeOwnershipBodyItem {
+  Pair get value => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ChangeOwnershipBodyItemCopyWith<ChangeOwnershipBodyItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ChangeOwnershipBodyItemCopyWith<$Res> {
+  factory $ChangeOwnershipBodyItemCopyWith(ChangeOwnershipBodyItem value,
+          $Res Function(ChangeOwnershipBodyItem) then) =
+      _$ChangeOwnershipBodyItemCopyWithImpl<$Res>;
+  $Res call({Pair value});
+
+  $PairCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class _$ChangeOwnershipBodyItemCopyWithImpl<$Res>
+    implements $ChangeOwnershipBodyItemCopyWith<$Res> {
+  _$ChangeOwnershipBodyItemCopyWithImpl(this._value, this._then);
+
+  final ChangeOwnershipBodyItem _value;
+  // ignore: unused_field
+  final $Res Function(ChangeOwnershipBodyItem) _then;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_value.copyWith(
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Pair,
+    ));
+  }
+
+  @override
+  $PairCopyWith<$Res> get value {
+    return $PairCopyWith<$Res>(_value.value, (value) {
+      return _then(_value.copyWith(value: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$ChangeOwnershipBodyItemCopyWith<$Res>
+    implements $ChangeOwnershipBodyItemCopyWith<$Res> {
+  factory _$ChangeOwnershipBodyItemCopyWith(_ChangeOwnershipBodyItem value,
+          $Res Function(_ChangeOwnershipBodyItem) then) =
+      __$ChangeOwnershipBodyItemCopyWithImpl<$Res>;
+  @override
+  $Res call({Pair value});
+
+  @override
+  $PairCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class __$ChangeOwnershipBodyItemCopyWithImpl<$Res>
+    extends _$ChangeOwnershipBodyItemCopyWithImpl<$Res>
+    implements _$ChangeOwnershipBodyItemCopyWith<$Res> {
+  __$ChangeOwnershipBodyItemCopyWithImpl(_ChangeOwnershipBodyItem _value,
+      $Res Function(_ChangeOwnershipBodyItem) _then)
+      : super(_value, (v) => _then(v as _ChangeOwnershipBodyItem));
+
+  @override
+  _ChangeOwnershipBodyItem get _value =>
+      super._value as _ChangeOwnershipBodyItem;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_ChangeOwnershipBodyItem(
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Pair,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ChangeOwnershipBodyItem implements _ChangeOwnershipBodyItem {
+  const _$_ChangeOwnershipBodyItem(this.value);
+
+  factory _$_ChangeOwnershipBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$_$_ChangeOwnershipBodyItemFromJson(json);
+
+  @override
+  final Pair value;
+
+  @override
+  String toString() {
+    return 'ChangeOwnershipBodyItem(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ChangeOwnershipBodyItem &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ChangeOwnershipBodyItemCopyWith<_ChangeOwnershipBodyItem> get copyWith =>
+      __$ChangeOwnershipBodyItemCopyWithImpl<_ChangeOwnershipBodyItem>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ChangeOwnershipBodyItemToJson(this);
+  }
+}
+
+abstract class _ChangeOwnershipBodyItem implements ChangeOwnershipBodyItem {
+  const factory _ChangeOwnershipBodyItem(Pair value) =
+      _$_ChangeOwnershipBodyItem;
+
+  factory _ChangeOwnershipBodyItem.fromJson(Map<String, dynamic> json) =
+      _$_ChangeOwnershipBodyItem.fromJson;
+
+  @override
+  Pair get value => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ChangeOwnershipBodyItemCopyWith<_ChangeOwnershipBodyItem> get copyWith =>
       throw _privateConstructorUsedError;
 }

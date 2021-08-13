@@ -1,8 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
+import 'package:farmbot/src/corpus/celery_node/shared/pin_number_arg/pin_number_arg.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'set_servo_angle.freezed.dart';
 part 'set_servo_angle.g.dart';
@@ -23,14 +22,18 @@ class SetServoAngle with _$SetServoAngle implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 
 @freezed
 class SetServoAngleArgs with _$SetServoAngleArgs {
   const factory SetServoAngleArgs({
-    required AllowedAxis axis,
+    required PinNumberArg pinNumber,
+    required int pinValue,
   }) = _SetServoAngleArgs;
 
   factory SetServoAngleArgs.fromJson(Map<String, dynamic> json) =>

@@ -32,6 +32,8 @@ Map<String, dynamic> _$_$_DefaultSpeedOverwriteToJson(
 _$_SpeedOverwriteArgs _$_$_SpeedOverwriteArgsFromJson(Map json) {
   return _$_SpeedOverwriteArgs(
     axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+    speedSetting: SpeedSettingArg.fromJson(
+        Map<String, dynamic>.from(json['speed_setting'] as Map)),
   );
 }
 
@@ -39,6 +41,7 @@ Map<String, dynamic> _$_$_SpeedOverwriteArgsToJson(
         _$_SpeedOverwriteArgs instance) =>
     <String, dynamic>{
       'axis': _$AllowedAxisEnumMap[instance.axis],
+      'speed_setting': instance.speedSetting.toJson(),
     };
 
 K _$enumDecode<K, V>(
@@ -73,3 +76,27 @@ const _$AllowedAxisEnumMap = {
   AllowedAxis.y: 'y',
   AllowedAxis.z: 'z',
 };
+
+_$_SpeedSettingArgLua _$_$_SpeedSettingArgLuaFromJson(Map json) {
+  return _$_SpeedSettingArgLua(
+    value: Lua.fromJson(Map<String, dynamic>.from(json['value'] as Map)),
+  );
+}
+
+Map<String, dynamic> _$_$_SpeedSettingArgLuaToJson(
+        _$_SpeedSettingArgLua instance) =>
+    <String, dynamic>{
+      'value': instance.value.toJson(),
+    };
+
+_$_SpeedSettingArgNum _$_$_SpeedSettingArgNumFromJson(Map json) {
+  return _$_SpeedSettingArgNum(
+    value: Numeric.fromJson(Map<String, dynamic>.from(json['value'] as Map)),
+  );
+}
+
+Map<String, dynamic> _$_$_SpeedSettingArgNumToJson(
+        _$_SpeedSettingArgNum instance) =>
+    <String, dynamic>{
+      'value': instance.value.toJson(),
+    };

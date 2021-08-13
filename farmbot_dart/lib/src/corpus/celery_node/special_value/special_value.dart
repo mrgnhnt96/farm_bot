@@ -1,8 +1,6 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'special_value.freezed.dart';
 part 'special_value.g.dart';
@@ -23,14 +21,17 @@ class SpecialValue with _$SpecialValue implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 
 @freezed
 class SpecialValueArgs with _$SpecialValueArgs {
   const factory SpecialValueArgs({
-    required AllowedAxis axis,
+    required String label,
   }) = _SpecialValueArgs;
 
   factory SpecialValueArgs.fromJson(Map<String, dynamic> json) =>

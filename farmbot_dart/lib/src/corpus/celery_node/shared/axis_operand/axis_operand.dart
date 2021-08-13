@@ -1,3 +1,5 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:farmbot/src/corpus/celery_node/coordinate/coordinate.dart';
 import 'package:farmbot/src/corpus/celery_node/identifier/identifier.dart';
 import 'package:farmbot/src/corpus/celery_node/lua/lua.dart';
@@ -6,7 +8,6 @@ import 'package:farmbot/src/corpus/celery_node/point/point.dart';
 import 'package:farmbot/src/corpus/celery_node/random/random.dart';
 import 'package:farmbot/src/corpus/celery_node/special_value/special_value.dart';
 import 'package:farmbot/src/corpus/celery_node/tool/tool.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'axis_operand.freezed.dart';
 part 'axis_operand.g.dart';

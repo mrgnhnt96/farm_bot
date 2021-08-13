@@ -31,45 +31,15 @@ Map<String, dynamic> _$_$_DefaultSetServoAngleToJson(
 
 _$_SetServoAngleArgs _$_$_SetServoAngleArgsFromJson(Map json) {
   return _$_SetServoAngleArgs(
-    axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+    pinNumber: PinNumberArg.fromJson(
+        Map<String, dynamic>.from(json['pin_number'] as Map)),
+    pinValue: json['pin_value'] as int,
   );
 }
 
 Map<String, dynamic> _$_$_SetServoAngleArgsToJson(
         _$_SetServoAngleArgs instance) =>
     <String, dynamic>{
-      'axis': _$AllowedAxisEnumMap[instance.axis],
+      'pin_number': instance.pinNumber.toJson(),
+      'pin_value': instance.pinValue,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-const _$AllowedAxisEnumMap = {
-  AllowedAxis.all: 'all',
-  AllowedAxis.x: 'x',
-  AllowedAxis.y: 'y',
-  AllowedAxis.z: 'z',
-};

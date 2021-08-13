@@ -199,9 +199,9 @@ RpcOkArgs _$RpcOkArgsFromJson(Map<String, dynamic> json) {
 class _$RpcOkArgsTearOff {
   const _$RpcOkArgsTearOff();
 
-  _RpcOkArgs call({required AllowedAxis axis}) {
+  _RpcOkArgs call({required String label}) {
     return _RpcOkArgs(
-      axis: axis,
+      label: label,
     );
   }
 
@@ -215,7 +215,7 @@ const $RpcOkArgs = _$RpcOkArgsTearOff();
 
 /// @nodoc
 mixin _$RpcOkArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -227,7 +227,7 @@ mixin _$RpcOkArgs {
 abstract class $RpcOkArgsCopyWith<$Res> {
   factory $RpcOkArgsCopyWith(RpcOkArgs value, $Res Function(RpcOkArgs) then) =
       _$RpcOkArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({String label});
 }
 
 /// @nodoc
@@ -240,13 +240,13 @@ class _$RpcOkArgsCopyWithImpl<$Res> implements $RpcOkArgsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? label = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -257,7 +257,7 @@ abstract class _$RpcOkArgsCopyWith<$Res> implements $RpcOkArgsCopyWith<$Res> {
           _RpcOkArgs value, $Res Function(_RpcOkArgs) then) =
       __$RpcOkArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({String label});
 }
 
 /// @nodoc
@@ -271,13 +271,13 @@ class __$RpcOkArgsCopyWithImpl<$Res> extends _$RpcOkArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? label = freezed,
   }) {
     return _then(_RpcOkArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -285,30 +285,30 @@ class __$RpcOkArgsCopyWithImpl<$Res> extends _$RpcOkArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_RpcOkArgs implements _RpcOkArgs {
-  const _$_RpcOkArgs({required this.axis});
+  const _$_RpcOkArgs({required this.label});
 
   factory _$_RpcOkArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_RpcOkArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final String label;
 
   @override
   String toString() {
-    return 'RpcOkArgs(axis: $axis)';
+    return 'RpcOkArgs(label: $label)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RpcOkArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.label, label) ||
+                const DeepCollectionEquality().equals(other.label, label)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(label);
 
   @JsonKey(ignore: true)
   @override
@@ -322,13 +322,13 @@ class _$_RpcOkArgs implements _RpcOkArgs {
 }
 
 abstract class _RpcOkArgs implements RpcOkArgs {
-  const factory _RpcOkArgs({required AllowedAxis axis}) = _$_RpcOkArgs;
+  const factory _RpcOkArgs({required String label}) = _$_RpcOkArgs;
 
   factory _RpcOkArgs.fromJson(Map<String, dynamic> json) =
       _$_RpcOkArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$RpcOkArgsCopyWith<_RpcOkArgs> get copyWith =>

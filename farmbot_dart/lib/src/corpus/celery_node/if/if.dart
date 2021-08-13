@@ -1,5 +1,6 @@
 //ignore_for_file: non_constant_identifier_names
 
+import 'package:farmbot/src/corpus/celery_node/pair/pair.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
@@ -17,6 +18,7 @@ class If with _$If implements CeleryScript {
   const factory If({
     String? comment,
     required IfArgs args,
+    List<IfBodyItem>? body,
   }) = _DefaultIf;
 
   factory If.fromJson(Map<String, dynamic> json) => _$IfFromJson(json);
@@ -26,7 +28,11 @@ class If with _$If implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+      body: body?.map((e) => e.toJson()).toList() ?? [],
+    );
   }
 }
 
@@ -49,4 +55,12 @@ class LHSArg with _$LHSArg {
   const factory LHSArg.pin(NamedPin value) = _LHSArgPin;
 
   factory LHSArg.fromJson(Map<String, dynamic> json) => _$LHSArgFromJson(json);
+}
+
+@freezed
+class IfBodyItem with _$IfBodyItem {
+  const factory IfBodyItem(Pair value) = _IfBodyItem;
+
+  factory IfBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$IfBodyItemFromJson(json);
 }

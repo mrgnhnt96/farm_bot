@@ -10,6 +10,9 @@ _$_DefaultIf _$_$_DefaultIfFromJson(Map json) {
   return _$_DefaultIf(
     comment: json['comment'] as String?,
     args: IfArgs.fromJson(Map<String, dynamic>.from(json['args'] as Map)),
+    body: (json['body'] as List<dynamic>?)
+        ?.map((e) => IfBodyItem.fromJson(Map<String, dynamic>.from(e as Map)))
+        .toList(),
   );
 }
 
@@ -24,6 +27,7 @@ Map<String, dynamic> _$_$_DefaultIfToJson(_$_DefaultIf instance) {
 
   writeNotNull('comment', instance.comment);
   val['args'] = instance.args.toJson();
+  writeNotNull('body', instance.body?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -95,6 +99,17 @@ _$_LHSArgPin _$_$_LHSArgPinFromJson(Map json) {
 }
 
 Map<String, dynamic> _$_$_LHSArgPinToJson(_$_LHSArgPin instance) =>
+    <String, dynamic>{
+      'value': instance.value.toJson(),
+    };
+
+_$_IfBodyItem _$_$_IfBodyItemFromJson(Map json) {
+  return _$_IfBodyItem(
+    Pair.fromJson(Map<String, dynamic>.from(json['value'] as Map)),
+  );
+}
+
+Map<String, dynamic> _$_$_IfBodyItemToJson(_$_IfBodyItem instance) =>
     <String, dynamic>{
       'value': instance.value.toJson(),
     };

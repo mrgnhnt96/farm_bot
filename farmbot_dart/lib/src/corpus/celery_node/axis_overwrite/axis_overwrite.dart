@@ -1,6 +1,6 @@
+import 'package:farmbot/src/corpus/celery_node/shared/axis_operand/axis_operand.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:farmbot/src/corpus/celery_node/axis_operand/axis_operand.dart';
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 import 'package:farmbot/src/corpus/enums.dart';
@@ -24,7 +24,10 @@ class AxisOverwrite with _$AxisOverwrite implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 

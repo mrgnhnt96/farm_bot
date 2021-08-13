@@ -208,9 +208,11 @@ SpeedOverwriteArgs _$SpeedOverwriteArgsFromJson(Map<String, dynamic> json) {
 class _$SpeedOverwriteArgsTearOff {
   const _$SpeedOverwriteArgsTearOff();
 
-  _SpeedOverwriteArgs call({required AllowedAxis axis}) {
+  _SpeedOverwriteArgs call(
+      {required AllowedAxis axis, required SpeedSettingArg speedSetting}) {
     return _SpeedOverwriteArgs(
       axis: axis,
+      speedSetting: speedSetting,
     );
   }
 
@@ -225,6 +227,7 @@ const $SpeedOverwriteArgs = _$SpeedOverwriteArgsTearOff();
 /// @nodoc
 mixin _$SpeedOverwriteArgs {
   AllowedAxis get axis => throw _privateConstructorUsedError;
+  SpeedSettingArg get speedSetting => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -237,7 +240,9 @@ abstract class $SpeedOverwriteArgsCopyWith<$Res> {
   factory $SpeedOverwriteArgsCopyWith(
           SpeedOverwriteArgs value, $Res Function(SpeedOverwriteArgs) then) =
       _$SpeedOverwriteArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({AllowedAxis axis, SpeedSettingArg speedSetting});
+
+  $SpeedSettingArgCopyWith<$Res> get speedSetting;
 }
 
 /// @nodoc
@@ -252,13 +257,25 @@ class _$SpeedOverwriteArgsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? axis = freezed,
+    Object? speedSetting = freezed,
   }) {
     return _then(_value.copyWith(
       axis: axis == freezed
           ? _value.axis
           : axis // ignore: cast_nullable_to_non_nullable
               as AllowedAxis,
+      speedSetting: speedSetting == freezed
+          ? _value.speedSetting
+          : speedSetting // ignore: cast_nullable_to_non_nullable
+              as SpeedSettingArg,
     ));
+  }
+
+  @override
+  $SpeedSettingArgCopyWith<$Res> get speedSetting {
+    return $SpeedSettingArgCopyWith<$Res>(_value.speedSetting, (value) {
+      return _then(_value.copyWith(speedSetting: value));
+    });
   }
 }
 
@@ -269,7 +286,10 @@ abstract class _$SpeedOverwriteArgsCopyWith<$Res>
           _SpeedOverwriteArgs value, $Res Function(_SpeedOverwriteArgs) then) =
       __$SpeedOverwriteArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({AllowedAxis axis, SpeedSettingArg speedSetting});
+
+  @override
+  $SpeedSettingArgCopyWith<$Res> get speedSetting;
 }
 
 /// @nodoc
@@ -286,12 +306,17 @@ class __$SpeedOverwriteArgsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? axis = freezed,
+    Object? speedSetting = freezed,
   }) {
     return _then(_SpeedOverwriteArgs(
       axis: axis == freezed
           ? _value.axis
           : axis // ignore: cast_nullable_to_non_nullable
               as AllowedAxis,
+      speedSetting: speedSetting == freezed
+          ? _value.speedSetting
+          : speedSetting // ignore: cast_nullable_to_non_nullable
+              as SpeedSettingArg,
     ));
   }
 }
@@ -299,17 +324,19 @@ class __$SpeedOverwriteArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SpeedOverwriteArgs implements _SpeedOverwriteArgs {
-  const _$_SpeedOverwriteArgs({required this.axis});
+  const _$_SpeedOverwriteArgs({required this.axis, required this.speedSetting});
 
   factory _$_SpeedOverwriteArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_SpeedOverwriteArgsFromJson(json);
 
   @override
   final AllowedAxis axis;
+  @override
+  final SpeedSettingArg speedSetting;
 
   @override
   String toString() {
-    return 'SpeedOverwriteArgs(axis: $axis)';
+    return 'SpeedOverwriteArgs(axis: $axis, speedSetting: $speedSetting)';
   }
 
   @override
@@ -317,12 +344,17 @@ class _$_SpeedOverwriteArgs implements _SpeedOverwriteArgs {
     return identical(this, other) ||
         (other is _SpeedOverwriteArgs &&
             (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+                const DeepCollectionEquality().equals(other.axis, axis)) &&
+            (identical(other.speedSetting, speedSetting) ||
+                const DeepCollectionEquality()
+                    .equals(other.speedSetting, speedSetting)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(axis) ^
+      const DeepCollectionEquality().hash(speedSetting);
 
   @JsonKey(ignore: true)
   @override
@@ -336,8 +368,9 @@ class _$_SpeedOverwriteArgs implements _SpeedOverwriteArgs {
 }
 
 abstract class _SpeedOverwriteArgs implements SpeedOverwriteArgs {
-  const factory _SpeedOverwriteArgs({required AllowedAxis axis}) =
-      _$_SpeedOverwriteArgs;
+  const factory _SpeedOverwriteArgs(
+      {required AllowedAxis axis,
+      required SpeedSettingArg speedSetting}) = _$_SpeedOverwriteArgs;
 
   factory _SpeedOverwriteArgs.fromJson(Map<String, dynamic> json) =
       _$_SpeedOverwriteArgs.fromJson;
@@ -345,7 +378,367 @@ abstract class _SpeedOverwriteArgs implements SpeedOverwriteArgs {
   @override
   AllowedAxis get axis => throw _privateConstructorUsedError;
   @override
+  SpeedSettingArg get speedSetting => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$SpeedOverwriteArgsCopyWith<_SpeedOverwriteArgs> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SpeedSettingArg _$SpeedSettingArgFromJson(Map<String, dynamic> json) {
+  switch (json['runtimeType'] as String) {
+    case 'lua':
+      return _SpeedSettingArgLua.fromJson(json);
+    case 'numeric':
+      return _SpeedSettingArgNum.fromJson(json);
+
+    default:
+      throw FallThroughError();
+  }
+}
+
+/// @nodoc
+class _$SpeedSettingArgTearOff {
+  const _$SpeedSettingArgTearOff();
+
+  _SpeedSettingArgLua lua({required Lua value}) {
+    return _SpeedSettingArgLua(
+      value: value,
+    );
+  }
+
+  _SpeedSettingArgNum numeric({required Numeric value}) {
+    return _SpeedSettingArgNum(
+      value: value,
+    );
+  }
+
+  SpeedSettingArg fromJson(Map<String, Object> json) {
+    return SpeedSettingArg.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $SpeedSettingArg = _$SpeedSettingArgTearOff();
+
+/// @nodoc
+mixin _$SpeedSettingArg {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Lua value) lua,
+    required TResult Function(Numeric value) numeric,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Lua value)? lua,
+    TResult Function(Numeric value)? numeric,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeedSettingArgLua value) lua,
+    required TResult Function(_SpeedSettingArgNum value) numeric,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeedSettingArgLua value)? lua,
+    TResult Function(_SpeedSettingArgNum value)? numeric,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SpeedSettingArgCopyWith<$Res> {
+  factory $SpeedSettingArgCopyWith(
+          SpeedSettingArg value, $Res Function(SpeedSettingArg) then) =
+      _$SpeedSettingArgCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SpeedSettingArgCopyWithImpl<$Res>
+    implements $SpeedSettingArgCopyWith<$Res> {
+  _$SpeedSettingArgCopyWithImpl(this._value, this._then);
+
+  final SpeedSettingArg _value;
+  // ignore: unused_field
+  final $Res Function(SpeedSettingArg) _then;
+}
+
+/// @nodoc
+abstract class _$SpeedSettingArgLuaCopyWith<$Res> {
+  factory _$SpeedSettingArgLuaCopyWith(
+          _SpeedSettingArgLua value, $Res Function(_SpeedSettingArgLua) then) =
+      __$SpeedSettingArgLuaCopyWithImpl<$Res>;
+  $Res call({Lua value});
+
+  $LuaCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class __$SpeedSettingArgLuaCopyWithImpl<$Res>
+    extends _$SpeedSettingArgCopyWithImpl<$Res>
+    implements _$SpeedSettingArgLuaCopyWith<$Res> {
+  __$SpeedSettingArgLuaCopyWithImpl(
+      _SpeedSettingArgLua _value, $Res Function(_SpeedSettingArgLua) _then)
+      : super(_value, (v) => _then(v as _SpeedSettingArgLua));
+
+  @override
+  _SpeedSettingArgLua get _value => super._value as _SpeedSettingArgLua;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_SpeedSettingArgLua(
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Lua,
+    ));
+  }
+
+  @override
+  $LuaCopyWith<$Res> get value {
+    return $LuaCopyWith<$Res>(_value.value, (value) {
+      return _then(_value.copyWith(value: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_SpeedSettingArgLua implements _SpeedSettingArgLua {
+  const _$_SpeedSettingArgLua({required this.value});
+
+  factory _$_SpeedSettingArgLua.fromJson(Map<String, dynamic> json) =>
+      _$_$_SpeedSettingArgLuaFromJson(json);
+
+  @override
+  final Lua value;
+
+  @override
+  String toString() {
+    return 'SpeedSettingArg.lua(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SpeedSettingArgLua &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SpeedSettingArgLuaCopyWith<_SpeedSettingArgLua> get copyWith =>
+      __$SpeedSettingArgLuaCopyWithImpl<_SpeedSettingArgLua>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Lua value) lua,
+    required TResult Function(Numeric value) numeric,
+  }) {
+    return lua(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Lua value)? lua,
+    TResult Function(Numeric value)? numeric,
+    required TResult orElse(),
+  }) {
+    if (lua != null) {
+      return lua(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeedSettingArgLua value) lua,
+    required TResult Function(_SpeedSettingArgNum value) numeric,
+  }) {
+    return lua(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeedSettingArgLua value)? lua,
+    TResult Function(_SpeedSettingArgNum value)? numeric,
+    required TResult orElse(),
+  }) {
+    if (lua != null) {
+      return lua(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SpeedSettingArgLuaToJson(this)..['runtimeType'] = 'lua';
+  }
+}
+
+abstract class _SpeedSettingArgLua implements SpeedSettingArg {
+  const factory _SpeedSettingArgLua({required Lua value}) =
+      _$_SpeedSettingArgLua;
+
+  factory _SpeedSettingArgLua.fromJson(Map<String, dynamic> json) =
+      _$_SpeedSettingArgLua.fromJson;
+
+  Lua get value => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SpeedSettingArgLuaCopyWith<_SpeedSettingArgLua> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SpeedSettingArgNumCopyWith<$Res> {
+  factory _$SpeedSettingArgNumCopyWith(
+          _SpeedSettingArgNum value, $Res Function(_SpeedSettingArgNum) then) =
+      __$SpeedSettingArgNumCopyWithImpl<$Res>;
+  $Res call({Numeric value});
+
+  $NumericCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class __$SpeedSettingArgNumCopyWithImpl<$Res>
+    extends _$SpeedSettingArgCopyWithImpl<$Res>
+    implements _$SpeedSettingArgNumCopyWith<$Res> {
+  __$SpeedSettingArgNumCopyWithImpl(
+      _SpeedSettingArgNum _value, $Res Function(_SpeedSettingArgNum) _then)
+      : super(_value, (v) => _then(v as _SpeedSettingArgNum));
+
+  @override
+  _SpeedSettingArgNum get _value => super._value as _SpeedSettingArgNum;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_SpeedSettingArgNum(
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Numeric,
+    ));
+  }
+
+  @override
+  $NumericCopyWith<$Res> get value {
+    return $NumericCopyWith<$Res>(_value.value, (value) {
+      return _then(_value.copyWith(value: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_SpeedSettingArgNum implements _SpeedSettingArgNum {
+  const _$_SpeedSettingArgNum({required this.value});
+
+  factory _$_SpeedSettingArgNum.fromJson(Map<String, dynamic> json) =>
+      _$_$_SpeedSettingArgNumFromJson(json);
+
+  @override
+  final Numeric value;
+
+  @override
+  String toString() {
+    return 'SpeedSettingArg.numeric(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SpeedSettingArgNum &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SpeedSettingArgNumCopyWith<_SpeedSettingArgNum> get copyWith =>
+      __$SpeedSettingArgNumCopyWithImpl<_SpeedSettingArgNum>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Lua value) lua,
+    required TResult Function(Numeric value) numeric,
+  }) {
+    return numeric(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Lua value)? lua,
+    TResult Function(Numeric value)? numeric,
+    required TResult orElse(),
+  }) {
+    if (numeric != null) {
+      return numeric(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeedSettingArgLua value) lua,
+    required TResult Function(_SpeedSettingArgNum value) numeric,
+  }) {
+    return numeric(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeedSettingArgLua value)? lua,
+    TResult Function(_SpeedSettingArgNum value)? numeric,
+    required TResult orElse(),
+  }) {
+    if (numeric != null) {
+      return numeric(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SpeedSettingArgNumToJson(this)..['runtimeType'] = 'numeric';
+  }
+}
+
+abstract class _SpeedSettingArgNum implements SpeedSettingArg {
+  const factory _SpeedSettingArgNum({required Numeric value}) =
+      _$_SpeedSettingArgNum;
+
+  factory _SpeedSettingArgNum.fromJson(Map<String, dynamic> json) =
+      _$_SpeedSettingArgNum.fromJson;
+
+  Numeric get value => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SpeedSettingArgNumCopyWith<_SpeedSettingArgNum> get copyWith =>
       throw _privateConstructorUsedError;
 }

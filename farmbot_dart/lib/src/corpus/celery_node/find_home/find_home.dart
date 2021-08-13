@@ -23,7 +23,10 @@ class FindHome with _$FindHome implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 

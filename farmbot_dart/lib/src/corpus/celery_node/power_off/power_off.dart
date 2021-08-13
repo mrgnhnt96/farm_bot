@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
 
 part 'power_off.freezed.dart';
 part 'power_off.g.dart';
@@ -22,6 +21,8 @@ class PowerOff with _$PowerOff implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: {}, body: []);
+    return CeleryNode(
+      kind: kind,
+    );
   }
 }

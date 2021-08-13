@@ -201,9 +201,15 @@ WritePinArgs _$WritePinArgsFromJson(Map<String, dynamic> json) {
 class _$WritePinArgsTearOff {
   const _$WritePinArgsTearOff();
 
-  _WritePinArgs call({required AllowedAxis axis}) {
+  _WritePinArgs call(
+      {@JsonKey(fromJson: AllowedPinModes.pinModeFromJson, toJson: AllowedPinModes.pinModeToJson)
+          required AllowedPinModes pinModes,
+      required PinNumberArg pinNumber,
+      required int pinValue}) {
     return _WritePinArgs(
-      axis: axis,
+      pinModes: pinModes,
+      pinNumber: pinNumber,
+      pinValue: pinValue,
     );
   }
 
@@ -217,7 +223,12 @@ const $WritePinArgs = _$WritePinArgsTearOff();
 
 /// @nodoc
 mixin _$WritePinArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  @JsonKey(
+      fromJson: AllowedPinModes.pinModeFromJson,
+      toJson: AllowedPinModes.pinModeToJson)
+  AllowedPinModes get pinModes => throw _privateConstructorUsedError;
+  PinNumberArg get pinNumber => throw _privateConstructorUsedError;
+  int get pinValue => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -230,7 +241,13 @@ abstract class $WritePinArgsCopyWith<$Res> {
   factory $WritePinArgsCopyWith(
           WritePinArgs value, $Res Function(WritePinArgs) then) =
       _$WritePinArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call(
+      {@JsonKey(fromJson: AllowedPinModes.pinModeFromJson, toJson: AllowedPinModes.pinModeToJson)
+          AllowedPinModes pinModes,
+      PinNumberArg pinNumber,
+      int pinValue});
+
+  $PinNumberArgCopyWith<$Res> get pinNumber;
 }
 
 /// @nodoc
@@ -243,14 +260,31 @@ class _$WritePinArgsCopyWithImpl<$Res> implements $WritePinArgsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? pinModes = freezed,
+    Object? pinNumber = freezed,
+    Object? pinValue = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      pinModes: pinModes == freezed
+          ? _value.pinModes
+          : pinModes // ignore: cast_nullable_to_non_nullable
+              as AllowedPinModes,
+      pinNumber: pinNumber == freezed
+          ? _value.pinNumber
+          : pinNumber // ignore: cast_nullable_to_non_nullable
+              as PinNumberArg,
+      pinValue: pinValue == freezed
+          ? _value.pinValue
+          : pinValue // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
+  }
+
+  @override
+  $PinNumberArgCopyWith<$Res> get pinNumber {
+    return $PinNumberArgCopyWith<$Res>(_value.pinNumber, (value) {
+      return _then(_value.copyWith(pinNumber: value));
+    });
   }
 }
 
@@ -261,7 +295,14 @@ abstract class _$WritePinArgsCopyWith<$Res>
           _WritePinArgs value, $Res Function(_WritePinArgs) then) =
       __$WritePinArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call(
+      {@JsonKey(fromJson: AllowedPinModes.pinModeFromJson, toJson: AllowedPinModes.pinModeToJson)
+          AllowedPinModes pinModes,
+      PinNumberArg pinNumber,
+      int pinValue});
+
+  @override
+  $PinNumberArgCopyWith<$Res> get pinNumber;
 }
 
 /// @nodoc
@@ -276,13 +317,23 @@ class __$WritePinArgsCopyWithImpl<$Res> extends _$WritePinArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? pinModes = freezed,
+    Object? pinNumber = freezed,
+    Object? pinValue = freezed,
   }) {
     return _then(_WritePinArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      pinModes: pinModes == freezed
+          ? _value.pinModes
+          : pinModes // ignore: cast_nullable_to_non_nullable
+              as AllowedPinModes,
+      pinNumber: pinNumber == freezed
+          ? _value.pinNumber
+          : pinNumber // ignore: cast_nullable_to_non_nullable
+              as PinNumberArg,
+      pinValue: pinValue == freezed
+          ? _value.pinValue
+          : pinValue // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -290,30 +341,51 @@ class __$WritePinArgsCopyWithImpl<$Res> extends _$WritePinArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_WritePinArgs implements _WritePinArgs {
-  const _$_WritePinArgs({required this.axis});
+  const _$_WritePinArgs(
+      {@JsonKey(fromJson: AllowedPinModes.pinModeFromJson, toJson: AllowedPinModes.pinModeToJson)
+          required this.pinModes,
+      required this.pinNumber,
+      required this.pinValue});
 
   factory _$_WritePinArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_WritePinArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  @JsonKey(
+      fromJson: AllowedPinModes.pinModeFromJson,
+      toJson: AllowedPinModes.pinModeToJson)
+  final AllowedPinModes pinModes;
+  @override
+  final PinNumberArg pinNumber;
+  @override
+  final int pinValue;
 
   @override
   String toString() {
-    return 'WritePinArgs(axis: $axis)';
+    return 'WritePinArgs(pinModes: $pinModes, pinNumber: $pinNumber, pinValue: $pinValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WritePinArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.pinModes, pinModes) ||
+                const DeepCollectionEquality()
+                    .equals(other.pinModes, pinModes)) &&
+            (identical(other.pinNumber, pinNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.pinNumber, pinNumber)) &&
+            (identical(other.pinValue, pinValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.pinValue, pinValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(pinModes) ^
+      const DeepCollectionEquality().hash(pinNumber) ^
+      const DeepCollectionEquality().hash(pinValue);
 
   @JsonKey(ignore: true)
   @override
@@ -327,13 +399,24 @@ class _$_WritePinArgs implements _WritePinArgs {
 }
 
 abstract class _WritePinArgs implements WritePinArgs {
-  const factory _WritePinArgs({required AllowedAxis axis}) = _$_WritePinArgs;
+  const factory _WritePinArgs(
+      {@JsonKey(fromJson: AllowedPinModes.pinModeFromJson, toJson: AllowedPinModes.pinModeToJson)
+          required AllowedPinModes pinModes,
+      required PinNumberArg pinNumber,
+      required int pinValue}) = _$_WritePinArgs;
 
   factory _WritePinArgs.fromJson(Map<String, dynamic> json) =
       _$_WritePinArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  @JsonKey(
+      fromJson: AllowedPinModes.pinModeFromJson,
+      toJson: AllowedPinModes.pinModeToJson)
+  AllowedPinModes get pinModes => throw _privateConstructorUsedError;
+  @override
+  PinNumberArg get pinNumber => throw _privateConstructorUsedError;
+  @override
+  int get pinValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WritePinArgsCopyWith<_WritePinArgs> get copyWith =>

@@ -8,9 +8,9 @@ class CeleryNode with _$CeleryNode {
   @JsonSerializable(genericArgumentFactories: true)
   const factory CeleryNode({
     String? comment,
-    List<Map<String, dynamic>>? body,
+    @Default([]) List<Map<String, dynamic>> body,
     required String kind,
-    required Map<String, dynamic> args,
+    @Default({}) Map<String, dynamic> args,
   }) = _CeleryNode;
 
   factory CeleryNode.fromJson(Map<String, dynamic> json) =>

@@ -1,3 +1,4 @@
+import 'package:farmbot/src/corpus/celery_node/shared/pin_number_arg/pin_number_arg.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
@@ -23,14 +24,20 @@ class WritePin with _$WritePin implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 
 @freezed
 class WritePinArgs with _$WritePinArgs {
   const factory WritePinArgs({
-    required AllowedAxis axis,
+    @JsonKey(fromJson: AllowedPinModes.pinModeFromJson, toJson: AllowedPinModes.pinModeToJson)
+        required AllowedPinModes pinModes,
+    required PinNumberArg pinNumber,
+    required int pinValue,
   }) = _WritePinArgs;
 
   factory WritePinArgs.fromJson(Map<String, dynamic> json) =>

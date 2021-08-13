@@ -9,8 +9,10 @@ part of 'scope_declaration.dart';
 _$_DefaultScopeDeclaration _$_$_DefaultScopeDeclarationFromJson(Map json) {
   return _$_DefaultScopeDeclaration(
     comment: json['comment'] as String?,
-    args: ScopeDeclarationArgs.fromJson(
-        Map<String, dynamic>.from(json['args'] as Map)),
+    body: (json['body'] as List<dynamic>?)
+        ?.map((e) => ScopeDeclarationBodyItem.fromJson(
+            Map<String, dynamic>.from(e as Map)))
+        .toList(),
   );
 }
 
@@ -25,51 +27,34 @@ Map<String, dynamic> _$_$_DefaultScopeDeclarationToJson(
   }
 
   writeNotNull('comment', instance.comment);
-  val['args'] = instance.args.toJson();
+  writeNotNull('body', instance.body?.map((e) => e.toJson()).toList());
   return val;
 }
 
-_$_ScopeDeclarationArgs _$_$_ScopeDeclarationArgsFromJson(Map json) {
-  return _$_ScopeDeclarationArgs(
-    axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+_$_ScopeDeclarationBodyItemParameterDeclaration
+    _$_$_ScopeDeclarationBodyItemParameterDeclarationFromJson(Map json) {
+  return _$_ScopeDeclarationBodyItemParameterDeclaration(
+    ParameterDeclaration.fromJson(
+        Map<String, dynamic>.from(json['parameter_declaration'] as Map)),
   );
 }
 
-Map<String, dynamic> _$_$_ScopeDeclarationArgsToJson(
-        _$_ScopeDeclarationArgs instance) =>
+Map<String, dynamic> _$_$_ScopeDeclarationBodyItemParameterDeclarationToJson(
+        _$_ScopeDeclarationBodyItemParameterDeclaration instance) =>
     <String, dynamic>{
-      'axis': _$AllowedAxisEnumMap[instance.axis],
+      'parameter_declaration': instance.parameterDeclaration.toJson(),
     };
 
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
+_$_ScopeDeclarationBodyItemVariableDeclaration
+    _$_$_ScopeDeclarationBodyItemVariableDeclarationFromJson(Map json) {
+  return _$_ScopeDeclarationBodyItemVariableDeclaration(
+    VariableDeclaration.fromJson(
+        Map<String, dynamic>.from(json['variable_declaration'] as Map)),
+  );
 }
 
-const _$AllowedAxisEnumMap = {
-  AllowedAxis.all: 'all',
-  AllowedAxis.x: 'x',
-  AllowedAxis.y: 'y',
-  AllowedAxis.z: 'z',
-};
+Map<String, dynamic> _$_$_ScopeDeclarationBodyItemVariableDeclarationToJson(
+        _$_ScopeDeclarationBodyItemVariableDeclaration instance) =>
+    <String, dynamic>{
+      'variable_declaration': instance.variableDeclaration.toJson(),
+    };

@@ -32,45 +32,15 @@ Map<String, dynamic> _$_$_DefaultVariableDeclarationToJson(
 
 _$_VariableDeclarationArgs _$_$_VariableDeclarationArgsFromJson(Map json) {
   return _$_VariableDeclarationArgs(
-    axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+    dataValue: DataValueArg.fromJson(
+        Map<String, dynamic>.from(json['data_value'] as Map)),
+    label: json['label'] as String,
   );
 }
 
 Map<String, dynamic> _$_$_VariableDeclarationArgsToJson(
         _$_VariableDeclarationArgs instance) =>
     <String, dynamic>{
-      'axis': _$AllowedAxisEnumMap[instance.axis],
+      'data_value': instance.dataValue.toJson(),
+      'label': instance.label,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-const _$AllowedAxisEnumMap = {
-  AllowedAxis.all: 'all',
-  AllowedAxis.x: 'x',
-  AllowedAxis.y: 'y',
-  AllowedAxis.z: 'z',
-};

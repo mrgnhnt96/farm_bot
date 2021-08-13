@@ -20,10 +20,12 @@ Sequence _$SequenceFromJson(Map<String, dynamic> json) {
 class _$SequenceTearOff {
   const _$SequenceTearOff();
 
-  _DefaultSequence call({String? comment, required SequenceArgs args}) {
+  _DefaultSequence call(
+      {String? comment, required SequenceArgs args, List<AnyBodyItem>? body}) {
     return _DefaultSequence(
       comment: comment,
       args: args,
+      body: body,
     );
   }
 
@@ -39,6 +41,7 @@ const $Sequence = _$SequenceTearOff();
 mixin _$Sequence {
   String? get comment => throw _privateConstructorUsedError;
   SequenceArgs get args => throw _privateConstructorUsedError;
+  List<AnyBodyItem>? get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,7 +53,7 @@ mixin _$Sequence {
 abstract class $SequenceCopyWith<$Res> {
   factory $SequenceCopyWith(Sequence value, $Res Function(Sequence) then) =
       _$SequenceCopyWithImpl<$Res>;
-  $Res call({String? comment, SequenceArgs args});
+  $Res call({String? comment, SequenceArgs args, List<AnyBodyItem>? body});
 
   $SequenceArgsCopyWith<$Res> get args;
 }
@@ -67,6 +70,7 @@ class _$SequenceCopyWithImpl<$Res> implements $SequenceCopyWith<$Res> {
   $Res call({
     Object? comment = freezed,
     Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
@@ -77,6 +81,10 @@ class _$SequenceCopyWithImpl<$Res> implements $SequenceCopyWith<$Res> {
           ? _value.args
           : args // ignore: cast_nullable_to_non_nullable
               as SequenceArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<AnyBodyItem>?,
     ));
   }
 
@@ -95,7 +103,7 @@ abstract class _$DefaultSequenceCopyWith<$Res>
           _DefaultSequence value, $Res Function(_DefaultSequence) then) =
       __$DefaultSequenceCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment, SequenceArgs args});
+  $Res call({String? comment, SequenceArgs args, List<AnyBodyItem>? body});
 
   @override
   $SequenceArgsCopyWith<$Res> get args;
@@ -115,6 +123,7 @@ class __$DefaultSequenceCopyWithImpl<$Res> extends _$SequenceCopyWithImpl<$Res>
   $Res call({
     Object? comment = freezed,
     Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_DefaultSequence(
       comment: comment == freezed
@@ -125,6 +134,10 @@ class __$DefaultSequenceCopyWithImpl<$Res> extends _$SequenceCopyWithImpl<$Res>
           ? _value.args
           : args // ignore: cast_nullable_to_non_nullable
               as SequenceArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<AnyBodyItem>?,
     ));
   }
 }
@@ -132,7 +145,8 @@ class __$DefaultSequenceCopyWithImpl<$Res> extends _$SequenceCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultSequence extends _DefaultSequence {
-  const _$_DefaultSequence({this.comment, required this.args}) : super._();
+  const _$_DefaultSequence({this.comment, required this.args, this.body})
+      : super._();
 
   factory _$_DefaultSequence.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultSequenceFromJson(json);
@@ -141,10 +155,12 @@ class _$_DefaultSequence extends _DefaultSequence {
   final String? comment;
   @override
   final SequenceArgs args;
+  @override
+  final List<AnyBodyItem>? body;
 
   @override
   String toString() {
-    return 'Sequence(comment: $comment, args: $args)';
+    return 'Sequence(comment: $comment, args: $args, body: $body)';
   }
 
   @override
@@ -155,14 +171,17 @@ class _$_DefaultSequence extends _DefaultSequence {
                 const DeepCollectionEquality()
                     .equals(other.comment, comment)) &&
             (identical(other.args, args) ||
-                const DeepCollectionEquality().equals(other.args, args)));
+                const DeepCollectionEquality().equals(other.args, args)) &&
+            (identical(other.body, body) ||
+                const DeepCollectionEquality().equals(other.body, body)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(args);
+      const DeepCollectionEquality().hash(args) ^
+      const DeepCollectionEquality().hash(body);
 
   @JsonKey(ignore: true)
   @override
@@ -177,7 +196,9 @@ class _$_DefaultSequence extends _DefaultSequence {
 
 abstract class _DefaultSequence extends Sequence {
   const factory _DefaultSequence(
-      {String? comment, required SequenceArgs args}) = _$_DefaultSequence;
+      {String? comment,
+      required SequenceArgs args,
+      List<AnyBodyItem>? body}) = _$_DefaultSequence;
   const _DefaultSequence._() : super._();
 
   factory _DefaultSequence.fromJson(Map<String, dynamic> json) =
@@ -187,6 +208,8 @@ abstract class _DefaultSequence extends Sequence {
   String? get comment => throw _privateConstructorUsedError;
   @override
   SequenceArgs get args => throw _privateConstructorUsedError;
+  @override
+  List<AnyBodyItem>? get body => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DefaultSequenceCopyWith<_DefaultSequence> get copyWith =>
@@ -201,9 +224,10 @@ SequenceArgs _$SequenceArgsFromJson(Map<String, dynamic> json) {
 class _$SequenceArgsTearOff {
   const _$SequenceArgsTearOff();
 
-  _SequenceArgs call({required AllowedAxis axis}) {
+  _SequenceArgs call({required ScopeDeclaration locals, required int version}) {
     return _SequenceArgs(
-      axis: axis,
+      locals: locals,
+      version: version,
     );
   }
 
@@ -217,7 +241,8 @@ const $SequenceArgs = _$SequenceArgsTearOff();
 
 /// @nodoc
 mixin _$SequenceArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  ScopeDeclaration get locals => throw _privateConstructorUsedError;
+  int get version => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -230,7 +255,9 @@ abstract class $SequenceArgsCopyWith<$Res> {
   factory $SequenceArgsCopyWith(
           SequenceArgs value, $Res Function(SequenceArgs) then) =
       _$SequenceArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({ScopeDeclaration locals, int version});
+
+  $ScopeDeclarationCopyWith<$Res> get locals;
 }
 
 /// @nodoc
@@ -243,14 +270,26 @@ class _$SequenceArgsCopyWithImpl<$Res> implements $SequenceArgsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? locals = freezed,
+    Object? version = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      locals: locals == freezed
+          ? _value.locals
+          : locals // ignore: cast_nullable_to_non_nullable
+              as ScopeDeclaration,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
+  }
+
+  @override
+  $ScopeDeclarationCopyWith<$Res> get locals {
+    return $ScopeDeclarationCopyWith<$Res>(_value.locals, (value) {
+      return _then(_value.copyWith(locals: value));
+    });
   }
 }
 
@@ -261,7 +300,10 @@ abstract class _$SequenceArgsCopyWith<$Res>
           _SequenceArgs value, $Res Function(_SequenceArgs) then) =
       __$SequenceArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({ScopeDeclaration locals, int version});
+
+  @override
+  $ScopeDeclarationCopyWith<$Res> get locals;
 }
 
 /// @nodoc
@@ -276,13 +318,18 @@ class __$SequenceArgsCopyWithImpl<$Res> extends _$SequenceArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? locals = freezed,
+    Object? version = freezed,
   }) {
     return _then(_SequenceArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      locals: locals == freezed
+          ? _value.locals
+          : locals // ignore: cast_nullable_to_non_nullable
+              as ScopeDeclaration,
+      version: version == freezed
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -290,30 +337,36 @@ class __$SequenceArgsCopyWithImpl<$Res> extends _$SequenceArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SequenceArgs implements _SequenceArgs {
-  const _$_SequenceArgs({required this.axis});
+  const _$_SequenceArgs({required this.locals, required this.version});
 
   factory _$_SequenceArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_SequenceArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final ScopeDeclaration locals;
+  @override
+  final int version;
 
   @override
   String toString() {
-    return 'SequenceArgs(axis: $axis)';
+    return 'SequenceArgs(locals: $locals, version: $version)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SequenceArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.locals, locals) ||
+                const DeepCollectionEquality().equals(other.locals, locals)) &&
+            (identical(other.version, version) ||
+                const DeepCollectionEquality().equals(other.version, version)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(locals) ^
+      const DeepCollectionEquality().hash(version);
 
   @JsonKey(ignore: true)
   @override
@@ -327,13 +380,17 @@ class _$_SequenceArgs implements _SequenceArgs {
 }
 
 abstract class _SequenceArgs implements SequenceArgs {
-  const factory _SequenceArgs({required AllowedAxis axis}) = _$_SequenceArgs;
+  const factory _SequenceArgs(
+      {required ScopeDeclaration locals,
+      required int version}) = _$_SequenceArgs;
 
   factory _SequenceArgs.fromJson(Map<String, dynamic> json) =
       _$_SequenceArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  ScopeDeclaration get locals => throw _privateConstructorUsedError;
+  @override
+  int get version => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SequenceArgsCopyWith<_SequenceArgs> get copyWith =>

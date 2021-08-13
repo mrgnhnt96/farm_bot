@@ -20,10 +20,9 @@ Sync _$SyncFromJson(Map<String, dynamic> json) {
 class _$SyncTearOff {
   const _$SyncTearOff();
 
-  _DefaultSync call({String? comment, required SyncArgs args}) {
+  _DefaultSync call({String? comment}) {
     return _DefaultSync(
       comment: comment,
-      args: args,
     );
   }
 
@@ -38,7 +37,6 @@ const $Sync = _$SyncTearOff();
 /// @nodoc
 mixin _$Sync {
   String? get comment => throw _privateConstructorUsedError;
-  SyncArgs get args => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,9 +47,7 @@ mixin _$Sync {
 abstract class $SyncCopyWith<$Res> {
   factory $SyncCopyWith(Sync value, $Res Function(Sync) then) =
       _$SyncCopyWithImpl<$Res>;
-  $Res call({String? comment, SyncArgs args});
-
-  $SyncArgsCopyWith<$Res> get args;
+  $Res call({String? comment});
 }
 
 /// @nodoc
@@ -65,25 +61,13 @@ class _$SyncCopyWithImpl<$Res> implements $SyncCopyWith<$Res> {
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as SyncArgs,
     ));
-  }
-
-  @override
-  $SyncArgsCopyWith<$Res> get args {
-    return $SyncArgsCopyWith<$Res>(_value.args, (value) {
-      return _then(_value.copyWith(args: value));
-    });
   }
 }
 
@@ -93,10 +77,7 @@ abstract class _$DefaultSyncCopyWith<$Res> implements $SyncCopyWith<$Res> {
           _DefaultSync value, $Res Function(_DefaultSync) then) =
       __$DefaultSyncCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment, SyncArgs args});
-
-  @override
-  $SyncArgsCopyWith<$Res> get args;
+  $Res call({String? comment});
 }
 
 /// @nodoc
@@ -112,17 +93,12 @@ class __$DefaultSyncCopyWithImpl<$Res> extends _$SyncCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
   }) {
     return _then(_DefaultSync(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as SyncArgs,
     ));
   }
 }
@@ -130,19 +106,17 @@ class __$DefaultSyncCopyWithImpl<$Res> extends _$SyncCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultSync extends _DefaultSync {
-  const _$_DefaultSync({this.comment, required this.args}) : super._();
+  const _$_DefaultSync({this.comment}) : super._();
 
   factory _$_DefaultSync.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultSyncFromJson(json);
 
   @override
   final String? comment;
-  @override
-  final SyncArgs args;
 
   @override
   String toString() {
-    return 'Sync(comment: $comment, args: $args)';
+    return 'Sync(comment: $comment)';
   }
 
   @override
@@ -150,17 +124,12 @@ class _$_DefaultSync extends _DefaultSync {
     return identical(this, other) ||
         (other is _DefaultSync &&
             (identical(other.comment, comment) ||
-                const DeepCollectionEquality()
-                    .equals(other.comment, comment)) &&
-            (identical(other.args, args) ||
-                const DeepCollectionEquality().equals(other.args, args)));
+                const DeepCollectionEquality().equals(other.comment, comment)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(args);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
 
   @JsonKey(ignore: true)
   @override
@@ -174,8 +143,7 @@ class _$_DefaultSync extends _DefaultSync {
 }
 
 abstract class _DefaultSync extends Sync {
-  const factory _DefaultSync({String? comment, required SyncArgs args}) =
-      _$_DefaultSync;
+  const factory _DefaultSync({String? comment}) = _$_DefaultSync;
   const _DefaultSync._() : super._();
 
   factory _DefaultSync.fromJson(Map<String, dynamic> json) =
@@ -184,151 +152,7 @@ abstract class _DefaultSync extends Sync {
   @override
   String? get comment => throw _privateConstructorUsedError;
   @override
-  SyncArgs get args => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$DefaultSyncCopyWith<_DefaultSync> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SyncArgs _$SyncArgsFromJson(Map<String, dynamic> json) {
-  return _SyncArgs.fromJson(json);
-}
-
-/// @nodoc
-class _$SyncArgsTearOff {
-  const _$SyncArgsTearOff();
-
-  _SyncArgs call({required AllowedAxis axis}) {
-    return _SyncArgs(
-      axis: axis,
-    );
-  }
-
-  SyncArgs fromJson(Map<String, Object> json) {
-    return SyncArgs.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SyncArgs = _$SyncArgsTearOff();
-
-/// @nodoc
-mixin _$SyncArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SyncArgsCopyWith<SyncArgs> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SyncArgsCopyWith<$Res> {
-  factory $SyncArgsCopyWith(SyncArgs value, $Res Function(SyncArgs) then) =
-      _$SyncArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
-}
-
-/// @nodoc
-class _$SyncArgsCopyWithImpl<$Res> implements $SyncArgsCopyWith<$Res> {
-  _$SyncArgsCopyWithImpl(this._value, this._then);
-
-  final SyncArgs _value;
-  // ignore: unused_field
-  final $Res Function(SyncArgs) _then;
-
-  @override
-  $Res call({
-    Object? axis = freezed,
-  }) {
-    return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SyncArgsCopyWith<$Res> implements $SyncArgsCopyWith<$Res> {
-  factory _$SyncArgsCopyWith(_SyncArgs value, $Res Function(_SyncArgs) then) =
-      __$SyncArgsCopyWithImpl<$Res>;
-  @override
-  $Res call({AllowedAxis axis});
-}
-
-/// @nodoc
-class __$SyncArgsCopyWithImpl<$Res> extends _$SyncArgsCopyWithImpl<$Res>
-    implements _$SyncArgsCopyWith<$Res> {
-  __$SyncArgsCopyWithImpl(_SyncArgs _value, $Res Function(_SyncArgs) _then)
-      : super(_value, (v) => _then(v as _SyncArgs));
-
-  @override
-  _SyncArgs get _value => super._value as _SyncArgs;
-
-  @override
-  $Res call({
-    Object? axis = freezed,
-  }) {
-    return _then(_SyncArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_SyncArgs implements _SyncArgs {
-  const _$_SyncArgs({required this.axis});
-
-  factory _$_SyncArgs.fromJson(Map<String, dynamic> json) =>
-      _$_$_SyncArgsFromJson(json);
-
-  @override
-  final AllowedAxis axis;
-
-  @override
-  String toString() {
-    return 'SyncArgs(axis: $axis)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SyncArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SyncArgsCopyWith<_SyncArgs> get copyWith =>
-      __$SyncArgsCopyWithImpl<_SyncArgs>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_SyncArgsToJson(this);
-  }
-}
-
-abstract class _SyncArgs implements SyncArgs {
-  const factory _SyncArgs({required AllowedAxis axis}) = _$_SyncArgs;
-
-  factory _SyncArgs.fromJson(Map<String, dynamic> json) = _$_SyncArgs.fromJson;
-
-  @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$SyncArgsCopyWith<_SyncArgs> get copyWith =>
       throw _privateConstructorUsedError;
 }

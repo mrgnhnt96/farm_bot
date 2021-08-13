@@ -1,9 +1,8 @@
-import 'package:farmbot/src/corpus/celery_node/named_pin/named_pin.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
+import 'package:farmbot/src/corpus/celery_node/shared/pin_number_arg/pin_number_arg.dart';
 import 'package:farmbot/src/corpus/enums.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'read_pin.freezed.dart';
 part 'read_pin.g.dart';
@@ -24,7 +23,10 @@ class ReadPin with _$ReadPin implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 
@@ -39,13 +41,4 @@ class ReadPinArgs with _$ReadPinArgs {
 
   factory ReadPinArgs.fromJson(Map<String, dynamic> json) =>
       _$ReadPinArgsFromJson(json);
-}
-
-@freezed
-class PinNumberArg with _$PinNumberArg {
-  const factory PinNumberArg(int value) = _PinNumberArg;
-  const factory PinNumberArg.pin(NamedPin value) = _PinNumberArgPin;
-
-  factory PinNumberArg.fromJson(Map<String, dynamic> json) =>
-      _$PinNumberArgFromJson(json);
 }

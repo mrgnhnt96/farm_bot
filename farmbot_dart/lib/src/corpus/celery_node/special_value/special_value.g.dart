@@ -31,45 +31,12 @@ Map<String, dynamic> _$_$_DefaultSpecialValueToJson(
 
 _$_SpecialValueArgs _$_$_SpecialValueArgsFromJson(Map json) {
   return _$_SpecialValueArgs(
-    axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+    label: json['label'] as String,
   );
 }
 
 Map<String, dynamic> _$_$_SpecialValueArgsToJson(
         _$_SpecialValueArgs instance) =>
     <String, dynamic>{
-      'axis': _$AllowedAxisEnumMap[instance.axis],
+      'label': instance.label,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-const _$AllowedAxisEnumMap = {
-  AllowedAxis.all: 'all',
-  AllowedAxis.x: 'x',
-  AllowedAxis.y: 'y',
-  AllowedAxis.z: 'z',
-};

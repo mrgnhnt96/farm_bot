@@ -22,9 +22,9 @@ class _$CeleryNodeTearOff {
 
   _CeleryNode call(
       {String? comment,
-      List<Map<String, dynamic>>? body,
+      List<Map<String, dynamic>> body = const [],
       required String kind,
-      required Map<String, dynamic> args}) {
+      Map<String, dynamic> args = const {}}) {
     return _CeleryNode(
       comment: comment,
       body: body,
@@ -44,7 +44,7 @@ const $CeleryNode = _$CeleryNodeTearOff();
 /// @nodoc
 mixin _$CeleryNode {
   String? get comment => throw _privateConstructorUsedError;
-  List<Map<String, dynamic>>? get body => throw _privateConstructorUsedError;
+  List<Map<String, dynamic>> get body => throw _privateConstructorUsedError;
   String get kind => throw _privateConstructorUsedError;
   Map<String, dynamic> get args => throw _privateConstructorUsedError;
 
@@ -61,7 +61,7 @@ abstract class $CeleryNodeCopyWith<$Res> {
       _$CeleryNodeCopyWithImpl<$Res>;
   $Res call(
       {String? comment,
-      List<Map<String, dynamic>>? body,
+      List<Map<String, dynamic>> body,
       String kind,
       Map<String, dynamic> args});
 }
@@ -89,7 +89,7 @@ class _$CeleryNodeCopyWithImpl<$Res> implements $CeleryNodeCopyWith<$Res> {
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as List<Map<String, dynamic>>?,
+              as List<Map<String, dynamic>>,
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
@@ -110,7 +110,7 @@ abstract class _$CeleryNodeCopyWith<$Res> implements $CeleryNodeCopyWith<$Res> {
   @override
   $Res call(
       {String? comment,
-      List<Map<String, dynamic>>? body,
+      List<Map<String, dynamic>> body,
       String kind,
       Map<String, dynamic> args});
 }
@@ -140,7 +140,7 @@ class __$CeleryNodeCopyWithImpl<$Res> extends _$CeleryNodeCopyWithImpl<$Res>
       body: body == freezed
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as List<Map<String, dynamic>>?,
+              as List<Map<String, dynamic>>,
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
@@ -158,17 +158,22 @@ class __$CeleryNodeCopyWithImpl<$Res> extends _$CeleryNodeCopyWithImpl<$Res>
 @JsonSerializable(genericArgumentFactories: true)
 class _$_CeleryNode implements _CeleryNode {
   const _$_CeleryNode(
-      {this.comment, this.body, required this.kind, required this.args});
+      {this.comment,
+      this.body = const [],
+      required this.kind,
+      this.args = const {}});
 
   factory _$_CeleryNode.fromJson(Map<String, dynamic> json) =>
       _$_$_CeleryNodeFromJson(json);
 
   @override
   final String? comment;
+  @JsonKey(defaultValue: const [])
   @override
-  final List<Map<String, dynamic>>? body;
+  final List<Map<String, dynamic>> body;
   @override
   final String kind;
+  @JsonKey(defaultValue: const {})
   @override
   final Map<String, dynamic> args;
 
@@ -214,9 +219,9 @@ class _$_CeleryNode implements _CeleryNode {
 abstract class _CeleryNode implements CeleryNode {
   const factory _CeleryNode(
       {String? comment,
-      List<Map<String, dynamic>>? body,
+      List<Map<String, dynamic>> body,
       required String kind,
-      required Map<String, dynamic> args}) = _$_CeleryNode;
+      Map<String, dynamic> args}) = _$_CeleryNode;
 
   factory _CeleryNode.fromJson(Map<String, dynamic> json) =
       _$_CeleryNode.fromJson;
@@ -224,7 +229,7 @@ abstract class _CeleryNode implements CeleryNode {
   @override
   String? get comment => throw _privateConstructorUsedError;
   @override
-  List<Map<String, dynamic>>? get body => throw _privateConstructorUsedError;
+  List<Map<String, dynamic>> get body => throw _privateConstructorUsedError;
   @override
   String get kind => throw _privateConstructorUsedError;
   @override

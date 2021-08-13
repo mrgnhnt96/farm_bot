@@ -11,6 +11,10 @@ _$_DefaultExecuteScript _$_$_DefaultExecuteScriptFromJson(Map json) {
     comment: json['comment'] as String?,
     args: ExecuteScriptArgs.fromJson(
         Map<String, dynamic>.from(json['args'] as Map)),
+    body: (json['body'] as List<dynamic>?)
+        ?.map((e) =>
+            ExecuteScriptBodyItem.fromJson(Map<String, dynamic>.from(e as Map)))
+        .toList(),
   );
 }
 
@@ -26,6 +30,7 @@ Map<String, dynamic> _$_$_DefaultExecuteScriptToJson(
 
   writeNotNull('comment', instance.comment);
   val['args'] = instance.args.toJson();
+  writeNotNull('body', instance.body?.map((e) => e.toJson()).toList());
   return val;
 }
 
@@ -39,4 +44,16 @@ Map<String, dynamic> _$_$_ExecuteScriptArgsToJson(
         _$_ExecuteScriptArgs instance) =>
     <String, dynamic>{
       'label': instance.label,
+    };
+
+_$_ChangeOwnershipBodyItem _$_$_ChangeOwnershipBodyItemFromJson(Map json) {
+  return _$_ChangeOwnershipBodyItem(
+    Pair.fromJson(Map<String, dynamic>.from(json['value'] as Map)),
+  );
+}
+
+Map<String, dynamic> _$_$_ChangeOwnershipBodyItemToJson(
+        _$_ChangeOwnershipBodyItem instance) =>
+    <String, dynamic>{
+      'value': instance.value.toJson(),
     };

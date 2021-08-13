@@ -1,8 +1,6 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'rpc_ok.freezed.dart';
 part 'rpc_ok.g.dart';
@@ -22,15 +20,17 @@ class RpcOk with _$RpcOk implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 
 @freezed
 class RpcOkArgs with _$RpcOkArgs {
-  // TODO: use correct arguments here
   const factory RpcOkArgs({
-    required AllowedAxis axis,
+    required String label,
   }) = _RpcOkArgs;
 
   factory RpcOkArgs.fromJson(Map<String, dynamic> json) =>

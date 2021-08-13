@@ -1,8 +1,8 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
+import 'package:farmbot/src/corpus/celery_node/scope_declaration/scope_declaration.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
+import 'package:farmbot/src/corpus/celery_node/shared/any_body_item/any_body_item.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'sequence.freezed.dart';
 part 'sequence.g.dart';
@@ -13,6 +13,7 @@ class Sequence with _$Sequence implements CeleryScript {
   const factory Sequence({
     String? comment,
     required SequenceArgs args,
+    List<AnyBodyItem>? body,
   }) = _DefaultSequence;
 
   factory Sequence.fromJson(Map<String, dynamic> json) =>
@@ -23,14 +24,19 @@ class Sequence with _$Sequence implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+      body: body?.map((e) => e.toJson()).toList() ?? [],
+    );
   }
 }
 
 @freezed
 class SequenceArgs with _$SequenceArgs {
   const factory SequenceArgs({
-    required AllowedAxis axis,
+    required ScopeDeclaration locals,
+    required int version,
   }) = _SequenceArgs;
 
   factory SequenceArgs.fromJson(Map<String, dynamic> json) =>

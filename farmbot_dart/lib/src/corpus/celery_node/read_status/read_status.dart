@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
 
 part 'read_status.freezed.dart';
 part 'read_status.g.dart';
@@ -22,6 +21,8 @@ class ReadStatus with _$ReadStatus implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: {}, body: []);
+    return CeleryNode(
+      kind: kind,
+    );
   }
 }

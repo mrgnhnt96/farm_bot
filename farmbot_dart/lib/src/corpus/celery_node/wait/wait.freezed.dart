@@ -199,9 +199,9 @@ WaitArgs _$WaitArgsFromJson(Map<String, dynamic> json) {
 class _$WaitArgsTearOff {
   const _$WaitArgsTearOff();
 
-  _WaitArgs call({required AllowedAxis axis}) {
+  _WaitArgs call({required int milliseconds}) {
     return _WaitArgs(
-      axis: axis,
+      milliseconds: milliseconds,
     );
   }
 
@@ -215,7 +215,7 @@ const $WaitArgs = _$WaitArgsTearOff();
 
 /// @nodoc
 mixin _$WaitArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  int get milliseconds => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -227,7 +227,7 @@ mixin _$WaitArgs {
 abstract class $WaitArgsCopyWith<$Res> {
   factory $WaitArgsCopyWith(WaitArgs value, $Res Function(WaitArgs) then) =
       _$WaitArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({int milliseconds});
 }
 
 /// @nodoc
@@ -240,13 +240,13 @@ class _$WaitArgsCopyWithImpl<$Res> implements $WaitArgsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? milliseconds = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      milliseconds: milliseconds == freezed
+          ? _value.milliseconds
+          : milliseconds // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -256,7 +256,7 @@ abstract class _$WaitArgsCopyWith<$Res> implements $WaitArgsCopyWith<$Res> {
   factory _$WaitArgsCopyWith(_WaitArgs value, $Res Function(_WaitArgs) then) =
       __$WaitArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({int milliseconds});
 }
 
 /// @nodoc
@@ -270,13 +270,13 @@ class __$WaitArgsCopyWithImpl<$Res> extends _$WaitArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? milliseconds = freezed,
   }) {
     return _then(_WaitArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      milliseconds: milliseconds == freezed
+          ? _value.milliseconds
+          : milliseconds // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -284,30 +284,31 @@ class __$WaitArgsCopyWithImpl<$Res> extends _$WaitArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_WaitArgs implements _WaitArgs {
-  const _$_WaitArgs({required this.axis});
+  const _$_WaitArgs({required this.milliseconds});
 
   factory _$_WaitArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_WaitArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final int milliseconds;
 
   @override
   String toString() {
-    return 'WaitArgs(axis: $axis)';
+    return 'WaitArgs(milliseconds: $milliseconds)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _WaitArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.milliseconds, milliseconds) ||
+                const DeepCollectionEquality()
+                    .equals(other.milliseconds, milliseconds)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(milliseconds);
 
   @JsonKey(ignore: true)
   @override
@@ -321,12 +322,12 @@ class _$_WaitArgs implements _WaitArgs {
 }
 
 abstract class _WaitArgs implements WaitArgs {
-  const factory _WaitArgs({required AllowedAxis axis}) = _$_WaitArgs;
+  const factory _WaitArgs({required int milliseconds}) = _$_WaitArgs;
 
   factory _WaitArgs.fromJson(Map<String, dynamic> json) = _$_WaitArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  int get milliseconds => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WaitArgsCopyWith<_WaitArgs> get copyWith =>

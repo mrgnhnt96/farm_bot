@@ -21,10 +21,10 @@ class _$ScopeDeclarationTearOff {
   const _$ScopeDeclarationTearOff();
 
   _DefaultScopeDeclaration call(
-      {String? comment, required ScopeDeclarationArgs args}) {
+      {String? comment, List<ScopeDeclarationBodyItem>? body}) {
     return _DefaultScopeDeclaration(
       comment: comment,
-      args: args,
+      body: body,
     );
   }
 
@@ -39,7 +39,8 @@ const $ScopeDeclaration = _$ScopeDeclarationTearOff();
 /// @nodoc
 mixin _$ScopeDeclaration {
   String? get comment => throw _privateConstructorUsedError;
-  ScopeDeclarationArgs get args => throw _privateConstructorUsedError;
+  List<ScopeDeclarationBodyItem>? get body =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,9 +53,7 @@ abstract class $ScopeDeclarationCopyWith<$Res> {
   factory $ScopeDeclarationCopyWith(
           ScopeDeclaration value, $Res Function(ScopeDeclaration) then) =
       _$ScopeDeclarationCopyWithImpl<$Res>;
-  $Res call({String? comment, ScopeDeclarationArgs args});
-
-  $ScopeDeclarationArgsCopyWith<$Res> get args;
+  $Res call({String? comment, List<ScopeDeclarationBodyItem>? body});
 }
 
 /// @nodoc
@@ -69,25 +68,18 @@ class _$ScopeDeclarationCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as ScopeDeclarationArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<ScopeDeclarationBodyItem>?,
     ));
-  }
-
-  @override
-  $ScopeDeclarationArgsCopyWith<$Res> get args {
-    return $ScopeDeclarationArgsCopyWith<$Res>(_value.args, (value) {
-      return _then(_value.copyWith(args: value));
-    });
   }
 }
 
@@ -98,10 +90,7 @@ abstract class _$DefaultScopeDeclarationCopyWith<$Res>
           $Res Function(_DefaultScopeDeclaration) then) =
       __$DefaultScopeDeclarationCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment, ScopeDeclarationArgs args});
-
-  @override
-  $ScopeDeclarationArgsCopyWith<$Res> get args;
+  $Res call({String? comment, List<ScopeDeclarationBodyItem>? body});
 }
 
 /// @nodoc
@@ -119,17 +108,17 @@ class __$DefaultScopeDeclarationCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_DefaultScopeDeclaration(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as ScopeDeclarationArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<ScopeDeclarationBodyItem>?,
     ));
   }
 }
@@ -137,8 +126,7 @@ class __$DefaultScopeDeclarationCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultScopeDeclaration extends _DefaultScopeDeclaration {
-  const _$_DefaultScopeDeclaration({this.comment, required this.args})
-      : super._();
+  const _$_DefaultScopeDeclaration({this.comment, this.body}) : super._();
 
   factory _$_DefaultScopeDeclaration.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultScopeDeclarationFromJson(json);
@@ -146,11 +134,11 @@ class _$_DefaultScopeDeclaration extends _DefaultScopeDeclaration {
   @override
   final String? comment;
   @override
-  final ScopeDeclarationArgs args;
+  final List<ScopeDeclarationBodyItem>? body;
 
   @override
   String toString() {
-    return 'ScopeDeclaration(comment: $comment, args: $args)';
+    return 'ScopeDeclaration(comment: $comment, body: $body)';
   }
 
   @override
@@ -160,15 +148,15 @@ class _$_DefaultScopeDeclaration extends _DefaultScopeDeclaration {
             (identical(other.comment, comment) ||
                 const DeepCollectionEquality()
                     .equals(other.comment, comment)) &&
-            (identical(other.args, args) ||
-                const DeepCollectionEquality().equals(other.args, args)));
+            (identical(other.body, body) ||
+                const DeepCollectionEquality().equals(other.body, body)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(args);
+      const DeepCollectionEquality().hash(body);
 
   @JsonKey(ignore: true)
   @override
@@ -185,7 +173,7 @@ class _$_DefaultScopeDeclaration extends _DefaultScopeDeclaration {
 abstract class _DefaultScopeDeclaration extends ScopeDeclaration {
   const factory _DefaultScopeDeclaration(
       {String? comment,
-      required ScopeDeclarationArgs args}) = _$_DefaultScopeDeclaration;
+      List<ScopeDeclarationBodyItem>? body}) = _$_DefaultScopeDeclaration;
   const _DefaultScopeDeclaration._() : super._();
 
   factory _DefaultScopeDeclaration.fromJson(Map<String, dynamic> json) =
@@ -194,160 +182,439 @@ abstract class _DefaultScopeDeclaration extends ScopeDeclaration {
   @override
   String? get comment => throw _privateConstructorUsedError;
   @override
-  ScopeDeclarationArgs get args => throw _privateConstructorUsedError;
+  List<ScopeDeclarationBodyItem>? get body =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DefaultScopeDeclarationCopyWith<_DefaultScopeDeclaration> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-ScopeDeclarationArgs _$ScopeDeclarationArgsFromJson(Map<String, dynamic> json) {
-  return _ScopeDeclarationArgs.fromJson(json);
+ScopeDeclarationBodyItem _$ScopeDeclarationBodyItemFromJson(
+    Map<String, dynamic> json) {
+  switch (json['runtimeType'] as String) {
+    case 'parameterDeclaration':
+      return _ScopeDeclarationBodyItemParameterDeclaration.fromJson(json);
+    case 'variableDeclaration':
+      return _ScopeDeclarationBodyItemVariableDeclaration.fromJson(json);
+
+    default:
+      throw FallThroughError();
+  }
 }
 
 /// @nodoc
-class _$ScopeDeclarationArgsTearOff {
-  const _$ScopeDeclarationArgsTearOff();
+class _$ScopeDeclarationBodyItemTearOff {
+  const _$ScopeDeclarationBodyItemTearOff();
 
-  _ScopeDeclarationArgs call({required AllowedAxis axis}) {
-    return _ScopeDeclarationArgs(
-      axis: axis,
+  _ScopeDeclarationBodyItemParameterDeclaration parameterDeclaration(
+      ParameterDeclaration parameterDeclaration) {
+    return _ScopeDeclarationBodyItemParameterDeclaration(
+      parameterDeclaration,
     );
   }
 
-  ScopeDeclarationArgs fromJson(Map<String, Object> json) {
-    return ScopeDeclarationArgs.fromJson(json);
+  _ScopeDeclarationBodyItemVariableDeclaration variableDeclaration(
+      VariableDeclaration variableDeclaration) {
+    return _ScopeDeclarationBodyItemVariableDeclaration(
+      variableDeclaration,
+    );
+  }
+
+  ScopeDeclarationBodyItem fromJson(Map<String, Object> json) {
+    return ScopeDeclarationBodyItem.fromJson(json);
   }
 }
 
 /// @nodoc
-const $ScopeDeclarationArgs = _$ScopeDeclarationArgsTearOff();
+const $ScopeDeclarationBodyItem = _$ScopeDeclarationBodyItemTearOff();
 
 /// @nodoc
-mixin _$ScopeDeclarationArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ScopeDeclarationArgsCopyWith<ScopeDeclarationArgs> get copyWith =>
+mixin _$ScopeDeclarationBodyItem {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ParameterDeclaration parameterDeclaration)
+        parameterDeclaration,
+    required TResult Function(VariableDeclaration variableDeclaration)
+        variableDeclaration,
+  }) =>
       throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ParameterDeclaration parameterDeclaration)?
+        parameterDeclaration,
+    TResult Function(VariableDeclaration variableDeclaration)?
+        variableDeclaration,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            _ScopeDeclarationBodyItemParameterDeclaration value)
+        parameterDeclaration,
+    required TResult Function(
+            _ScopeDeclarationBodyItemVariableDeclaration value)
+        variableDeclaration,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ScopeDeclarationBodyItemParameterDeclaration value)?
+        parameterDeclaration,
+    TResult Function(_ScopeDeclarationBodyItemVariableDeclaration value)?
+        variableDeclaration,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ScopeDeclarationArgsCopyWith<$Res> {
-  factory $ScopeDeclarationArgsCopyWith(ScopeDeclarationArgs value,
-          $Res Function(ScopeDeclarationArgs) then) =
-      _$ScopeDeclarationArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+abstract class $ScopeDeclarationBodyItemCopyWith<$Res> {
+  factory $ScopeDeclarationBodyItemCopyWith(ScopeDeclarationBodyItem value,
+          $Res Function(ScopeDeclarationBodyItem) then) =
+      _$ScopeDeclarationBodyItemCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ScopeDeclarationArgsCopyWithImpl<$Res>
-    implements $ScopeDeclarationArgsCopyWith<$Res> {
-  _$ScopeDeclarationArgsCopyWithImpl(this._value, this._then);
+class _$ScopeDeclarationBodyItemCopyWithImpl<$Res>
+    implements $ScopeDeclarationBodyItemCopyWith<$Res> {
+  _$ScopeDeclarationBodyItemCopyWithImpl(this._value, this._then);
 
-  final ScopeDeclarationArgs _value;
+  final ScopeDeclarationBodyItem _value;
   // ignore: unused_field
-  final $Res Function(ScopeDeclarationArgs) _then;
+  final $Res Function(ScopeDeclarationBodyItem) _then;
+}
+
+/// @nodoc
+abstract class _$ScopeDeclarationBodyItemParameterDeclarationCopyWith<$Res> {
+  factory _$ScopeDeclarationBodyItemParameterDeclarationCopyWith(
+          _ScopeDeclarationBodyItemParameterDeclaration value,
+          $Res Function(_ScopeDeclarationBodyItemParameterDeclaration) then) =
+      __$ScopeDeclarationBodyItemParameterDeclarationCopyWithImpl<$Res>;
+  $Res call({ParameterDeclaration parameterDeclaration});
+
+  $ParameterDeclarationCopyWith<$Res> get parameterDeclaration;
+}
+
+/// @nodoc
+class __$ScopeDeclarationBodyItemParameterDeclarationCopyWithImpl<$Res>
+    extends _$ScopeDeclarationBodyItemCopyWithImpl<$Res>
+    implements _$ScopeDeclarationBodyItemParameterDeclarationCopyWith<$Res> {
+  __$ScopeDeclarationBodyItemParameterDeclarationCopyWithImpl(
+      _ScopeDeclarationBodyItemParameterDeclaration _value,
+      $Res Function(_ScopeDeclarationBodyItemParameterDeclaration) _then)
+      : super(_value,
+            (v) => _then(v as _ScopeDeclarationBodyItemParameterDeclaration));
+
+  @override
+  _ScopeDeclarationBodyItemParameterDeclaration get _value =>
+      super._value as _ScopeDeclarationBodyItemParameterDeclaration;
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? parameterDeclaration = freezed,
   }) {
-    return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+    return _then(_ScopeDeclarationBodyItemParameterDeclaration(
+      parameterDeclaration == freezed
+          ? _value.parameterDeclaration
+          : parameterDeclaration // ignore: cast_nullable_to_non_nullable
+              as ParameterDeclaration,
     ));
   }
-}
-
-/// @nodoc
-abstract class _$ScopeDeclarationArgsCopyWith<$Res>
-    implements $ScopeDeclarationArgsCopyWith<$Res> {
-  factory _$ScopeDeclarationArgsCopyWith(_ScopeDeclarationArgs value,
-          $Res Function(_ScopeDeclarationArgs) then) =
-      __$ScopeDeclarationArgsCopyWithImpl<$Res>;
-  @override
-  $Res call({AllowedAxis axis});
-}
-
-/// @nodoc
-class __$ScopeDeclarationArgsCopyWithImpl<$Res>
-    extends _$ScopeDeclarationArgsCopyWithImpl<$Res>
-    implements _$ScopeDeclarationArgsCopyWith<$Res> {
-  __$ScopeDeclarationArgsCopyWithImpl(
-      _ScopeDeclarationArgs _value, $Res Function(_ScopeDeclarationArgs) _then)
-      : super(_value, (v) => _then(v as _ScopeDeclarationArgs));
 
   @override
-  _ScopeDeclarationArgs get _value => super._value as _ScopeDeclarationArgs;
-
-  @override
-  $Res call({
-    Object? axis = freezed,
-  }) {
-    return _then(_ScopeDeclarationArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
-    ));
+  $ParameterDeclarationCopyWith<$Res> get parameterDeclaration {
+    return $ParameterDeclarationCopyWith<$Res>(_value.parameterDeclaration,
+        (value) {
+      return _then(_value.copyWith(parameterDeclaration: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_ScopeDeclarationArgs implements _ScopeDeclarationArgs {
-  const _$_ScopeDeclarationArgs({required this.axis});
+class _$_ScopeDeclarationBodyItemParameterDeclaration
+    implements _ScopeDeclarationBodyItemParameterDeclaration {
+  const _$_ScopeDeclarationBodyItemParameterDeclaration(
+      this.parameterDeclaration);
 
-  factory _$_ScopeDeclarationArgs.fromJson(Map<String, dynamic> json) =>
-      _$_$_ScopeDeclarationArgsFromJson(json);
+  factory _$_ScopeDeclarationBodyItemParameterDeclaration.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_ScopeDeclarationBodyItemParameterDeclarationFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final ParameterDeclaration parameterDeclaration;
 
   @override
   String toString() {
-    return 'ScopeDeclarationArgs(axis: $axis)';
+    return 'ScopeDeclarationBodyItem.parameterDeclaration(parameterDeclaration: $parameterDeclaration)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ScopeDeclarationArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+        (other is _ScopeDeclarationBodyItemParameterDeclaration &&
+            (identical(other.parameterDeclaration, parameterDeclaration) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameterDeclaration, parameterDeclaration)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(parameterDeclaration);
 
   @JsonKey(ignore: true)
   @override
-  _$ScopeDeclarationArgsCopyWith<_ScopeDeclarationArgs> get copyWith =>
-      __$ScopeDeclarationArgsCopyWithImpl<_ScopeDeclarationArgs>(
-          this, _$identity);
+  _$ScopeDeclarationBodyItemParameterDeclarationCopyWith<
+          _ScopeDeclarationBodyItemParameterDeclaration>
+      get copyWith =>
+          __$ScopeDeclarationBodyItemParameterDeclarationCopyWithImpl<
+              _ScopeDeclarationBodyItemParameterDeclaration>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ParameterDeclaration parameterDeclaration)
+        parameterDeclaration,
+    required TResult Function(VariableDeclaration variableDeclaration)
+        variableDeclaration,
+  }) {
+    return parameterDeclaration(this.parameterDeclaration);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ParameterDeclaration parameterDeclaration)?
+        parameterDeclaration,
+    TResult Function(VariableDeclaration variableDeclaration)?
+        variableDeclaration,
+    required TResult orElse(),
+  }) {
+    if (parameterDeclaration != null) {
+      return parameterDeclaration(this.parameterDeclaration);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            _ScopeDeclarationBodyItemParameterDeclaration value)
+        parameterDeclaration,
+    required TResult Function(
+            _ScopeDeclarationBodyItemVariableDeclaration value)
+        variableDeclaration,
+  }) {
+    return parameterDeclaration(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ScopeDeclarationBodyItemParameterDeclaration value)?
+        parameterDeclaration,
+    TResult Function(_ScopeDeclarationBodyItemVariableDeclaration value)?
+        variableDeclaration,
+    required TResult orElse(),
+  }) {
+    if (parameterDeclaration != null) {
+      return parameterDeclaration(this);
+    }
+    return orElse();
+  }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ScopeDeclarationArgsToJson(this);
+    return _$_$_ScopeDeclarationBodyItemParameterDeclarationToJson(this)
+      ..['runtimeType'] = 'parameterDeclaration';
   }
 }
 
-abstract class _ScopeDeclarationArgs implements ScopeDeclarationArgs {
-  const factory _ScopeDeclarationArgs({required AllowedAxis axis}) =
-      _$_ScopeDeclarationArgs;
+abstract class _ScopeDeclarationBodyItemParameterDeclaration
+    implements ScopeDeclarationBodyItem {
+  const factory _ScopeDeclarationBodyItemParameterDeclaration(
+          ParameterDeclaration parameterDeclaration) =
+      _$_ScopeDeclarationBodyItemParameterDeclaration;
 
-  factory _ScopeDeclarationArgs.fromJson(Map<String, dynamic> json) =
-      _$_ScopeDeclarationArgs.fromJson;
+  factory _ScopeDeclarationBodyItemParameterDeclaration.fromJson(
+          Map<String, dynamic> json) =
+      _$_ScopeDeclarationBodyItemParameterDeclaration.fromJson;
 
-  @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$ScopeDeclarationArgsCopyWith<_ScopeDeclarationArgs> get copyWith =>
+  ParameterDeclaration get parameterDeclaration =>
       throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ScopeDeclarationBodyItemParameterDeclarationCopyWith<
+          _ScopeDeclarationBodyItemParameterDeclaration>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ScopeDeclarationBodyItemVariableDeclarationCopyWith<$Res> {
+  factory _$ScopeDeclarationBodyItemVariableDeclarationCopyWith(
+          _ScopeDeclarationBodyItemVariableDeclaration value,
+          $Res Function(_ScopeDeclarationBodyItemVariableDeclaration) then) =
+      __$ScopeDeclarationBodyItemVariableDeclarationCopyWithImpl<$Res>;
+  $Res call({VariableDeclaration variableDeclaration});
+
+  $VariableDeclarationCopyWith<$Res> get variableDeclaration;
+}
+
+/// @nodoc
+class __$ScopeDeclarationBodyItemVariableDeclarationCopyWithImpl<$Res>
+    extends _$ScopeDeclarationBodyItemCopyWithImpl<$Res>
+    implements _$ScopeDeclarationBodyItemVariableDeclarationCopyWith<$Res> {
+  __$ScopeDeclarationBodyItemVariableDeclarationCopyWithImpl(
+      _ScopeDeclarationBodyItemVariableDeclaration _value,
+      $Res Function(_ScopeDeclarationBodyItemVariableDeclaration) _then)
+      : super(_value,
+            (v) => _then(v as _ScopeDeclarationBodyItemVariableDeclaration));
+
+  @override
+  _ScopeDeclarationBodyItemVariableDeclaration get _value =>
+      super._value as _ScopeDeclarationBodyItemVariableDeclaration;
+
+  @override
+  $Res call({
+    Object? variableDeclaration = freezed,
+  }) {
+    return _then(_ScopeDeclarationBodyItemVariableDeclaration(
+      variableDeclaration == freezed
+          ? _value.variableDeclaration
+          : variableDeclaration // ignore: cast_nullable_to_non_nullable
+              as VariableDeclaration,
+    ));
+  }
+
+  @override
+  $VariableDeclarationCopyWith<$Res> get variableDeclaration {
+    return $VariableDeclarationCopyWith<$Res>(_value.variableDeclaration,
+        (value) {
+      return _then(_value.copyWith(variableDeclaration: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ScopeDeclarationBodyItemVariableDeclaration
+    implements _ScopeDeclarationBodyItemVariableDeclaration {
+  const _$_ScopeDeclarationBodyItemVariableDeclaration(
+      this.variableDeclaration);
+
+  factory _$_ScopeDeclarationBodyItemVariableDeclaration.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_ScopeDeclarationBodyItemVariableDeclarationFromJson(json);
+
+  @override
+  final VariableDeclaration variableDeclaration;
+
+  @override
+  String toString() {
+    return 'ScopeDeclarationBodyItem.variableDeclaration(variableDeclaration: $variableDeclaration)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ScopeDeclarationBodyItemVariableDeclaration &&
+            (identical(other.variableDeclaration, variableDeclaration) ||
+                const DeepCollectionEquality()
+                    .equals(other.variableDeclaration, variableDeclaration)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(variableDeclaration);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ScopeDeclarationBodyItemVariableDeclarationCopyWith<
+          _ScopeDeclarationBodyItemVariableDeclaration>
+      get copyWith =>
+          __$ScopeDeclarationBodyItemVariableDeclarationCopyWithImpl<
+              _ScopeDeclarationBodyItemVariableDeclaration>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ParameterDeclaration parameterDeclaration)
+        parameterDeclaration,
+    required TResult Function(VariableDeclaration variableDeclaration)
+        variableDeclaration,
+  }) {
+    return variableDeclaration(this.variableDeclaration);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ParameterDeclaration parameterDeclaration)?
+        parameterDeclaration,
+    TResult Function(VariableDeclaration variableDeclaration)?
+        variableDeclaration,
+    required TResult orElse(),
+  }) {
+    if (variableDeclaration != null) {
+      return variableDeclaration(this.variableDeclaration);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(
+            _ScopeDeclarationBodyItemParameterDeclaration value)
+        parameterDeclaration,
+    required TResult Function(
+            _ScopeDeclarationBodyItemVariableDeclaration value)
+        variableDeclaration,
+  }) {
+    return variableDeclaration(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ScopeDeclarationBodyItemParameterDeclaration value)?
+        parameterDeclaration,
+    TResult Function(_ScopeDeclarationBodyItemVariableDeclaration value)?
+        variableDeclaration,
+    required TResult orElse(),
+  }) {
+    if (variableDeclaration != null) {
+      return variableDeclaration(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ScopeDeclarationBodyItemVariableDeclarationToJson(this)
+      ..['runtimeType'] = 'variableDeclaration';
+  }
+}
+
+abstract class _ScopeDeclarationBodyItemVariableDeclaration
+    implements ScopeDeclarationBodyItem {
+  const factory _ScopeDeclarationBodyItemVariableDeclaration(
+          VariableDeclaration variableDeclaration) =
+      _$_ScopeDeclarationBodyItemVariableDeclaration;
+
+  factory _ScopeDeclarationBodyItemVariableDeclaration.fromJson(
+          Map<String, dynamic> json) =
+      _$_ScopeDeclarationBodyItemVariableDeclaration.fromJson;
+
+  VariableDeclaration get variableDeclaration =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ScopeDeclarationBodyItemVariableDeclarationCopyWith<
+          _ScopeDeclarationBodyItemVariableDeclaration>
+      get copyWith => throw _privateConstructorUsedError;
 }

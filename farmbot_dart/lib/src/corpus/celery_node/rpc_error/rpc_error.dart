@@ -1,8 +1,8 @@
+import 'package:farmbot/src/corpus/celery_node/explanation/explanation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
 
 part 'rpc_error.freezed.dart';
 part 'rpc_error.g.dart';
@@ -13,6 +13,7 @@ class RpcError with _$RpcError implements CeleryScript {
   const factory RpcError({
     String? comment,
     required RpcErrorArgs args,
+    List<RpcErrorBodyItem>? body,
   }) = _DefaultRpcError;
 
   factory RpcError.fromJson(Map<String, dynamic> json) =>
@@ -23,7 +24,11 @@ class RpcError with _$RpcError implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+      body: body?.map((e) => e.toJson()).toList() ?? [],
+    );
   }
 }
 
@@ -35,4 +40,12 @@ class RpcErrorArgs with _$RpcErrorArgs {
 
   factory RpcErrorArgs.fromJson(Map<String, dynamic> json) =>
       _$RpcErrorArgsFromJson(json);
+}
+
+@freezed
+class RpcErrorBodyItem with _$RpcErrorBodyItem {
+  const factory RpcErrorBodyItem(Explanation value) = _RpcErrorBodyItem;
+
+  factory RpcErrorBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$RpcErrorBodyItemFromJson(json);
 }

@@ -208,9 +208,9 @@ UpdateFarmwareArgs _$UpdateFarmwareArgsFromJson(Map<String, dynamic> json) {
 class _$UpdateFarmwareArgsTearOff {
   const _$UpdateFarmwareArgsTearOff();
 
-  _UpdateFarmwareArgs call({required AllowedAxis axis}) {
+  _UpdateFarmwareArgs call({required String package}) {
     return _UpdateFarmwareArgs(
-      axis: axis,
+      package: package,
     );
   }
 
@@ -224,7 +224,7 @@ const $UpdateFarmwareArgs = _$UpdateFarmwareArgsTearOff();
 
 /// @nodoc
 mixin _$UpdateFarmwareArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  String get package => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -237,7 +237,7 @@ abstract class $UpdateFarmwareArgsCopyWith<$Res> {
   factory $UpdateFarmwareArgsCopyWith(
           UpdateFarmwareArgs value, $Res Function(UpdateFarmwareArgs) then) =
       _$UpdateFarmwareArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({String package});
 }
 
 /// @nodoc
@@ -251,13 +251,13 @@ class _$UpdateFarmwareArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? package = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      package: package == freezed
+          ? _value.package
+          : package // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -269,7 +269,7 @@ abstract class _$UpdateFarmwareArgsCopyWith<$Res>
           _UpdateFarmwareArgs value, $Res Function(_UpdateFarmwareArgs) then) =
       __$UpdateFarmwareArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({String package});
 }
 
 /// @nodoc
@@ -285,13 +285,13 @@ class __$UpdateFarmwareArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? package = freezed,
   }) {
     return _then(_UpdateFarmwareArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      package: package == freezed
+          ? _value.package
+          : package // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -299,30 +299,30 @@ class __$UpdateFarmwareArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_UpdateFarmwareArgs implements _UpdateFarmwareArgs {
-  const _$_UpdateFarmwareArgs({required this.axis});
+  const _$_UpdateFarmwareArgs({required this.package});
 
   factory _$_UpdateFarmwareArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_UpdateFarmwareArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final String package;
 
   @override
   String toString() {
-    return 'UpdateFarmwareArgs(axis: $axis)';
+    return 'UpdateFarmwareArgs(package: $package)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UpdateFarmwareArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.package, package) ||
+                const DeepCollectionEquality().equals(other.package, package)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(package);
 
   @JsonKey(ignore: true)
   @override
@@ -336,14 +336,14 @@ class _$_UpdateFarmwareArgs implements _UpdateFarmwareArgs {
 }
 
 abstract class _UpdateFarmwareArgs implements UpdateFarmwareArgs {
-  const factory _UpdateFarmwareArgs({required AllowedAxis axis}) =
+  const factory _UpdateFarmwareArgs({required String package}) =
       _$_UpdateFarmwareArgs;
 
   factory _UpdateFarmwareArgs.fromJson(Map<String, dynamic> json) =
       _$_UpdateFarmwareArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  String get package => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UpdateFarmwareArgsCopyWith<_UpdateFarmwareArgs> get copyWith =>

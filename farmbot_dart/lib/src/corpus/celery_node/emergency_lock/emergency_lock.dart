@@ -21,6 +21,8 @@ class EmergencyLock with _$EmergencyLock implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: {}, body: []);
+    return CeleryNode(
+      kind: kind,
+    );
   }
 }

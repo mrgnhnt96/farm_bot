@@ -6,7 +6,6 @@ import 'package:farmbot/src/corpus/celery_node/identifier/identifier.dart';
 import 'package:farmbot/src/corpus/celery_node/point/point.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
 import 'package:farmbot/src/corpus/celery_node/tool/tool.dart';
-import 'package:farmbot/src/corpus/enums.dart';
 
 part 'parameter_declaration.freezed.dart';
 part 'parameter_declaration.g.dart';
@@ -27,7 +26,10 @@ class ParameterDeclaration with _$ParameterDeclaration implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 

@@ -1,8 +1,8 @@
+import 'package:farmbot/src/corpus/celery_node/pair/pair.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
 
 part 'execute_script.freezed.dart';
 part 'execute_script.g.dart';
@@ -13,6 +13,7 @@ class ExecuteScript with _$ExecuteScript implements CeleryScript {
   const factory ExecuteScript({
     String? comment,
     required ExecuteScriptArgs args,
+    List<ExecuteScriptBodyItem>? body,
   }) = _DefaultExecuteScript;
 
   factory ExecuteScript.fromJson(Map<String, dynamic> json) =>
@@ -23,7 +24,11 @@ class ExecuteScript with _$ExecuteScript implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+      body: body?.map((e) => e.toJson()).toList() ?? [],
+    );
   }
 }
 
@@ -35,4 +40,12 @@ class ExecuteScriptArgs with _$ExecuteScriptArgs {
 
   factory ExecuteScriptArgs.fromJson(Map<String, dynamic> json) =>
       _$ExecuteScriptArgsFromJson(json);
+}
+
+@freezed
+class ExecuteScriptBodyItem with _$ExecuteScriptBodyItem {
+  const factory ExecuteScriptBodyItem(Pair value) = _ChangeOwnershipBodyItem;
+
+  factory ExecuteScriptBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$ExecuteScriptBodyItemFromJson(json);
 }

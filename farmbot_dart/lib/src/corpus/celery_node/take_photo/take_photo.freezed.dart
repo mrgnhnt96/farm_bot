@@ -20,10 +20,9 @@ TakePhoto _$TakePhotoFromJson(Map<String, dynamic> json) {
 class _$TakePhotoTearOff {
   const _$TakePhotoTearOff();
 
-  _DefaultTakePhoto call({String? comment, required TakePhotoArgs args}) {
+  _DefaultTakePhoto call({String? comment}) {
     return _DefaultTakePhoto(
       comment: comment,
-      args: args,
     );
   }
 
@@ -38,7 +37,6 @@ const $TakePhoto = _$TakePhotoTearOff();
 /// @nodoc
 mixin _$TakePhoto {
   String? get comment => throw _privateConstructorUsedError;
-  TakePhotoArgs get args => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,9 +48,7 @@ mixin _$TakePhoto {
 abstract class $TakePhotoCopyWith<$Res> {
   factory $TakePhotoCopyWith(TakePhoto value, $Res Function(TakePhoto) then) =
       _$TakePhotoCopyWithImpl<$Res>;
-  $Res call({String? comment, TakePhotoArgs args});
-
-  $TakePhotoArgsCopyWith<$Res> get args;
+  $Res call({String? comment});
 }
 
 /// @nodoc
@@ -66,25 +62,13 @@ class _$TakePhotoCopyWithImpl<$Res> implements $TakePhotoCopyWith<$Res> {
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as TakePhotoArgs,
     ));
-  }
-
-  @override
-  $TakePhotoArgsCopyWith<$Res> get args {
-    return $TakePhotoArgsCopyWith<$Res>(_value.args, (value) {
-      return _then(_value.copyWith(args: value));
-    });
   }
 }
 
@@ -95,10 +79,7 @@ abstract class _$DefaultTakePhotoCopyWith<$Res>
           _DefaultTakePhoto value, $Res Function(_DefaultTakePhoto) then) =
       __$DefaultTakePhotoCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment, TakePhotoArgs args});
-
-  @override
-  $TakePhotoArgsCopyWith<$Res> get args;
+  $Res call({String? comment});
 }
 
 /// @nodoc
@@ -115,17 +96,12 @@ class __$DefaultTakePhotoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
   }) {
     return _then(_DefaultTakePhoto(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as TakePhotoArgs,
     ));
   }
 }
@@ -133,19 +109,17 @@ class __$DefaultTakePhotoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultTakePhoto extends _DefaultTakePhoto {
-  const _$_DefaultTakePhoto({this.comment, required this.args}) : super._();
+  const _$_DefaultTakePhoto({this.comment}) : super._();
 
   factory _$_DefaultTakePhoto.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultTakePhotoFromJson(json);
 
   @override
   final String? comment;
-  @override
-  final TakePhotoArgs args;
 
   @override
   String toString() {
-    return 'TakePhoto(comment: $comment, args: $args)';
+    return 'TakePhoto(comment: $comment)';
   }
 
   @override
@@ -153,17 +127,12 @@ class _$_DefaultTakePhoto extends _DefaultTakePhoto {
     return identical(this, other) ||
         (other is _DefaultTakePhoto &&
             (identical(other.comment, comment) ||
-                const DeepCollectionEquality()
-                    .equals(other.comment, comment)) &&
-            (identical(other.args, args) ||
-                const DeepCollectionEquality().equals(other.args, args)));
+                const DeepCollectionEquality().equals(other.comment, comment)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(args);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
 
   @JsonKey(ignore: true)
   @override
@@ -177,8 +146,7 @@ class _$_DefaultTakePhoto extends _DefaultTakePhoto {
 }
 
 abstract class _DefaultTakePhoto extends TakePhoto {
-  const factory _DefaultTakePhoto(
-      {String? comment, required TakePhotoArgs args}) = _$_DefaultTakePhoto;
+  const factory _DefaultTakePhoto({String? comment}) = _$_DefaultTakePhoto;
   const _DefaultTakePhoto._() : super._();
 
   factory _DefaultTakePhoto.fromJson(Map<String, dynamic> json) =
@@ -187,158 +155,7 @@ abstract class _DefaultTakePhoto extends TakePhoto {
   @override
   String? get comment => throw _privateConstructorUsedError;
   @override
-  TakePhotoArgs get args => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$DefaultTakePhotoCopyWith<_DefaultTakePhoto> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TakePhotoArgs _$TakePhotoArgsFromJson(Map<String, dynamic> json) {
-  return _TakePhotoArgs.fromJson(json);
-}
-
-/// @nodoc
-class _$TakePhotoArgsTearOff {
-  const _$TakePhotoArgsTearOff();
-
-  _TakePhotoArgs call({required AllowedAxis axis}) {
-    return _TakePhotoArgs(
-      axis: axis,
-    );
-  }
-
-  TakePhotoArgs fromJson(Map<String, Object> json) {
-    return TakePhotoArgs.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $TakePhotoArgs = _$TakePhotoArgsTearOff();
-
-/// @nodoc
-mixin _$TakePhotoArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TakePhotoArgsCopyWith<TakePhotoArgs> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TakePhotoArgsCopyWith<$Res> {
-  factory $TakePhotoArgsCopyWith(
-          TakePhotoArgs value, $Res Function(TakePhotoArgs) then) =
-      _$TakePhotoArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
-}
-
-/// @nodoc
-class _$TakePhotoArgsCopyWithImpl<$Res>
-    implements $TakePhotoArgsCopyWith<$Res> {
-  _$TakePhotoArgsCopyWithImpl(this._value, this._then);
-
-  final TakePhotoArgs _value;
-  // ignore: unused_field
-  final $Res Function(TakePhotoArgs) _then;
-
-  @override
-  $Res call({
-    Object? axis = freezed,
-  }) {
-    return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$TakePhotoArgsCopyWith<$Res>
-    implements $TakePhotoArgsCopyWith<$Res> {
-  factory _$TakePhotoArgsCopyWith(
-          _TakePhotoArgs value, $Res Function(_TakePhotoArgs) then) =
-      __$TakePhotoArgsCopyWithImpl<$Res>;
-  @override
-  $Res call({AllowedAxis axis});
-}
-
-/// @nodoc
-class __$TakePhotoArgsCopyWithImpl<$Res>
-    extends _$TakePhotoArgsCopyWithImpl<$Res>
-    implements _$TakePhotoArgsCopyWith<$Res> {
-  __$TakePhotoArgsCopyWithImpl(
-      _TakePhotoArgs _value, $Res Function(_TakePhotoArgs) _then)
-      : super(_value, (v) => _then(v as _TakePhotoArgs));
-
-  @override
-  _TakePhotoArgs get _value => super._value as _TakePhotoArgs;
-
-  @override
-  $Res call({
-    Object? axis = freezed,
-  }) {
-    return _then(_TakePhotoArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_TakePhotoArgs implements _TakePhotoArgs {
-  const _$_TakePhotoArgs({required this.axis});
-
-  factory _$_TakePhotoArgs.fromJson(Map<String, dynamic> json) =>
-      _$_$_TakePhotoArgsFromJson(json);
-
-  @override
-  final AllowedAxis axis;
-
-  @override
-  String toString() {
-    return 'TakePhotoArgs(axis: $axis)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _TakePhotoArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
-
-  @JsonKey(ignore: true)
-  @override
-  _$TakePhotoArgsCopyWith<_TakePhotoArgs> get copyWith =>
-      __$TakePhotoArgsCopyWithImpl<_TakePhotoArgs>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_TakePhotoArgsToJson(this);
-  }
-}
-
-abstract class _TakePhotoArgs implements TakePhotoArgs {
-  const factory _TakePhotoArgs({required AllowedAxis axis}) = _$_TakePhotoArgs;
-
-  factory _TakePhotoArgs.fromJson(Map<String, dynamic> json) =
-      _$_TakePhotoArgs.fromJson;
-
-  @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$TakePhotoArgsCopyWith<_TakePhotoArgs> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -29,7 +29,6 @@ class Assertion with _$Assertion implements CeleryScript {
       args: args.toJson(),
       kind: kind,
       comment: comment,
-      body: [],
     );
   }
 }

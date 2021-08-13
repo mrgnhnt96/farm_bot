@@ -207,9 +207,11 @@ SetServoAngleArgs _$SetServoAngleArgsFromJson(Map<String, dynamic> json) {
 class _$SetServoAngleArgsTearOff {
   const _$SetServoAngleArgsTearOff();
 
-  _SetServoAngleArgs call({required AllowedAxis axis}) {
+  _SetServoAngleArgs call(
+      {required PinNumberArg pinNumber, required int pinValue}) {
     return _SetServoAngleArgs(
-      axis: axis,
+      pinNumber: pinNumber,
+      pinValue: pinValue,
     );
   }
 
@@ -223,7 +225,8 @@ const $SetServoAngleArgs = _$SetServoAngleArgsTearOff();
 
 /// @nodoc
 mixin _$SetServoAngleArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  PinNumberArg get pinNumber => throw _privateConstructorUsedError;
+  int get pinValue => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -236,7 +239,9 @@ abstract class $SetServoAngleArgsCopyWith<$Res> {
   factory $SetServoAngleArgsCopyWith(
           SetServoAngleArgs value, $Res Function(SetServoAngleArgs) then) =
       _$SetServoAngleArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({PinNumberArg pinNumber, int pinValue});
+
+  $PinNumberArgCopyWith<$Res> get pinNumber;
 }
 
 /// @nodoc
@@ -250,14 +255,26 @@ class _$SetServoAngleArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? pinNumber = freezed,
+    Object? pinValue = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      pinNumber: pinNumber == freezed
+          ? _value.pinNumber
+          : pinNumber // ignore: cast_nullable_to_non_nullable
+              as PinNumberArg,
+      pinValue: pinValue == freezed
+          ? _value.pinValue
+          : pinValue // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
+  }
+
+  @override
+  $PinNumberArgCopyWith<$Res> get pinNumber {
+    return $PinNumberArgCopyWith<$Res>(_value.pinNumber, (value) {
+      return _then(_value.copyWith(pinNumber: value));
+    });
   }
 }
 
@@ -268,7 +285,10 @@ abstract class _$SetServoAngleArgsCopyWith<$Res>
           _SetServoAngleArgs value, $Res Function(_SetServoAngleArgs) then) =
       __$SetServoAngleArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({PinNumberArg pinNumber, int pinValue});
+
+  @override
+  $PinNumberArgCopyWith<$Res> get pinNumber;
 }
 
 /// @nodoc
@@ -284,13 +304,18 @@ class __$SetServoAngleArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? pinNumber = freezed,
+    Object? pinValue = freezed,
   }) {
     return _then(_SetServoAngleArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      pinNumber: pinNumber == freezed
+          ? _value.pinNumber
+          : pinNumber // ignore: cast_nullable_to_non_nullable
+              as PinNumberArg,
+      pinValue: pinValue == freezed
+          ? _value.pinValue
+          : pinValue // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -298,30 +323,38 @@ class __$SetServoAngleArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SetServoAngleArgs implements _SetServoAngleArgs {
-  const _$_SetServoAngleArgs({required this.axis});
+  const _$_SetServoAngleArgs({required this.pinNumber, required this.pinValue});
 
   factory _$_SetServoAngleArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_SetServoAngleArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final PinNumberArg pinNumber;
+  @override
+  final int pinValue;
 
   @override
   String toString() {
-    return 'SetServoAngleArgs(axis: $axis)';
+    return 'SetServoAngleArgs(pinNumber: $pinNumber, pinValue: $pinValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SetServoAngleArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.pinNumber, pinNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.pinNumber, pinNumber)) &&
+            (identical(other.pinValue, pinValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.pinValue, pinValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(pinNumber) ^
+      const DeepCollectionEquality().hash(pinValue);
 
   @JsonKey(ignore: true)
   @override
@@ -335,14 +368,17 @@ class _$_SetServoAngleArgs implements _SetServoAngleArgs {
 }
 
 abstract class _SetServoAngleArgs implements SetServoAngleArgs {
-  const factory _SetServoAngleArgs({required AllowedAxis axis}) =
-      _$_SetServoAngleArgs;
+  const factory _SetServoAngleArgs(
+      {required PinNumberArg pinNumber,
+      required int pinValue}) = _$_SetServoAngleArgs;
 
   factory _SetServoAngleArgs.fromJson(Map<String, dynamic> json) =
       _$_SetServoAngleArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  PinNumberArg get pinNumber => throw _privateConstructorUsedError;
+  @override
+  int get pinValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SetServoAngleArgsCopyWith<_SetServoAngleArgs> get copyWith =>

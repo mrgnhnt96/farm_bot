@@ -20,10 +20,10 @@ SetUserEnv _$SetUserEnvFromJson(Map<String, dynamic> json) {
 class _$SetUserEnvTearOff {
   const _$SetUserEnvTearOff();
 
-  _DefaultSetUserEnv call({String? comment, required SetUserEnvArgs args}) {
+  _DefaultSetUserEnv call({String? comment, List<SetUserEnvBodyItem>? body}) {
     return _DefaultSetUserEnv(
       comment: comment,
-      args: args,
+      body: body,
     );
   }
 
@@ -38,7 +38,7 @@ const $SetUserEnv = _$SetUserEnvTearOff();
 /// @nodoc
 mixin _$SetUserEnv {
   String? get comment => throw _privateConstructorUsedError;
-  SetUserEnvArgs get args => throw _privateConstructorUsedError;
+  List<SetUserEnvBodyItem>? get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,9 +51,7 @@ abstract class $SetUserEnvCopyWith<$Res> {
   factory $SetUserEnvCopyWith(
           SetUserEnv value, $Res Function(SetUserEnv) then) =
       _$SetUserEnvCopyWithImpl<$Res>;
-  $Res call({String? comment, SetUserEnvArgs args});
-
-  $SetUserEnvArgsCopyWith<$Res> get args;
+  $Res call({String? comment, List<SetUserEnvBodyItem>? body});
 }
 
 /// @nodoc
@@ -67,25 +65,18 @@ class _$SetUserEnvCopyWithImpl<$Res> implements $SetUserEnvCopyWith<$Res> {
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as SetUserEnvArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<SetUserEnvBodyItem>?,
     ));
-  }
-
-  @override
-  $SetUserEnvArgsCopyWith<$Res> get args {
-    return $SetUserEnvArgsCopyWith<$Res>(_value.args, (value) {
-      return _then(_value.copyWith(args: value));
-    });
   }
 }
 
@@ -96,10 +87,7 @@ abstract class _$DefaultSetUserEnvCopyWith<$Res>
           _DefaultSetUserEnv value, $Res Function(_DefaultSetUserEnv) then) =
       __$DefaultSetUserEnvCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment, SetUserEnvArgs args});
-
-  @override
-  $SetUserEnvArgsCopyWith<$Res> get args;
+  $Res call({String? comment, List<SetUserEnvBodyItem>? body});
 }
 
 /// @nodoc
@@ -116,17 +104,17 @@ class __$DefaultSetUserEnvCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
-    Object? args = freezed,
+    Object? body = freezed,
   }) {
     return _then(_DefaultSetUserEnv(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      args: args == freezed
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as SetUserEnvArgs,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<SetUserEnvBodyItem>?,
     ));
   }
 }
@@ -134,7 +122,7 @@ class __$DefaultSetUserEnvCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultSetUserEnv extends _DefaultSetUserEnv {
-  const _$_DefaultSetUserEnv({this.comment, required this.args}) : super._();
+  const _$_DefaultSetUserEnv({this.comment, this.body}) : super._();
 
   factory _$_DefaultSetUserEnv.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultSetUserEnvFromJson(json);
@@ -142,11 +130,11 @@ class _$_DefaultSetUserEnv extends _DefaultSetUserEnv {
   @override
   final String? comment;
   @override
-  final SetUserEnvArgs args;
+  final List<SetUserEnvBodyItem>? body;
 
   @override
   String toString() {
-    return 'SetUserEnv(comment: $comment, args: $args)';
+    return 'SetUserEnv(comment: $comment, body: $body)';
   }
 
   @override
@@ -156,15 +144,15 @@ class _$_DefaultSetUserEnv extends _DefaultSetUserEnv {
             (identical(other.comment, comment) ||
                 const DeepCollectionEquality()
                     .equals(other.comment, comment)) &&
-            (identical(other.args, args) ||
-                const DeepCollectionEquality().equals(other.args, args)));
+            (identical(other.body, body) ||
+                const DeepCollectionEquality().equals(other.body, body)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(args);
+      const DeepCollectionEquality().hash(body);
 
   @JsonKey(ignore: true)
   @override
@@ -179,7 +167,7 @@ class _$_DefaultSetUserEnv extends _DefaultSetUserEnv {
 
 abstract class _DefaultSetUserEnv extends SetUserEnv {
   const factory _DefaultSetUserEnv(
-      {String? comment, required SetUserEnvArgs args}) = _$_DefaultSetUserEnv;
+      {String? comment, List<SetUserEnvBodyItem>? body}) = _$_DefaultSetUserEnv;
   const _DefaultSetUserEnv._() : super._();
 
   factory _DefaultSetUserEnv.fromJson(Map<String, dynamic> json) =
@@ -188,159 +176,170 @@ abstract class _DefaultSetUserEnv extends SetUserEnv {
   @override
   String? get comment => throw _privateConstructorUsedError;
   @override
-  SetUserEnvArgs get args => throw _privateConstructorUsedError;
+  List<SetUserEnvBodyItem>? get body => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DefaultSetUserEnvCopyWith<_DefaultSetUserEnv> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-SetUserEnvArgs _$SetUserEnvArgsFromJson(Map<String, dynamic> json) {
-  return _SetUserEnvArgs.fromJson(json);
+SetUserEnvBodyItem _$SetUserEnvBodyItemFromJson(Map<String, dynamic> json) {
+  return _SetUserEnvBodyItem.fromJson(json);
 }
 
 /// @nodoc
-class _$SetUserEnvArgsTearOff {
-  const _$SetUserEnvArgsTearOff();
+class _$SetUserEnvBodyItemTearOff {
+  const _$SetUserEnvBodyItemTearOff();
 
-  _SetUserEnvArgs call({required AllowedAxis axis}) {
-    return _SetUserEnvArgs(
-      axis: axis,
+  _SetUserEnvBodyItem call(Pair value) {
+    return _SetUserEnvBodyItem(
+      value,
     );
   }
 
-  SetUserEnvArgs fromJson(Map<String, Object> json) {
-    return SetUserEnvArgs.fromJson(json);
+  SetUserEnvBodyItem fromJson(Map<String, Object> json) {
+    return SetUserEnvBodyItem.fromJson(json);
   }
 }
 
 /// @nodoc
-const $SetUserEnvArgs = _$SetUserEnvArgsTearOff();
+const $SetUserEnvBodyItem = _$SetUserEnvBodyItemTearOff();
 
 /// @nodoc
-mixin _$SetUserEnvArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+mixin _$SetUserEnvBodyItem {
+  Pair get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SetUserEnvArgsCopyWith<SetUserEnvArgs> get copyWith =>
+  $SetUserEnvBodyItemCopyWith<SetUserEnvBodyItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SetUserEnvArgsCopyWith<$Res> {
-  factory $SetUserEnvArgsCopyWith(
-          SetUserEnvArgs value, $Res Function(SetUserEnvArgs) then) =
-      _$SetUserEnvArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+abstract class $SetUserEnvBodyItemCopyWith<$Res> {
+  factory $SetUserEnvBodyItemCopyWith(
+          SetUserEnvBodyItem value, $Res Function(SetUserEnvBodyItem) then) =
+      _$SetUserEnvBodyItemCopyWithImpl<$Res>;
+  $Res call({Pair value});
+
+  $PairCopyWith<$Res> get value;
 }
 
 /// @nodoc
-class _$SetUserEnvArgsCopyWithImpl<$Res>
-    implements $SetUserEnvArgsCopyWith<$Res> {
-  _$SetUserEnvArgsCopyWithImpl(this._value, this._then);
+class _$SetUserEnvBodyItemCopyWithImpl<$Res>
+    implements $SetUserEnvBodyItemCopyWith<$Res> {
+  _$SetUserEnvBodyItemCopyWithImpl(this._value, this._then);
 
-  final SetUserEnvArgs _value;
+  final SetUserEnvBodyItem _value;
   // ignore: unused_field
-  final $Res Function(SetUserEnvArgs) _then;
+  final $Res Function(SetUserEnvBodyItem) _then;
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Pair,
     ));
+  }
+
+  @override
+  $PairCopyWith<$Res> get value {
+    return $PairCopyWith<$Res>(_value.value, (value) {
+      return _then(_value.copyWith(value: value));
+    });
   }
 }
 
 /// @nodoc
-abstract class _$SetUserEnvArgsCopyWith<$Res>
-    implements $SetUserEnvArgsCopyWith<$Res> {
-  factory _$SetUserEnvArgsCopyWith(
-          _SetUserEnvArgs value, $Res Function(_SetUserEnvArgs) then) =
-      __$SetUserEnvArgsCopyWithImpl<$Res>;
+abstract class _$SetUserEnvBodyItemCopyWith<$Res>
+    implements $SetUserEnvBodyItemCopyWith<$Res> {
+  factory _$SetUserEnvBodyItemCopyWith(
+          _SetUserEnvBodyItem value, $Res Function(_SetUserEnvBodyItem) then) =
+      __$SetUserEnvBodyItemCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({Pair value});
+
+  @override
+  $PairCopyWith<$Res> get value;
 }
 
 /// @nodoc
-class __$SetUserEnvArgsCopyWithImpl<$Res>
-    extends _$SetUserEnvArgsCopyWithImpl<$Res>
-    implements _$SetUserEnvArgsCopyWith<$Res> {
-  __$SetUserEnvArgsCopyWithImpl(
-      _SetUserEnvArgs _value, $Res Function(_SetUserEnvArgs) _then)
-      : super(_value, (v) => _then(v as _SetUserEnvArgs));
+class __$SetUserEnvBodyItemCopyWithImpl<$Res>
+    extends _$SetUserEnvBodyItemCopyWithImpl<$Res>
+    implements _$SetUserEnvBodyItemCopyWith<$Res> {
+  __$SetUserEnvBodyItemCopyWithImpl(
+      _SetUserEnvBodyItem _value, $Res Function(_SetUserEnvBodyItem) _then)
+      : super(_value, (v) => _then(v as _SetUserEnvBodyItem));
 
   @override
-  _SetUserEnvArgs get _value => super._value as _SetUserEnvArgs;
+  _SetUserEnvBodyItem get _value => super._value as _SetUserEnvBodyItem;
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? value = freezed,
   }) {
-    return _then(_SetUserEnvArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+    return _then(_SetUserEnvBodyItem(
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Pair,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_SetUserEnvArgs implements _SetUserEnvArgs {
-  const _$_SetUserEnvArgs({required this.axis});
+class _$_SetUserEnvBodyItem implements _SetUserEnvBodyItem {
+  const _$_SetUserEnvBodyItem(this.value);
 
-  factory _$_SetUserEnvArgs.fromJson(Map<String, dynamic> json) =>
-      _$_$_SetUserEnvArgsFromJson(json);
+  factory _$_SetUserEnvBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$_$_SetUserEnvBodyItemFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final Pair value;
 
   @override
   String toString() {
-    return 'SetUserEnvArgs(axis: $axis)';
+    return 'SetUserEnvBodyItem(value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SetUserEnvArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+        (other is _SetUserEnvBodyItem &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
   @JsonKey(ignore: true)
   @override
-  _$SetUserEnvArgsCopyWith<_SetUserEnvArgs> get copyWith =>
-      __$SetUserEnvArgsCopyWithImpl<_SetUserEnvArgs>(this, _$identity);
+  _$SetUserEnvBodyItemCopyWith<_SetUserEnvBodyItem> get copyWith =>
+      __$SetUserEnvBodyItemCopyWithImpl<_SetUserEnvBodyItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SetUserEnvArgsToJson(this);
+    return _$_$_SetUserEnvBodyItemToJson(this);
   }
 }
 
-abstract class _SetUserEnvArgs implements SetUserEnvArgs {
-  const factory _SetUserEnvArgs({required AllowedAxis axis}) =
-      _$_SetUserEnvArgs;
+abstract class _SetUserEnvBodyItem implements SetUserEnvBodyItem {
+  const factory _SetUserEnvBodyItem(Pair value) = _$_SetUserEnvBodyItem;
 
-  factory _SetUserEnvArgs.fromJson(Map<String, dynamic> json) =
-      _$_SetUserEnvArgs.fromJson;
+  factory _SetUserEnvBodyItem.fromJson(Map<String, dynamic> json) =
+      _$_SetUserEnvBodyItem.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  Pair get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SetUserEnvArgsCopyWith<_SetUserEnvArgs> get copyWith =>
+  _$SetUserEnvBodyItemCopyWith<_SetUserEnvBodyItem> get copyWith =>
       throw _privateConstructorUsedError;
 }

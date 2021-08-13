@@ -12,7 +12,7 @@ class ChangeOwnership with _$ChangeOwnership implements CeleryScript {
   const ChangeOwnership._();
   const factory ChangeOwnership({
     String? comment,
-    Pair? body,
+    List<ChangeOwnershipBodyItem>? body,
   }) = _DefaultChangeOwnership;
 
   factory ChangeOwnership.fromJson(Map<String, dynamic> json) =>
@@ -25,8 +25,15 @@ class ChangeOwnership with _$ChangeOwnership implements CeleryScript {
   CeleryNode toRequest() {
     return CeleryNode(
       kind: kind,
-      args: {},
-      body: body != null ? [body!.toJson()] : [],
+      body: body?.map((e) => e.toJson()).toList() ?? [],
     );
   }
+}
+
+@freezed
+class ChangeOwnershipBodyItem with _$ChangeOwnershipBodyItem {
+  const factory ChangeOwnershipBodyItem(Pair value) = _ChangeOwnershipBodyItem;
+
+  factory ChangeOwnershipBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$ChangeOwnershipBodyItemFromJson(json);
 }

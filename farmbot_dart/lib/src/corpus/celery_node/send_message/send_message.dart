@@ -1,3 +1,4 @@
+import 'package:farmbot/src/corpus/celery_node/channel/channel.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
@@ -13,6 +14,7 @@ class SendMessage with _$SendMessage implements CeleryScript {
   const factory SendMessage({
     String? comment,
     required SendMessageArgs args,
+    List<SendMessageBodyItem>? body,
   }) = _DefaultSendMessage;
 
   factory SendMessage.fromJson(Map<String, dynamic> json) =>
@@ -23,16 +25,29 @@ class SendMessage with _$SendMessage implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+      body: body?.map((e) => e.toJson()).toList() ?? [],
+    );
   }
 }
 
 @freezed
 class SendMessageArgs with _$SendMessageArgs {
   const factory SendMessageArgs({
-    required AllowedAxis axis,
+    required String message,
+    required AllowedMessageTypes messageType,
   }) = _SendMessageArgs;
 
   factory SendMessageArgs.fromJson(Map<String, dynamic> json) =>
       _$SendMessageArgsFromJson(json);
+}
+
+@freezed
+class SendMessageBodyItem with _$SendMessageBodyItem {
+  const factory SendMessageBodyItem(Channel value) = _SendMessageBodyItem;
+
+  factory SendMessageBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$SendMessageBodyItemFromJson(json);
 }

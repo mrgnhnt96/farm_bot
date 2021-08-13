@@ -205,9 +205,9 @@ SpecialValueArgs _$SpecialValueArgsFromJson(Map<String, dynamic> json) {
 class _$SpecialValueArgsTearOff {
   const _$SpecialValueArgsTearOff();
 
-  _SpecialValueArgs call({required AllowedAxis axis}) {
+  _SpecialValueArgs call({required String label}) {
     return _SpecialValueArgs(
-      axis: axis,
+      label: label,
     );
   }
 
@@ -221,7 +221,7 @@ const $SpecialValueArgs = _$SpecialValueArgsTearOff();
 
 /// @nodoc
 mixin _$SpecialValueArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -234,7 +234,7 @@ abstract class $SpecialValueArgsCopyWith<$Res> {
   factory $SpecialValueArgsCopyWith(
           SpecialValueArgs value, $Res Function(SpecialValueArgs) then) =
       _$SpecialValueArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({String label});
 }
 
 /// @nodoc
@@ -248,13 +248,13 @@ class _$SpecialValueArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? label = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -266,7 +266,7 @@ abstract class _$SpecialValueArgsCopyWith<$Res>
           _SpecialValueArgs value, $Res Function(_SpecialValueArgs) then) =
       __$SpecialValueArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({String label});
 }
 
 /// @nodoc
@@ -282,13 +282,13 @@ class __$SpecialValueArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? label = freezed,
   }) {
     return _then(_SpecialValueArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -296,30 +296,30 @@ class __$SpecialValueArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SpecialValueArgs implements _SpecialValueArgs {
-  const _$_SpecialValueArgs({required this.axis});
+  const _$_SpecialValueArgs({required this.label});
 
   factory _$_SpecialValueArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_SpecialValueArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final String label;
 
   @override
   String toString() {
-    return 'SpecialValueArgs(axis: $axis)';
+    return 'SpecialValueArgs(label: $label)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SpecialValueArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.label, label) ||
+                const DeepCollectionEquality().equals(other.label, label)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(label);
 
   @JsonKey(ignore: true)
   @override
@@ -333,14 +333,14 @@ class _$_SpecialValueArgs implements _SpecialValueArgs {
 }
 
 abstract class _SpecialValueArgs implements SpecialValueArgs {
-  const factory _SpecialValueArgs({required AllowedAxis axis}) =
+  const factory _SpecialValueArgs({required String label}) =
       _$_SpecialValueArgs;
 
   factory _SpecialValueArgs.fromJson(Map<String, dynamic> json) =
       _$_SpecialValueArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SpecialValueArgsCopyWith<_SpecialValueArgs> get copyWith =>

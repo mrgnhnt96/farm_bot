@@ -20,9 +20,11 @@ InternalFarmEvent _$InternalFarmEventFromJson(Map<String, dynamic> json) {
 class _$InternalFarmEventTearOff {
   const _$InternalFarmEventTearOff();
 
-  _DefaultInternalFarmEvent call({String? comment}) {
+  _DefaultInternalFarmEvent call(
+      {String? comment, List<InternalFarmEventBodyItem>? body}) {
     return _DefaultInternalFarmEvent(
       comment: comment,
+      body: body,
     );
   }
 
@@ -37,6 +39,8 @@ const $InternalFarmEvent = _$InternalFarmEventTearOff();
 /// @nodoc
 mixin _$InternalFarmEvent {
   String? get comment => throw _privateConstructorUsedError;
+  List<InternalFarmEventBodyItem>? get body =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +53,7 @@ abstract class $InternalFarmEventCopyWith<$Res> {
   factory $InternalFarmEventCopyWith(
           InternalFarmEvent value, $Res Function(InternalFarmEvent) then) =
       _$InternalFarmEventCopyWithImpl<$Res>;
-  $Res call({String? comment});
+  $Res call({String? comment, List<InternalFarmEventBodyItem>? body});
 }
 
 /// @nodoc
@@ -64,12 +68,17 @@ class _$InternalFarmEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
+    Object? body = freezed,
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<InternalFarmEventBodyItem>?,
     ));
   }
 }
@@ -81,7 +90,7 @@ abstract class _$DefaultInternalFarmEventCopyWith<$Res>
           $Res Function(_DefaultInternalFarmEvent) then) =
       __$DefaultInternalFarmEventCopyWithImpl<$Res>;
   @override
-  $Res call({String? comment});
+  $Res call({String? comment, List<InternalFarmEventBodyItem>? body});
 }
 
 /// @nodoc
@@ -99,12 +108,17 @@ class __$DefaultInternalFarmEventCopyWithImpl<$Res>
   @override
   $Res call({
     Object? comment = freezed,
+    Object? body = freezed,
   }) {
     return _then(_DefaultInternalFarmEvent(
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
               as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<InternalFarmEventBodyItem>?,
     ));
   }
 }
@@ -112,17 +126,19 @@ class __$DefaultInternalFarmEventCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultInternalFarmEvent extends _DefaultInternalFarmEvent {
-  const _$_DefaultInternalFarmEvent({this.comment}) : super._();
+  const _$_DefaultInternalFarmEvent({this.comment, this.body}) : super._();
 
   factory _$_DefaultInternalFarmEvent.fromJson(Map<String, dynamic> json) =>
       _$_$_DefaultInternalFarmEventFromJson(json);
 
   @override
   final String? comment;
+  @override
+  final List<InternalFarmEventBodyItem>? body;
 
   @override
   String toString() {
-    return 'InternalFarmEvent(comment: $comment)';
+    return 'InternalFarmEvent(comment: $comment, body: $body)';
   }
 
   @override
@@ -130,12 +146,17 @@ class _$_DefaultInternalFarmEvent extends _DefaultInternalFarmEvent {
     return identical(this, other) ||
         (other is _DefaultInternalFarmEvent &&
             (identical(other.comment, comment) ||
-                const DeepCollectionEquality().equals(other.comment, comment)));
+                const DeepCollectionEquality()
+                    .equals(other.comment, comment)) &&
+            (identical(other.body, body) ||
+                const DeepCollectionEquality().equals(other.body, body)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(comment) ^
+      const DeepCollectionEquality().hash(body);
 
   @JsonKey(ignore: true)
   @override
@@ -150,8 +171,9 @@ class _$_DefaultInternalFarmEvent extends _DefaultInternalFarmEvent {
 }
 
 abstract class _DefaultInternalFarmEvent extends InternalFarmEvent {
-  const factory _DefaultInternalFarmEvent({String? comment}) =
-      _$_DefaultInternalFarmEvent;
+  const factory _DefaultInternalFarmEvent(
+      {String? comment,
+      List<InternalFarmEventBodyItem>? body}) = _$_DefaultInternalFarmEvent;
   const _DefaultInternalFarmEvent._() : super._();
 
   factory _DefaultInternalFarmEvent.fromJson(Map<String, dynamic> json) =
@@ -160,7 +182,173 @@ abstract class _DefaultInternalFarmEvent extends InternalFarmEvent {
   @override
   String? get comment => throw _privateConstructorUsedError;
   @override
+  List<InternalFarmEventBodyItem>? get body =>
+      throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$DefaultInternalFarmEventCopyWith<_DefaultInternalFarmEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+InternalFarmEventBodyItem _$InternalFarmEventBodyItemFromJson(
+    Map<String, dynamic> json) {
+  return _ExecuteBodyItem.fromJson(json);
+}
+
+/// @nodoc
+class _$InternalFarmEventBodyItemTearOff {
+  const _$InternalFarmEventBodyItemTearOff();
+
+  _ExecuteBodyItem call(ParameterApplication value) {
+    return _ExecuteBodyItem(
+      value,
+    );
+  }
+
+  InternalFarmEventBodyItem fromJson(Map<String, Object> json) {
+    return InternalFarmEventBodyItem.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $InternalFarmEventBodyItem = _$InternalFarmEventBodyItemTearOff();
+
+/// @nodoc
+mixin _$InternalFarmEventBodyItem {
+  ParameterApplication get value => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InternalFarmEventBodyItemCopyWith<InternalFarmEventBodyItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InternalFarmEventBodyItemCopyWith<$Res> {
+  factory $InternalFarmEventBodyItemCopyWith(InternalFarmEventBodyItem value,
+          $Res Function(InternalFarmEventBodyItem) then) =
+      _$InternalFarmEventBodyItemCopyWithImpl<$Res>;
+  $Res call({ParameterApplication value});
+
+  $ParameterApplicationCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class _$InternalFarmEventBodyItemCopyWithImpl<$Res>
+    implements $InternalFarmEventBodyItemCopyWith<$Res> {
+  _$InternalFarmEventBodyItemCopyWithImpl(this._value, this._then);
+
+  final InternalFarmEventBodyItem _value;
+  // ignore: unused_field
+  final $Res Function(InternalFarmEventBodyItem) _then;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_value.copyWith(
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as ParameterApplication,
+    ));
+  }
+
+  @override
+  $ParameterApplicationCopyWith<$Res> get value {
+    return $ParameterApplicationCopyWith<$Res>(_value.value, (value) {
+      return _then(_value.copyWith(value: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$ExecuteBodyItemCopyWith<$Res>
+    implements $InternalFarmEventBodyItemCopyWith<$Res> {
+  factory _$ExecuteBodyItemCopyWith(
+          _ExecuteBodyItem value, $Res Function(_ExecuteBodyItem) then) =
+      __$ExecuteBodyItemCopyWithImpl<$Res>;
+  @override
+  $Res call({ParameterApplication value});
+
+  @override
+  $ParameterApplicationCopyWith<$Res> get value;
+}
+
+/// @nodoc
+class __$ExecuteBodyItemCopyWithImpl<$Res>
+    extends _$InternalFarmEventBodyItemCopyWithImpl<$Res>
+    implements _$ExecuteBodyItemCopyWith<$Res> {
+  __$ExecuteBodyItemCopyWithImpl(
+      _ExecuteBodyItem _value, $Res Function(_ExecuteBodyItem) _then)
+      : super(_value, (v) => _then(v as _ExecuteBodyItem));
+
+  @override
+  _ExecuteBodyItem get _value => super._value as _ExecuteBodyItem;
+
+  @override
+  $Res call({
+    Object? value = freezed,
+  }) {
+    return _then(_ExecuteBodyItem(
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as ParameterApplication,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ExecuteBodyItem implements _ExecuteBodyItem {
+  const _$_ExecuteBodyItem(this.value);
+
+  factory _$_ExecuteBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$_$_ExecuteBodyItemFromJson(json);
+
+  @override
+  final ParameterApplication value;
+
+  @override
+  String toString() {
+    return 'InternalFarmEventBodyItem(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ExecuteBodyItem &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ExecuteBodyItemCopyWith<_ExecuteBodyItem> get copyWith =>
+      __$ExecuteBodyItemCopyWithImpl<_ExecuteBodyItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ExecuteBodyItemToJson(this);
+  }
+}
+
+abstract class _ExecuteBodyItem implements InternalFarmEventBodyItem {
+  const factory _ExecuteBodyItem(ParameterApplication value) =
+      _$_ExecuteBodyItem;
+
+  factory _ExecuteBodyItem.fromJson(Map<String, dynamic> json) =
+      _$_ExecuteBodyItem.fromJson;
+
+  @override
+  ParameterApplication get value => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ExecuteBodyItemCopyWith<_ExecuteBodyItem> get copyWith =>
       throw _privateConstructorUsedError;
 }

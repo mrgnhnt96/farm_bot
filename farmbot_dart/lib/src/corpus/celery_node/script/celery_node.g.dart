@@ -10,10 +10,14 @@ _$_CeleryNode _$_$_CeleryNodeFromJson(Map json) {
   return _$_CeleryNode(
     comment: json['comment'] as String?,
     body: (json['body'] as List<dynamic>?)
-        ?.map((e) => Map<String, dynamic>.from(e as Map))
-        .toList(),
+            ?.map((e) => Map<String, dynamic>.from(e as Map))
+            .toList() ??
+        [],
     kind: json['kind'] as String,
-    args: Map<String, dynamic>.from(json['args'] as Map),
+    args: (json['args'] as Map?)?.map(
+          (k, e) => MapEntry(k as String, e),
+        ) ??
+        {},
   );
 }
 
@@ -27,7 +31,7 @@ Map<String, dynamic> _$_$_CeleryNodeToJson(_$_CeleryNode instance) {
   }
 
   writeNotNull('comment', instance.comment);
-  writeNotNull('body', instance.body);
+  val['body'] = instance.body;
   val['kind'] = instance.kind;
   val['args'] = instance.args;
   return val;

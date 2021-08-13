@@ -211,9 +211,11 @@ VariableDeclarationArgs _$VariableDeclarationArgsFromJson(
 class _$VariableDeclarationArgsTearOff {
   const _$VariableDeclarationArgsTearOff();
 
-  _VariableDeclarationArgs call({required AllowedAxis axis}) {
+  _VariableDeclarationArgs call(
+      {required DataValueArg dataValue, required String label}) {
     return _VariableDeclarationArgs(
-      axis: axis,
+      dataValue: dataValue,
+      label: label,
     );
   }
 
@@ -227,7 +229,8 @@ const $VariableDeclarationArgs = _$VariableDeclarationArgsTearOff();
 
 /// @nodoc
 mixin _$VariableDeclarationArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  DataValueArg get dataValue => throw _privateConstructorUsedError;
+  String get label => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -240,7 +243,9 @@ abstract class $VariableDeclarationArgsCopyWith<$Res> {
   factory $VariableDeclarationArgsCopyWith(VariableDeclarationArgs value,
           $Res Function(VariableDeclarationArgs) then) =
       _$VariableDeclarationArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({DataValueArg dataValue, String label});
+
+  $DataValueArgCopyWith<$Res> get dataValue;
 }
 
 /// @nodoc
@@ -254,14 +259,26 @@ class _$VariableDeclarationArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? dataValue = freezed,
+    Object? label = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      dataValue: dataValue == freezed
+          ? _value.dataValue
+          : dataValue // ignore: cast_nullable_to_non_nullable
+              as DataValueArg,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
+  }
+
+  @override
+  $DataValueArgCopyWith<$Res> get dataValue {
+    return $DataValueArgCopyWith<$Res>(_value.dataValue, (value) {
+      return _then(_value.copyWith(dataValue: value));
+    });
   }
 }
 
@@ -272,7 +289,10 @@ abstract class _$VariableDeclarationArgsCopyWith<$Res>
           $Res Function(_VariableDeclarationArgs) then) =
       __$VariableDeclarationArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({DataValueArg dataValue, String label});
+
+  @override
+  $DataValueArgCopyWith<$Res> get dataValue;
 }
 
 /// @nodoc
@@ -289,13 +309,18 @@ class __$VariableDeclarationArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? dataValue = freezed,
+    Object? label = freezed,
   }) {
     return _then(_VariableDeclarationArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      dataValue: dataValue == freezed
+          ? _value.dataValue
+          : dataValue // ignore: cast_nullable_to_non_nullable
+              as DataValueArg,
+      label: label == freezed
+          ? _value.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -303,30 +328,38 @@ class __$VariableDeclarationArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_VariableDeclarationArgs implements _VariableDeclarationArgs {
-  const _$_VariableDeclarationArgs({required this.axis});
+  const _$_VariableDeclarationArgs(
+      {required this.dataValue, required this.label});
 
   factory _$_VariableDeclarationArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_VariableDeclarationArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final DataValueArg dataValue;
+  @override
+  final String label;
 
   @override
   String toString() {
-    return 'VariableDeclarationArgs(axis: $axis)';
+    return 'VariableDeclarationArgs(dataValue: $dataValue, label: $label)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _VariableDeclarationArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.dataValue, dataValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.dataValue, dataValue)) &&
+            (identical(other.label, label) ||
+                const DeepCollectionEquality().equals(other.label, label)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(dataValue) ^
+      const DeepCollectionEquality().hash(label);
 
   @JsonKey(ignore: true)
   @override
@@ -341,14 +374,17 @@ class _$_VariableDeclarationArgs implements _VariableDeclarationArgs {
 }
 
 abstract class _VariableDeclarationArgs implements VariableDeclarationArgs {
-  const factory _VariableDeclarationArgs({required AllowedAxis axis}) =
-      _$_VariableDeclarationArgs;
+  const factory _VariableDeclarationArgs(
+      {required DataValueArg dataValue,
+      required String label}) = _$_VariableDeclarationArgs;
 
   factory _VariableDeclarationArgs.fromJson(Map<String, dynamic> json) =
       _$_VariableDeclarationArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  DataValueArg get dataValue => throw _privateConstructorUsedError;
+  @override
+  String get label => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$VariableDeclarationArgsCopyWith<_VariableDeclarationArgs> get copyWith =>

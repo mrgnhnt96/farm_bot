@@ -11,6 +11,9 @@ _$_DefaultRpcRequest _$_$_DefaultRpcRequestFromJson(Map json) {
     comment: json['comment'] as String?,
     args:
         RpcRequestArgs.fromJson(Map<String, dynamic>.from(json['args'] as Map)),
+    body: (json['body'] as List<dynamic>?)
+        ?.map((e) => AnyBodyItem.fromJson(Map<String, dynamic>.from(e as Map)))
+        .toList(),
   );
 }
 
@@ -26,49 +29,19 @@ Map<String, dynamic> _$_$_DefaultRpcRequestToJson(
 
   writeNotNull('comment', instance.comment);
   val['args'] = instance.args.toJson();
+  writeNotNull('body', instance.body?.map((e) => e.toJson()).toList());
   return val;
 }
 
 _$_RpcRequestArgs _$_$_RpcRequestArgsFromJson(Map json) {
   return _$_RpcRequestArgs(
-    axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+    label: json['label'] as String,
+    priority: json['priority'] as int,
   );
 }
 
 Map<String, dynamic> _$_$_RpcRequestArgsToJson(_$_RpcRequestArgs instance) =>
     <String, dynamic>{
-      'axis': _$AllowedAxisEnumMap[instance.axis],
+      'label': instance.label,
+      'priority': instance.priority,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-const _$AllowedAxisEnumMap = {
-  AllowedAxis.all: 'all',
-  AllowedAxis.x: 'x',
-  AllowedAxis.y: 'y',
-  AllowedAxis.z: 'z',
-};

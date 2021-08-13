@@ -1,8 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
+import 'package:farmbot/src/corpus/celery_node/parameter_application/parameter_application.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'execute.freezed.dart';
 part 'execute.g.dart';
@@ -13,6 +12,7 @@ class Execute with _$Execute implements CeleryScript {
   const factory Execute({
     String? comment,
     required ExecuteArgs args,
+    List<ExecuteBodyItem>? body,
   }) = _DefaultExecute;
 
   factory Execute.fromJson(Map<String, dynamic> json) =>
@@ -23,7 +23,11 @@ class Execute with _$Execute implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+      body: body?.map((e) => e.toJson()).toList() ?? [],
+    );
   }
 }
 
@@ -35,4 +39,12 @@ class ExecuteArgs with _$ExecuteArgs {
 
   factory ExecuteArgs.fromJson(Map<String, dynamic> json) =>
       _$ExecuteArgsFromJson(json);
+}
+
+@freezed
+class ExecuteBodyItem with _$ExecuteBodyItem {
+  const factory ExecuteBodyItem(ParameterApplication value) = _ExecuteBodyItem;
+
+  factory ExecuteBodyItem.fromJson(Map<String, dynamic> json) =>
+      _$ExecuteBodyItemFromJson(json);
 }

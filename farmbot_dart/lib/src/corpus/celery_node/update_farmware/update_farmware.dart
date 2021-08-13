@@ -1,8 +1,6 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'update_farmware.freezed.dart';
 part 'update_farmware.g.dart';
@@ -23,14 +21,17 @@ class UpdateFarmware with _$UpdateFarmware implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 
 @freezed
 class UpdateFarmwareArgs with _$UpdateFarmwareArgs {
   const factory UpdateFarmwareArgs({
-    required AllowedAxis axis,
+    required String package,
   }) = _UpdateFarmwareArgs;
 
   factory UpdateFarmwareArgs.fromJson(Map<String, dynamic> json) =>

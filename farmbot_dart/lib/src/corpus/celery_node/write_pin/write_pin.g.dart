@@ -29,44 +29,24 @@ Map<String, dynamic> _$_$_DefaultWritePinToJson(_$_DefaultWritePin instance) {
 
 _$_WritePinArgs _$_$_WritePinArgsFromJson(Map json) {
   return _$_WritePinArgs(
-    axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+    pinModes: AllowedPinModes.pinModeFromJson(json['pin_modes'] as int),
+    pinNumber: PinNumberArg.fromJson(
+        Map<String, dynamic>.from(json['pin_number'] as Map)),
+    pinValue: json['pin_value'] as int,
   );
 }
 
-Map<String, dynamic> _$_$_WritePinArgsToJson(_$_WritePinArgs instance) =>
-    <String, dynamic>{
-      'axis': _$AllowedAxisEnumMap[instance.axis],
-    };
+Map<String, dynamic> _$_$_WritePinArgsToJson(_$_WritePinArgs instance) {
+  final val = <String, dynamic>{};
 
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
   }
 
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
+  writeNotNull('pin_modes', AllowedPinModes.pinModeToJson(instance.pinModes));
+  val['pin_number'] = instance.pinNumber.toJson();
+  val['pin_value'] = instance.pinValue;
+  return val;
 }
-
-const _$AllowedAxisEnumMap = {
-  AllowedAxis.all: 'all',
-  AllowedAxis.x: 'x',
-  AllowedAxis.y: 'y',
-  AllowedAxis.z: 'z',
-};

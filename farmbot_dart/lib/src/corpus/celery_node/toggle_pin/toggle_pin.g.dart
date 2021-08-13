@@ -30,44 +30,12 @@ Map<String, dynamic> _$_$_DefaultTogglePinToJson(_$_DefaultTogglePin instance) {
 
 _$_TogglePinArgs _$_$_TogglePinArgsFromJson(Map json) {
   return _$_TogglePinArgs(
-    axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+    pinNumber: PinNumberArg.fromJson(
+        Map<String, dynamic>.from(json['pin_number'] as Map)),
   );
 }
 
 Map<String, dynamic> _$_$_TogglePinArgsToJson(_$_TogglePinArgs instance) =>
     <String, dynamic>{
-      'axis': _$AllowedAxisEnumMap[instance.axis],
+      'pin_number': instance.pinNumber.toJson(),
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-const _$AllowedAxisEnumMap = {
-  AllowedAxis.all: 'all',
-  AllowedAxis.x: 'x',
-  AllowedAxis.y: 'y',
-  AllowedAxis.z: 'z',
-};

@@ -1,13 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
-import 'package:farmbot/src/corpus/celery_node/coordinate/coordinate.dart';
-import 'package:farmbot/src/corpus/celery_node/identifier/identifier.dart';
-import 'package:farmbot/src/corpus/celery_node/point/point.dart';
-import 'package:farmbot/src/corpus/celery_node/point_group/point_group.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/celery_node/tool/tool.dart';
-import 'package:farmbot/src/corpus/enums.dart';
+import 'package:farmbot/src/corpus/celery_node/shared/data_value_arg/data_value_arg.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'parameter_application.freezed.dart';
 part 'parameter_application.g.dart';
@@ -28,7 +22,10 @@ class ParameterApplication with _$ParameterApplication implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 
@@ -41,19 +38,4 @@ class ParameterApplicationArgs with _$ParameterApplicationArgs {
 
   factory ParameterApplicationArgs.fromJson(Map<String, dynamic> json) =>
       _$ParameterApplicationArgsFromJson(json);
-}
-
-@freezed
-class DataValueArg with _$DataValueArg {
-  const factory DataValueArg.tool(Tool value) = _DataValueArgTool;
-  const factory DataValueArg.coordinate(Coordinate value) =
-      _DataValueArgCoordinate;
-  const factory DataValueArg.point(Point value) = _DataValueArgPoint;
-  const factory DataValueArg.identifier(Identifier value) =
-      _DataValueArgIdentifier;
-  const factory DataValueArg.piontGroup(PointGroup value) =
-      _DataValueArgPointGroup;
-
-  factory DataValueArg.fromJson(Map<String, dynamic> json) =>
-      _$DataValueArgFromJson(json);
 }

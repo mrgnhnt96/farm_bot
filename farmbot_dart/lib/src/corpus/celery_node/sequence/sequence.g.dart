@@ -10,6 +10,9 @@ _$_DefaultSequence _$_$_DefaultSequenceFromJson(Map json) {
   return _$_DefaultSequence(
     comment: json['comment'] as String?,
     args: SequenceArgs.fromJson(Map<String, dynamic>.from(json['args'] as Map)),
+    body: (json['body'] as List<dynamic>?)
+        ?.map((e) => AnyBodyItem.fromJson(Map<String, dynamic>.from(e as Map)))
+        .toList(),
   );
 }
 
@@ -24,49 +27,20 @@ Map<String, dynamic> _$_$_DefaultSequenceToJson(_$_DefaultSequence instance) {
 
   writeNotNull('comment', instance.comment);
   val['args'] = instance.args.toJson();
+  writeNotNull('body', instance.body?.map((e) => e.toJson()).toList());
   return val;
 }
 
 _$_SequenceArgs _$_$_SequenceArgsFromJson(Map json) {
   return _$_SequenceArgs(
-    axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+    locals: ScopeDeclaration.fromJson(
+        Map<String, dynamic>.from(json['locals'] as Map)),
+    version: json['version'] as int,
   );
 }
 
 Map<String, dynamic> _$_$_SequenceArgsToJson(_$_SequenceArgs instance) =>
     <String, dynamic>{
-      'axis': _$AllowedAxisEnumMap[instance.axis],
+      'locals': instance.locals.toJson(),
+      'version': instance.version,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-const _$AllowedAxisEnumMap = {
-  AllowedAxis.all: 'all',
-  AllowedAxis.x: 'x',
-  AllowedAxis.y: 'y',
-  AllowedAxis.z: 'z',
-};

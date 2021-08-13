@@ -1,4 +1,4 @@
-import 'package:farmbot/src/corpus/celery_node/value_arg/value_arg.dart';
+import 'package:farmbot/src/corpus/celery_node/shared/value_arg/value_arg.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
@@ -24,7 +24,10 @@ class ResourceUpdate with _$ResourceUpdate implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 

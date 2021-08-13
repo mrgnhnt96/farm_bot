@@ -199,9 +199,9 @@ ToolArgs _$ToolArgsFromJson(Map<String, dynamic> json) {
 class _$ToolArgsTearOff {
   const _$ToolArgsTearOff();
 
-  _ToolArgs call({required AllowedAxis axis}) {
+  _ToolArgs call({required int toolId}) {
     return _ToolArgs(
-      axis: axis,
+      toolId: toolId,
     );
   }
 
@@ -215,7 +215,7 @@ const $ToolArgs = _$ToolArgsTearOff();
 
 /// @nodoc
 mixin _$ToolArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  int get toolId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -227,7 +227,7 @@ mixin _$ToolArgs {
 abstract class $ToolArgsCopyWith<$Res> {
   factory $ToolArgsCopyWith(ToolArgs value, $Res Function(ToolArgs) then) =
       _$ToolArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({int toolId});
 }
 
 /// @nodoc
@@ -240,13 +240,13 @@ class _$ToolArgsCopyWithImpl<$Res> implements $ToolArgsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? toolId = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      toolId: toolId == freezed
+          ? _value.toolId
+          : toolId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -256,7 +256,7 @@ abstract class _$ToolArgsCopyWith<$Res> implements $ToolArgsCopyWith<$Res> {
   factory _$ToolArgsCopyWith(_ToolArgs value, $Res Function(_ToolArgs) then) =
       __$ToolArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({int toolId});
 }
 
 /// @nodoc
@@ -270,13 +270,13 @@ class __$ToolArgsCopyWithImpl<$Res> extends _$ToolArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? toolId = freezed,
   }) {
     return _then(_ToolArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      toolId: toolId == freezed
+          ? _value.toolId
+          : toolId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -284,30 +284,30 @@ class __$ToolArgsCopyWithImpl<$Res> extends _$ToolArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ToolArgs implements _ToolArgs {
-  const _$_ToolArgs({required this.axis});
+  const _$_ToolArgs({required this.toolId});
 
   factory _$_ToolArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_ToolArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final int toolId;
 
   @override
   String toString() {
-    return 'ToolArgs(axis: $axis)';
+    return 'ToolArgs(toolId: $toolId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ToolArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.toolId, toolId) ||
+                const DeepCollectionEquality().equals(other.toolId, toolId)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(toolId);
 
   @JsonKey(ignore: true)
   @override
@@ -321,12 +321,12 @@ class _$_ToolArgs implements _ToolArgs {
 }
 
 abstract class _ToolArgs implements ToolArgs {
-  const factory _ToolArgs({required AllowedAxis axis}) = _$_ToolArgs;
+  const factory _ToolArgs({required int toolId}) = _$_ToolArgs;
 
   factory _ToolArgs.fromJson(Map<String, dynamic> json) = _$_ToolArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  int get toolId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ToolArgsCopyWith<_ToolArgs> get copyWith =>

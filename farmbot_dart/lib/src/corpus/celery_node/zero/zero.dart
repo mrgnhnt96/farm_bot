@@ -15,15 +15,17 @@ class Zero with _$Zero implements CeleryScript {
     required ZeroArgs args,
   }) = _DefaultZero;
 
-  factory Zero.fromJson(Map<String, dynamic> json) =>
-      _$ZeroFromJson(json);
+  factory Zero.fromJson(Map<String, dynamic> json) => _$ZeroFromJson(json);
 
   @override
   String get kind => 'zero';
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 

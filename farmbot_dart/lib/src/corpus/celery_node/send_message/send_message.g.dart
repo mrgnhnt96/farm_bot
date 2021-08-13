@@ -11,6 +11,10 @@ _$_DefaultSendMessage _$_$_DefaultSendMessageFromJson(Map json) {
     comment: json['comment'] as String?,
     args: SendMessageArgs.fromJson(
         Map<String, dynamic>.from(json['args'] as Map)),
+    body: (json['body'] as List<dynamic>?)
+        ?.map((e) =>
+            SendMessageBodyItem.fromJson(Map<String, dynamic>.from(e as Map)))
+        .toList(),
   );
 }
 
@@ -26,18 +30,22 @@ Map<String, dynamic> _$_$_DefaultSendMessageToJson(
 
   writeNotNull('comment', instance.comment);
   val['args'] = instance.args.toJson();
+  writeNotNull('body', instance.body?.map((e) => e.toJson()).toList());
   return val;
 }
 
 _$_SendMessageArgs _$_$_SendMessageArgsFromJson(Map json) {
   return _$_SendMessageArgs(
-    axis: _$enumDecode(_$AllowedAxisEnumMap, json['axis']),
+    message: json['message'] as String,
+    messageType:
+        _$enumDecode(_$AllowedMessageTypesEnumMap, json['message_type']),
   );
 }
 
 Map<String, dynamic> _$_$_SendMessageArgsToJson(_$_SendMessageArgs instance) =>
     <String, dynamic>{
-      'axis': _$AllowedAxisEnumMap[instance.axis],
+      'message': instance.message,
+      'message_type': _$AllowedMessageTypesEnumMap[instance.messageType],
     };
 
 K _$enumDecode<K, V>(
@@ -66,9 +74,25 @@ K _$enumDecode<K, V>(
   ).key;
 }
 
-const _$AllowedAxisEnumMap = {
-  AllowedAxis.all: 'all',
-  AllowedAxis.x: 'x',
-  AllowedAxis.y: 'y',
-  AllowedAxis.z: 'z',
+const _$AllowedMessageTypesEnumMap = {
+  AllowedMessageTypes.assertion: 'assertion',
+  AllowedMessageTypes.busy: 'busy',
+  AllowedMessageTypes.debug: 'debug',
+  AllowedMessageTypes.error: 'error',
+  AllowedMessageTypes.fun: 'fun',
+  AllowedMessageTypes.info: 'info',
+  AllowedMessageTypes.success: 'success',
+  AllowedMessageTypes.warn: 'warn',
 };
+
+_$_SendMessageBodyItem _$_$_SendMessageBodyItemFromJson(Map json) {
+  return _$_SendMessageBodyItem(
+    Channel.fromJson(Map<String, dynamic>.from(json['value'] as Map)),
+  );
+}
+
+Map<String, dynamic> _$_$_SendMessageBodyItemToJson(
+        _$_SendMessageBodyItem instance) =>
+    <String, dynamic>{
+      'value': instance.value.toJson(),
+    };

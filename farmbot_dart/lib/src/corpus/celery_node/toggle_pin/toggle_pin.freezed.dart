@@ -202,9 +202,9 @@ TogglePinArgs _$TogglePinArgsFromJson(Map<String, dynamic> json) {
 class _$TogglePinArgsTearOff {
   const _$TogglePinArgsTearOff();
 
-  _TogglePinArgs call({required AllowedAxis axis}) {
+  _TogglePinArgs call({required PinNumberArg pinNumber}) {
     return _TogglePinArgs(
-      axis: axis,
+      pinNumber: pinNumber,
     );
   }
 
@@ -218,7 +218,7 @@ const $TogglePinArgs = _$TogglePinArgsTearOff();
 
 /// @nodoc
 mixin _$TogglePinArgs {
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  PinNumberArg get pinNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -231,7 +231,9 @@ abstract class $TogglePinArgsCopyWith<$Res> {
   factory $TogglePinArgsCopyWith(
           TogglePinArgs value, $Res Function(TogglePinArgs) then) =
       _$TogglePinArgsCopyWithImpl<$Res>;
-  $Res call({AllowedAxis axis});
+  $Res call({PinNumberArg pinNumber});
+
+  $PinNumberArgCopyWith<$Res> get pinNumber;
 }
 
 /// @nodoc
@@ -245,14 +247,21 @@ class _$TogglePinArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? pinNumber = freezed,
   }) {
     return _then(_value.copyWith(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      pinNumber: pinNumber == freezed
+          ? _value.pinNumber
+          : pinNumber // ignore: cast_nullable_to_non_nullable
+              as PinNumberArg,
     ));
+  }
+
+  @override
+  $PinNumberArgCopyWith<$Res> get pinNumber {
+    return $PinNumberArgCopyWith<$Res>(_value.pinNumber, (value) {
+      return _then(_value.copyWith(pinNumber: value));
+    });
   }
 }
 
@@ -263,7 +272,10 @@ abstract class _$TogglePinArgsCopyWith<$Res>
           _TogglePinArgs value, $Res Function(_TogglePinArgs) then) =
       __$TogglePinArgsCopyWithImpl<$Res>;
   @override
-  $Res call({AllowedAxis axis});
+  $Res call({PinNumberArg pinNumber});
+
+  @override
+  $PinNumberArgCopyWith<$Res> get pinNumber;
 }
 
 /// @nodoc
@@ -279,13 +291,13 @@ class __$TogglePinArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? axis = freezed,
+    Object? pinNumber = freezed,
   }) {
     return _then(_TogglePinArgs(
-      axis: axis == freezed
-          ? _value.axis
-          : axis // ignore: cast_nullable_to_non_nullable
-              as AllowedAxis,
+      pinNumber: pinNumber == freezed
+          ? _value.pinNumber
+          : pinNumber // ignore: cast_nullable_to_non_nullable
+              as PinNumberArg,
     ));
   }
 }
@@ -293,30 +305,31 @@ class __$TogglePinArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_TogglePinArgs implements _TogglePinArgs {
-  const _$_TogglePinArgs({required this.axis});
+  const _$_TogglePinArgs({required this.pinNumber});
 
   factory _$_TogglePinArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_TogglePinArgsFromJson(json);
 
   @override
-  final AllowedAxis axis;
+  final PinNumberArg pinNumber;
 
   @override
   String toString() {
-    return 'TogglePinArgs(axis: $axis)';
+    return 'TogglePinArgs(pinNumber: $pinNumber)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TogglePinArgs &&
-            (identical(other.axis, axis) ||
-                const DeepCollectionEquality().equals(other.axis, axis)));
+            (identical(other.pinNumber, pinNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.pinNumber, pinNumber)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(axis);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(pinNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -330,13 +343,14 @@ class _$_TogglePinArgs implements _TogglePinArgs {
 }
 
 abstract class _TogglePinArgs implements TogglePinArgs {
-  const factory _TogglePinArgs({required AllowedAxis axis}) = _$_TogglePinArgs;
+  const factory _TogglePinArgs({required PinNumberArg pinNumber}) =
+      _$_TogglePinArgs;
 
   factory _TogglePinArgs.fromJson(Map<String, dynamic> json) =
       _$_TogglePinArgs.fromJson;
 
   @override
-  AllowedAxis get axis => throw _privateConstructorUsedError;
+  PinNumberArg get pinNumber => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TogglePinArgsCopyWith<_TogglePinArgs> get copyWith =>

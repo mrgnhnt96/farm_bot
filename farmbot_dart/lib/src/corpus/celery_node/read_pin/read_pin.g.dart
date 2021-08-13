@@ -51,25 +51,3 @@ Map<String, dynamic> _$_$_ReadPinArgsToJson(_$_ReadPinArgs instance) {
   val['pin_number'] = instance.pinNumber.toJson();
   return val;
 }
-
-_$_PinNumberArg _$_$_PinNumberArgFromJson(Map json) {
-  return _$_PinNumberArg(
-    json['value'] as int,
-  );
-}
-
-Map<String, dynamic> _$_$_PinNumberArgToJson(_$_PinNumberArg instance) =>
-    <String, dynamic>{
-      'value': instance.value,
-    };
-
-_$_PinNumberArgPin _$_$_PinNumberArgPinFromJson(Map json) {
-  return _$_PinNumberArgPin(
-    NamedPin.fromJson(Map<String, dynamic>.from(json['value'] as Map)),
-  );
-}
-
-Map<String, dynamic> _$_$_PinNumberArgPinToJson(_$_PinNumberArgPin instance) =>
-    <String, dynamic>{
-      'value': instance.value.toJson(),
-    };

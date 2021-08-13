@@ -1,8 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:farmbot/src/corpus/celery_node/celery_script.dart';
 import 'package:farmbot/src/corpus/celery_node/script/celery_node.dart';
-import 'package:farmbot/src/corpus/enums.dart';
+import 'package:farmbot/src/corpus/celery_node/shared/pin_number_arg/pin_number_arg.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'toggle_pin.freezed.dart';
 part 'toggle_pin.g.dart';
@@ -23,14 +22,17 @@ class TogglePin with _$TogglePin implements CeleryScript {
 
   @override
   CeleryNode toRequest() {
-    return CeleryNode(kind: kind, args: args.toJson(), body: []);
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
   }
 }
 
 @freezed
 class TogglePinArgs with _$TogglePinArgs {
   const factory TogglePinArgs({
-    required AllowedAxis axis,
+    required PinNumberArg pinNumber,
   }) = _TogglePinArgs;
 
   factory TogglePinArgs.fromJson(Map<String, dynamic> json) =>
