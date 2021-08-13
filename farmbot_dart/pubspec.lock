@@ -323,6 +323,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  models:
+    dependency: "direct main"
+    description:
+      path: "packages/models"
+      relative: true
+    source: path
+    version: "0.0.1"
   mqtt_client:
     dependency: "direct main"
     description:

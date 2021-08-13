@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:farmbot/models.dart';
-import 'package:farmbot/src/celery_script.dart';
+import 'package:models/models.dart';
+import 'package:models/src/celery_script.dart';
 
 part 'safe_z.freezed.dart';
 part 'safe_z.g.dart';

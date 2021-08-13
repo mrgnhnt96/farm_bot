@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:farmbot/models.dart';
+import 'package:models/models.dart';
 
 part 'axis_operand.freezed.dart';
 part 'axis_operand.g.dart';

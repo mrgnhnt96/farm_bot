@@ -1,4 +1,4 @@
-name: farmbot
+name: models
 description: Models for the farmbot project
 publish_to: none
 version: 0.0.1
@@ -21,4 +21,4 @@ dev_dependencies:
 import_sorter:
   comments: false
 
-scripts: ../../../derry.yaml
+scripts: ../../derry.yaml

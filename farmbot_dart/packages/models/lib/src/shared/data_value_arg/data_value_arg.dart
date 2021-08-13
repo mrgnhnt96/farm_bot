@@ -1,5 +1,6 @@
-import 'package:farmbot/models.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:models/models.dart';
 
 part 'data_value_arg.freezed.dart';
 part 'data_value_arg.g.dart';
