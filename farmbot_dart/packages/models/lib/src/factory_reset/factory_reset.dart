@@ -1,0 +1,40 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:farmbot/models.dart';
+import 'package:farmbot/src/celery_script.dart';
+
+part 'factory_reset.freezed.dart';
+part 'factory_reset.g.dart';
+
+@freezed
+class FactoryReset with _$FactoryReset implements CeleryScript {
+  const FactoryReset._();
+  const factory FactoryReset({
+    String? comment,
+    required FactoryResetArgs args,
+  }) = _DefaultFactoryReset;
+
+  factory FactoryReset.fromJson(Map<String, dynamic> json) =>
+      _$FactoryResetFromJson(json);
+
+  @override
+  String get kind => 'factory_reset';
+
+  @override
+  CeleryNode toRequest() {
+    return CeleryNode(
+      kind: kind,
+      args: args.toJson(),
+    );
+  }
+}
+
+@freezed
+class FactoryResetArgs with _$FactoryResetArgs {
+  const factory FactoryResetArgs({
+    required String package,
+  }) = _FactoryResetArgs;
+
+  factory FactoryResetArgs.fromJson(Map<String, dynamic> json) =>
+      _$FactoryResetArgsFromJson(json);
+}
