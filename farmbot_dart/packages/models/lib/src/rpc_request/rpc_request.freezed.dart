@@ -228,9 +228,11 @@ RpcRequestArgs _$RpcRequestArgsFromJson(Map<String, dynamic> json) {
 class _$RpcRequestArgsTearOff {
   const _$RpcRequestArgsTearOff();
 
-  _RpcRequestArgs call({required String label, required int priority}) {
+  _RpcRequestArgs call(
+      {@JsonKey(name: 'label') required String uuid,
+      @JsonKey(toJson: _priorityToJson) required Priority priority}) {
     return _RpcRequestArgs(
-      label: label,
+      uuid: uuid,
       priority: priority,
     );
   }
@@ -245,8 +247,10 @@ const $RpcRequestArgs = _$RpcRequestArgsTearOff();
 
 /// @nodoc
 mixin _$RpcRequestArgs {
-  String get label => throw _privateConstructorUsedError;
-  int get priority => throw _privateConstructorUsedError;
+  @JsonKey(name: 'label')
+  String get uuid => throw _privateConstructorUsedError;
+  @JsonKey(toJson: _priorityToJson)
+  Priority get priority => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -259,7 +263,9 @@ abstract class $RpcRequestArgsCopyWith<$Res> {
   factory $RpcRequestArgsCopyWith(
           RpcRequestArgs value, $Res Function(RpcRequestArgs) then) =
       _$RpcRequestArgsCopyWithImpl<$Res>;
-  $Res call({String label, int priority});
+  $Res call(
+      {@JsonKey(name: 'label') String uuid,
+      @JsonKey(toJson: _priorityToJson) Priority priority});
 }
 
 /// @nodoc
@@ -273,18 +279,18 @@ class _$RpcRequestArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? label = freezed,
+    Object? uuid = freezed,
     Object? priority = freezed,
   }) {
     return _then(_value.copyWith(
-      label: label == freezed
-          ? _value.label
-          : label // ignore: cast_nullable_to_non_nullable
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as String,
       priority: priority == freezed
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Priority,
     ));
   }
 }
@@ -296,7 +302,9 @@ abstract class _$RpcRequestArgsCopyWith<$Res>
           _RpcRequestArgs value, $Res Function(_RpcRequestArgs) then) =
       __$RpcRequestArgsCopyWithImpl<$Res>;
   @override
-  $Res call({String label, int priority});
+  $Res call(
+      {@JsonKey(name: 'label') String uuid,
+      @JsonKey(toJson: _priorityToJson) Priority priority});
 }
 
 /// @nodoc
@@ -312,18 +320,18 @@ class __$RpcRequestArgsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? label = freezed,
+    Object? uuid = freezed,
     Object? priority = freezed,
   }) {
     return _then(_RpcRequestArgs(
-      label: label == freezed
-          ? _value.label
-          : label // ignore: cast_nullable_to_non_nullable
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as String,
       priority: priority == freezed
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Priority,
     ));
   }
 }
@@ -331,27 +339,31 @@ class __$RpcRequestArgsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_RpcRequestArgs implements _RpcRequestArgs {
-  const _$_RpcRequestArgs({required this.label, required this.priority});
+  const _$_RpcRequestArgs(
+      {@JsonKey(name: 'label') required this.uuid,
+      @JsonKey(toJson: _priorityToJson) required this.priority});
 
   factory _$_RpcRequestArgs.fromJson(Map<String, dynamic> json) =>
       _$_$_RpcRequestArgsFromJson(json);
 
   @override
-  final String label;
+  @JsonKey(name: 'label')
+  final String uuid;
   @override
-  final int priority;
+  @JsonKey(toJson: _priorityToJson)
+  final Priority priority;
 
   @override
   String toString() {
-    return 'RpcRequestArgs(label: $label, priority: $priority)';
+    return 'RpcRequestArgs(uuid: $uuid, priority: $priority)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RpcRequestArgs &&
-            (identical(other.label, label) ||
-                const DeepCollectionEquality().equals(other.label, label)) &&
+            (identical(other.uuid, uuid) ||
+                const DeepCollectionEquality().equals(other.uuid, uuid)) &&
             (identical(other.priority, priority) ||
                 const DeepCollectionEquality()
                     .equals(other.priority, priority)));
@@ -360,7 +372,7 @@ class _$_RpcRequestArgs implements _RpcRequestArgs {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(label) ^
+      const DeepCollectionEquality().hash(uuid) ^
       const DeepCollectionEquality().hash(priority);
 
   @JsonKey(ignore: true)
@@ -376,15 +388,19 @@ class _$_RpcRequestArgs implements _RpcRequestArgs {
 
 abstract class _RpcRequestArgs implements RpcRequestArgs {
   const factory _RpcRequestArgs(
-      {required String label, required int priority}) = _$_RpcRequestArgs;
+          {@JsonKey(name: 'label') required String uuid,
+          @JsonKey(toJson: _priorityToJson) required Priority priority}) =
+      _$_RpcRequestArgs;
 
   factory _RpcRequestArgs.fromJson(Map<String, dynamic> json) =
       _$_RpcRequestArgs.fromJson;
 
   @override
-  String get label => throw _privateConstructorUsedError;
+  @JsonKey(name: 'label')
+  String get uuid => throw _privateConstructorUsedError;
   @override
-  int get priority => throw _privateConstructorUsedError;
+  @JsonKey(toJson: _priorityToJson)
+  Priority get priority => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$RpcRequestArgsCopyWith<_RpcRequestArgs> get copyWith =>

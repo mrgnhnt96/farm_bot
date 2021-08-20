@@ -26,13 +26,45 @@ Map<String, dynamic> _$_$_DefaultRpcRequestToJson(
 
 _$_RpcRequestArgs _$_$_RpcRequestArgsFromJson(Map<String, dynamic> json) {
   return _$_RpcRequestArgs(
-    label: json['label'] as String,
-    priority: json['priority'] as int,
+    uuid: json['label'] as String,
+    priority: _$enumDecode(_$PriorityEnumMap, json['priority']),
   );
 }
 
 Map<String, dynamic> _$_$_RpcRequestArgsToJson(_$_RpcRequestArgs instance) =>
     <String, dynamic>{
-      'label': instance.label,
-      'priority': instance.priority,
+      'label': instance.uuid,
+      'priority': _$PriorityEnumMap[instance.priority],
     };
+
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
+  }
+
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
+}
+
+const _$PriorityEnumMap = {
+  Priority.low: 'low',
+  Priority.normal: 'normal',
+  Priority.high: 'high',
+};
