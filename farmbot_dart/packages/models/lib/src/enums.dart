@@ -1,5 +1,24 @@
 // ignore_for_file: constant_identifier_names
 
+enum Priority {
+  low,
+  normal,
+  high,
+}
+
+extension PriorityExt on Priority {
+  int get value {
+    switch (this) {
+      case Priority.low:
+        return 300;
+      case Priority.normal:
+        return 600;
+      case Priority.high:
+        return 9000;
+    }
+  }
+}
+
 enum AllowedAssertionTypes { abort, abort_recover, next, recover }
 
 enum AllowedAxis { all, x, y, z }
