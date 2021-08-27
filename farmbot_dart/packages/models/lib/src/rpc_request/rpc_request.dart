@@ -34,10 +34,12 @@ class RpcRequest with _$RpcRequest implements CeleryScript {
 @freezed
 class RpcRequestArgs with _$RpcRequestArgs {
   const factory RpcRequestArgs({
-    required String label,
-    required int priority,
+    @JsonKey(name: 'label') required String uuid,
+    @JsonKey(toJson: _priorityToJson) required Priority priority,
   }) = _RpcRequestArgs;
 
   factory RpcRequestArgs.fromJson(Map<String, dynamic> json) =>
       _$RpcRequestArgsFromJson(json);
+
+  static int _priorityToJson(Priority p) => p.value;
 }
